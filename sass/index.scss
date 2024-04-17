@@ -1,0 +1,55 @@
+//colors
+
+$orange: #ff4a00;
+$dark: #2d2e2d;
+$white: #fefefe;
+$gray: #dedede;
+$blue: #102e48;
+
+//box shadow
+$box-shadow: #e0e1e322 0px 5px 15px;
+
+//padding
+
+$small-padding: 0.5rem;
+$standard-padding: 1rem;
+$big-padding: 2rem;
+
+//hover scale size
+
+$hover-min-scale: 1.01;
+$hover-med-scale: 1.05;
+$hover-max-scale: 1.1;
+
+//border size
+
+$border-min: 0.3rem;
+$border-med: 0.5rem;
+$border-max: 1rem;
+
+//breakpoint
+
+$mobile: 560px;
+$tablet: 768px;
+$big-tablets: 900px;
+$small-desktop: 1024px;
+$desktop: 1200px;
+$large-desktop: 1700px;
+
+
+//mixins 
+
+
+@mixin d-flex() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+
+@mixin d-flex-column() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
