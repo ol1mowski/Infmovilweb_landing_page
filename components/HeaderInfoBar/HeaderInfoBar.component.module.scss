@@ -1,0 +1,5 @@
+@import '@/sass/index.scss';
+
+.container {
+    @include d-flex;
+}

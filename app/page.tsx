@@ -1,3 +1,9 @@
+import HeaderInfoBar from "@/components/HeaderInfoBar/HeaderInfoBar.component";
+
 export default function Home() {
-  return <h1>Main</h1>;
+  return (
+    <>
+    <HeaderInfoBar />
+    </>
+  );
 }
