@@ -1,5 +1,14 @@
 @import "@/sass/index.scss";
 
+.sticky {
+  @include d-flex;
+  height: 80vh;
+  background-image: url("../../assets/images/homepage_image.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
 .container {
   @include d-flex;
   height: 80vh;

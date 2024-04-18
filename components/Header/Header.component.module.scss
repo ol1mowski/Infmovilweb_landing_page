@@ -3,7 +3,7 @@
 .sticky {
   background-color: $white;
   @include d-flex;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   animation: positionAnimation 2s linear;
@@ -11,7 +11,7 @@
   transition: all 1s ease-in;
   justify-content: space-between;
   @media screen and (min-width: $big-tablets) {
-    padding: $standard-padding;
+    padding: $standard-padding 2rem;
   }
 }
 
@@ -26,10 +26,9 @@
   @include d-flex;
   width: 100%;
   padding: $small-padding $standard-padding;
-  transition: all 1s ease-in;
   justify-content: space-between;
   @media screen and (min-width: $big-tablets) {
-    padding: $standard-padding;
+    padding: $standard-padding 2rem;
   }
   &__logoSection {
     @include d-flex;

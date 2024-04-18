@@ -13,10 +13,10 @@ import { useEffect, useRef, useState } from "react";
 const Header = () => {
   const header = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
-
+  console.log(scrollY);
   const handleScroll = () => {
     if (header.current) {
-      if (scrollY > 100) {
+      if (scrollY > 46) {
         setIsSticky(true);
       } else {
         setIsSticky(false);
@@ -32,6 +32,7 @@ const Header = () => {
   }, []);
   return (
     <>
+      <section></section>
       <header ref={header} className={` ${isSticky ? s.sticky : s.header}`}>
         <section className={s.header__logoSection}>
           <Image src={logo} alt="logo of company" width={100} height={100} />
