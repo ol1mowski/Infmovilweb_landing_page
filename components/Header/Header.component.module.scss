@@ -1,10 +1,29 @@
 @import "@/sass/index.scss";
 
-.header {
+.sticky {
   background-color: $white;
   @include d-flex;
   position: fixed;
-  top: 10;
+  top: 0;
+  width: 100%;
+  animation: positionAnimation 2s linear;
+  padding: $small-padding $standard-padding;
+  transition: all 1s ease-in;
+  justify-content: space-between;
+  @media screen and (min-width: $big-tablets) {
+    padding: $standard-padding;
+  }
+}
+
+@keyframes positionAnimation {
+  100% {
+    top: 0;
+  }
+}
+
+.header {
+  background-color: $white;
+  @include d-flex;
   width: 100%;
   padding: $small-padding $standard-padding;
   transition: all 1s ease-in;

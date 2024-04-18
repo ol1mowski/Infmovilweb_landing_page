@@ -8,6 +8,8 @@ export default function Home() {
     <HeaderInfoBar />
     <Header />
     <HomePage />
+    <HomePage />
+    <HomePage />
     </>
   );
 }
