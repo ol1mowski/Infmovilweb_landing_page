@@ -1,0 +1,60 @@
+@import "@/sass/index.scss";
+
+.hamburgerMenu {
+  height: 100vh;
+  background-color: $white;
+  width: 100vw;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  transform: translateX(-100vw);
+  padding: $big-padding;
+  overflow-y: scroll;
+  animation: showMenu 1s linear forwards;
+  &__close {
+    @include d-flex;
+    justify-content: flex-end;
+  }
+  &__nav {
+    height: 90vh;
+    @include d-flex-column;
+    justify-content: flex-start;
+    gap: 3rem;
+    &__search {
+      @include d-flex;
+      &__btn {
+        border-radius: 0 0.7rem 0.7rem 0;
+        padding: 0.93rem $standard-padding;
+        cursor: pointer;
+      }
+      &__inp {
+        border-radius: 0.7rem 0 0 0.7rem;
+
+        border: none;
+        padding: 1.1rem $standard-padding;
+        color: $white;
+      }
+    }
+    &__items {
+      @include d-flex-column;
+      list-style-type: none;
+      align-items: flex-start;
+      gap: 0.5rem;
+      padding-left: 3rem;
+      &__item {
+        font-size: 1.5rem;
+        font-weight: 500;
+        margin-bottom: 0.7rem;
+      }
+    }
+  }
+}
+@keyframes showMenu {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}

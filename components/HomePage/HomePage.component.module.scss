@@ -1,0 +1,10 @@
+@import "@/sass/index.scss";
+
+.container {
+  @include d-flex;
+  height: 100vh;
+  background-image: url("../../assets/images/homepage_image.jpeg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}

@@ -1,0 +1,63 @@
+@import "@/sass/index.scss";
+
+.header {
+  position: fixed;
+  z-index: 100;
+  background-color: $white;
+  border-bottom: 0.1px solid $white;
+  @include d-flex;
+  justify-content: space-between;
+  width: 100%;
+  transition: all 1s ease-in;
+
+  &__logoSection {
+    @include d-flex;
+    &__logo {
+      font-size: 2rem;
+      &__span {
+        color: $white;
+        -webkit-text-fill-color: $white;
+      }
+    }
+  }
+
+  &__navMenu {
+    display: none;
+    @media screen and (min-width: $big-tablets) {
+      @include d-flex;
+      gap: 5rem;
+    }
+    &__nav {
+      @include d-flex;
+      border-right: 0.5px solid $white;
+    }
+
+    &__items {
+      @include d-flex;
+      list-style-type: none;
+      &__item {
+        margin-right: 2rem;
+        font-weight: 100;
+        font-size: 1rem;
+        cursor: pointer;
+        letter-spacing: 2px;
+        padding: $small-padding $standard-padding;
+        color: $white;
+        transition: background, scale 0.7s;
+        border-radius: $border-min;
+      }
+      &__item:hover {
+        box-shadow: $box-shadow;
+      }
+    }
+  }
+}
+
+@keyframes showMenu {
+  0% {
+    transform: translateX(-100vw);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
