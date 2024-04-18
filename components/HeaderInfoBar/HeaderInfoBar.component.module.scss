@@ -1,5 +1,36 @@
-@import '@/sass/index.scss';
+@import "@/sass/index.scss";
 
 .container {
+  @include d-flex;
+  background-color: $orange;
+  color: $white;
+  padding: $small-padding 0;
+  @media screen and (min-width: $small-desktop) {
+    justify-content: space-around;
+  }
+  &__contactSection {
     @include d-flex;
+    gap: 1rem;
+    @media screen and (min-width: $tablet) {
+      gap: 3rem;
+    }
+    &__telephoneNumber {
+      @include d-flex;
+      gap: 0.5rem;
+    }
+    &__emailAdress {
+      @include d-flex;
+      gap: 0.5rem;
+    }
+  }
+  &__iconsSection {
+    display: none;
+    @media screen and (min-width: $small-desktop) {
+      @include d-flex;
+    }
+    &__wrapper {
+      @include d-flex;
+      gap: 1rem;
+    }
+  }
 }
