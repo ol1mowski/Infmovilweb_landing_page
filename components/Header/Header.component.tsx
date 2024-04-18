@@ -20,28 +20,25 @@ const Header = () => {
               <li className={s.header__navMenu__items__item}>Home</li>
               <li>
                 {" "}
-                <a
-                  className={s.header__navMenu__items__item}
-                  href="https://oliwiermarkiewicz.netlify.app/"
-                  target="_blank"
-                >
-                  O Autorze
+                <a className={s.header__navMenu__items__item} href="">
+                  Sobre Nosotros
                 </a>
               </li>
-
               <li>
                 {" "}
-                <a
-                  className={s.header__navMenu__items__item}
-                  href="https://it.pracuj.pl/praca"
-                  target="_blank"
-                >
-                  Praca w IT
+                <a className={s.header__navMenu__items__item} href="">
+                  Servicios{" "}
+                </a>
+              </li>{" "}
+              <li>
+                {" "}
+                <a className={s.header__navMenu__items__item} href="">
+                  Contacto
                 </a>
               </li>
             </ul>
+            <SearchSetion />
           </div>
-          <SearchSetion />
         </section>
         <HamburgerLogo />
 

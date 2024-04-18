@@ -1,7 +1,7 @@
 import Image from "next/image";
 import s from "./SearchIcon.components.module.scss";
 
-import img from '@/assets/icons/arrow.png';
+import img from '@/assets/icons/search.png';
 
 type SearchIconProps = {
   showSearchSectionHandler: () => void;
