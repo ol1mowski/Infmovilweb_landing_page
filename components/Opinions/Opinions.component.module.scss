@@ -1,0 +1,6 @@
+@import "@/sass/index.scss";
+
+.container {
+    @include d-flex;
+    background-color: $white;
+}
