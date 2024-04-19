@@ -8,64 +8,38 @@ function Services() {
   return (
     <section className={s.container}>
       <section className={s.container__header}>
-        <div className={s.container__header__wrapper}>
-          <span className={s.container__header__wrapper__category}>
-            Sobre Nosotros
-          </span>
-          <h2 className={s.container__header__wrapper__title}>
-            Nuestros servicios
-          </h2>
-        </div>
+        <span className={s.container__header__category}>Sobre Nosotros</span>
+        <h2 className={s.container__header__title}>Nuestros servicios</h2>
       </section>
       <section className={s.container__servicesContainer}>
-        <div className={s.container__servicesContainer__wrapper}>
-          <div
-            className={s.container__servicesContainer__wrapper__imageWrapper}
+        <div className={s.container__servicesContainer__imageWrapper}>
+          <Image
+            width={270}
+            height={200}
+            className={s.container__servicesContainer__imageWrapper__img}
+            src={image}
+            alt="service-image"
+          />
+        </div>
+        <div className={s.container__servicesContainer__textWrapper}>
+          <h3 className={s.container__servicesContainer__textWrapper__title}>
+            reparación de ordenador
+          </h3>
+          <p
+            className={s.container__servicesContainer__textWrapper__description}
           >
-            <Image
-              className={
-                s.container__servicesContainer__wrapper__imageWrapper__img
-              }
-              src={image}
-              alt="service-image"
-            />
-          </div>
-          <div className={s.container__servicesContainer__wrapper__textWrapper}>
-            <h3
-              className={
-                s.container__servicesContainer__wrapper__textWrapper__title
-              }
-            >
-              reparación de ordenador
-            </h3>
-            <p
-              className={
-                s.container__servicesContainer__wrapper__textWrapper__description
-              }
-            >
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-            </p>
-          </div>
-          <div
-            className={s.container__servicesContainer__wrapper__actionSection}
-          >
-            <div
-              className={
-                s.container__servicesContainer__wrapper__actionWrapper__wrapper
-              }
-            >
-              <span
-                className={
-                  s.container__servicesContainer__wrapper__actionWrapper__wrapper__text
-                }
-              >
-                leer más
-              </span>
-              <Image  className={
-                  s.container__servicesContainer__wrapper__actionWrapper__wrapper__icon
-                } src={arrow} alt="arrow-icon" />
-            </div>
-          </div>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+          </p>
+        </div>
+        <div className={s.container__servicesContainer__actionWrapper}>
+          <span className={s.container__servicesContainer__actionWrapper__text}>
+            leer más
+          </span>
+          <Image
+            className={s.container__servicesContainer__actionWrapper__icon}
+            src={arrow}
+            alt="arrow-icon"
+          />
         </div>
       </section>
     </section>
