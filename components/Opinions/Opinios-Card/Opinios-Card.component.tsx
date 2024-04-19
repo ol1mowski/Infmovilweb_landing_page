@@ -3,7 +3,12 @@ import s from "./Opinios-Card.component.module.scss";
 
 import quotes from "@/assets/icons/quotes.png";
 
-function OpiniosCard() {
+type OpinionsCardProps = {
+  description: string;
+  author: string;
+};
+
+function OpiniosCard({ description, author }: OpinionsCardProps) {
   return (
     <section className={s.container}>
       <div className={s.container__topSideOfOpinion}>
@@ -22,10 +27,11 @@ function OpiniosCard() {
         </div>
         <div className={s.container__topSideOfOpinion__content}>
           <p className={s.container__topSideOpinion__content__description}>
-            Had a problem with my laptop's charger. Was diagnosed in 3 minutes.
-            Solution done. Problem solved.
+            {description}
           </p>
-          <span className={s.container__topSideOfOpinion__content__user}>Vadim Danilevichius</span>
+          <span className={s.container__topSideOfOpinion__content__user}>
+            {author}
+          </span>
         </div>
       </div>
       <div className={s.container__bottomSideOpinion}>

@@ -5,6 +5,7 @@ import arrow from "@/assets/icons/arrow.png";
 
 import star from "@/assets/icons/star.png";
 import OpiniosCard from "./Opinios-Card/Opinios-Card.component";
+import { OPINIONS } from "@/data/Opinions";
 
 function Opinions() {
   return (
@@ -29,8 +30,13 @@ function Opinions() {
         </div>
       </section>
       <section className={s.container__cardsWrapper}>
-        <OpiniosCard />
-        <OpiniosCard />
+        {OPINIONS.map((o) => (
+          <OpiniosCard
+            key={o.id}
+            description={o.description}
+            author={o.author}
+          />
+        ))}
       </section>
     </section>
   );
