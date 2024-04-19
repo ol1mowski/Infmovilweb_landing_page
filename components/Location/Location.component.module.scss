@@ -1,0 +1,39 @@
+@import "@/sass/index.scss";
+
+.container {
+  @include d-flex-column;
+  padding: $standard-padding;
+  margin-top: 5rem;
+  align-items: flex-start;
+  gap: 2rem;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+  }
+  &__infoSection {
+    @include d-flex-column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding: $standard-padding;
+    &__category {
+      @include category;
+    }
+    &__title {
+      @include title;
+      color: $dark;
+    }
+    &__btn {
+      @include btn;
+      margin-top: 1rem;
+    }
+  }
+  &__mapSection {
+    @include d-flex;
+    &__map {
+      width: 90vw;
+      border: none;
+      @media screen and (min-width: $desktop) {
+        width: 50rem;
+      }
+    }
+  }
+}

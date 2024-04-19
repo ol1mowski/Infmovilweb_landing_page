@@ -30,13 +30,8 @@ function Opinions() {
         </div>
       </section>
       <section className={s.container__cardsWrapper}>
-        {OPINIONS.map((o) => (
-          <OpiniosCard
-            key={o.id}
-            description={o.description}
-            author={o.author}
-          />
-        ))}
+       { OPINIONS.map(o =>  <OpiniosCard key={o.id} description={o.description} author={o.author}/>) }
+        
       </section>
     </section>
   );
