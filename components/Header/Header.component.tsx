@@ -13,7 +13,6 @@ import { useEffect, useRef, useState } from "react";
 const Header = () => {
   const header = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
-  console.log(scrollY);
   const handleScroll = () => {
     if (header.current) {
       if (scrollY > 46) {

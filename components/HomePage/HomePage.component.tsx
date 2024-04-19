@@ -1,33 +1,22 @@
-"use client";
-
-import { useEffect, useRef, useState } from "react";
 import s from "./HomePage.component.module.scss";
 
-function HomePage() {
-  const header = useRef<HTMLDivElement>(null);
-  const [isSticky, setIsSticky] = useState(false);
-  console.log(scrollY);
-  const handleScroll = () => {
-    if (header.current) {
-      if (scrollY > 46) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    }
-  };
+import Card from "./Card-Component/Card.component";
+import { CARD_INFO } from "@/data/HomePageCard";
 
-  useEffect(() => {
-    addEventListener("scroll", handleScroll);
-    return () => {
-      removeEventListener("scroll", handleScroll);
-    };
-  }, []);
+function HomePage() {
   return (
-    <section
-      ref={header}
-      className={` ${isSticky ? s.sticky : s.container}`}
-    ></section>
+    <section className={s.container}>
+      <div className={s.container__cardsWrapper}>
+        {CARD_INFO.map((c) => (
+          <Card
+            key={c.id}
+            logo={c.logo}
+            description={c.description}
+            title={c.title}
+          />
+        ))}
+      </div>
+    </section>
   );
 }
 
