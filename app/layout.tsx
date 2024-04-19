@@ -4,6 +4,8 @@ import Head from "next/head";
 
 const inter = Inter({ subsets: ["latin"] });
 
+import './globals.scss';
+
 export const metadata: Metadata = {
   title: "Infmovilweb | servicio de TI",
   description: "una empresa que repara equipos informáticos y crea sitios web",

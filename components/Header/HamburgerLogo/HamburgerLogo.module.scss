@@ -1,0 +1,14 @@
+@import '@/sass/index.scss';
+
+.hamburgerSection {
+  cursor: pointer;
+  padding-top: $small-padding;
+
+  @media screen and (min-width: $tablet) {
+    margin-right: 2rem;
+  }
+
+  @media screen and (min-width: $big-tablets) {
+    display: none;
+  }
+}

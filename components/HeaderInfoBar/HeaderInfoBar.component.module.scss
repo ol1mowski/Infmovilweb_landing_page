@@ -1,0 +1,57 @@
+@import "@/sass/index.scss";
+
+.container {
+  @include d-flex;
+  background-color: $orange;
+  color: $white;
+  padding: $small-padding 0;
+  @media screen and (min-width: $small-desktop) {
+    justify-content: space-around;
+  }
+  &__contactSection {
+    @include d-flex;
+    gap: 1rem;
+    @media screen and (min-width: $tablet) {
+      gap: 3rem;
+    }
+    &__telephoneNumber {
+      @include d-flex;
+      gap: 0.5rem;
+      transition: scale 0.7s;
+      will-change: scale;
+      cursor: pointer;
+    }
+    &__telephoneNumber:hover {
+      scale: 1.05;
+    }
+    &__emailAdress {
+      @include d-flex;
+      gap: 0.5rem;
+      transition: scale 0.7s;
+      will-change: scale;
+      cursor: pointer;
+    }
+    &__emailAdress:hover {
+      scale: 1.05;
+    }
+  }
+  &__iconsSection {
+    display: none;
+    @media screen and (min-width: $small-desktop) {
+      @include d-flex;
+    }
+
+    &__wrapper {
+      @include d-flex;
+      gap: 1rem;
+      &__icon {
+        cursor: pointer;
+        transition: scale 0.7s;
+        will-change: scale;
+      }
+      &__icon:hover {
+        scale: 1.1;
+      }
+    }
+  }
+}
