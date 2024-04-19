@@ -1,0 +1,7 @@
+@import "@/sass/index.scss";
+
+.container {
+    @include d-flex;
+    gap: 1rem;
+    padding: $standard-padding;
+}

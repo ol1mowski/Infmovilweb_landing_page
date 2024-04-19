@@ -1,6 +1,33 @@
 @import "@/sass/index.scss";
 
 .container {
-    @include d-flex;
-    background-color: $white;
+  @include d-flex-column;
+  background-color: $white;
+  padding: $standard-padding;
+  &__infoSection {
+    @include d-flex-column;
+    align-items: flex-start;
+    width: 100%;
+    gap: 1rem;
+    &__category {
+      @include category;
+    }
+    &__title {
+      @include title;
+      color: $dark;
+    }
+    &__btn {
+      @include btn;
+      margin-top: 1rem;
+    }
+    &__score {
+      @include d-flex;
+      gap: 1rem;
+      margin-top: 1rem;
+      &__content {
+        font-size: 2rem;
+        font-weight: 500;
+      }
+    }
+  }
 }
