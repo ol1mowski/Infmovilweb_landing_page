@@ -3,13 +3,15 @@ import s from './AboutUS.component.module.scss';
 
 import arrow from '@/assets/icons/arrow.png';
 
+import aboutImage from '@/assets/images/about_us.jpeg';
+
 function AboutUS() {
   return (
     <section className={s.container}>
       <section className={s.container__imageSection}>
         <div className={s.container__imageSection__frameOne}></div>
         <div className={s.container__imageSection__frameTwo}></div>
-        <Image className={s.container__imageSection__img} src={""} alt="" />
+        <Image className={s.container__imageSection__img} width={370} height={375} src={aboutImage} alt="" />
       </section>
       <section className={s.container__contentSection}>
         <div className={s.container__contentSection__infoWrapper}>

@@ -6,8 +6,10 @@
   background-position: center;
   background-size: cover;
   height: 160vh;
+  padding-top: 10rem;
   @media screen and (min-width: $desktop) {
     height: 80vh;
+    padding-top: 0rem;
   }
   padding-bottom: 3rem;
   &__cardsWrapper {
