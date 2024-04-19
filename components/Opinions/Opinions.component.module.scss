@@ -4,6 +4,7 @@
   @include d-flex-column;
   background-color: $white;
   padding: $standard-padding;
+  gap: 5rem;
   &__infoSection {
     @include d-flex-column;
     align-items: flex-start;
