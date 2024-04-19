@@ -1,8 +1,7 @@
-import Image from "next/image";
 import s from "./Services.component.module.scss";
 
-import arrow from "@/assets/icons/arrow.png";
-import image from "@/assets/images/compouter_repair.jpeg";
+import ServiceCard from "./Service-Card/Service-Card.component";
+import { SERVICES } from "@/data/ServicesData";
 
 function Services() {
   return (
@@ -11,36 +10,15 @@ function Services() {
         <span className={s.container__header__category}>Sobre Nosotros</span>
         <h2 className={s.container__header__title}>Nuestros servicios</h2>
       </section>
-      <section className={s.container__servicesContainer}>
-        <div className={s.container__servicesContainer__imageWrapper}>
-          <Image
-            width={270}
-            height={200}
-            className={s.container__servicesContainer__imageWrapper__img}
-            src={image}
-            alt="service-image"
+      <section className={s.container__cardsWrapper}>
+        {SERVICES.map((s) => (
+          <ServiceCard
+            key={s.id}
+            image={s.image}
+            description={s.description}
+            title={s.title}
           />
-        </div>
-        <div className={s.container__servicesContainer__textWrapper}>
-          <h3 className={s.container__servicesContainer__textWrapper__title}>
-            reparación de ordenador
-          </h3>
-          <p
-            className={s.container__servicesContainer__textWrapper__description}
-          >
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
-          </p>
-        </div>
-        <div className={s.container__servicesContainer__actionWrapper}>
-          <span className={s.container__servicesContainer__actionWrapper__text}>
-            leer más
-          </span>
-          <Image
-            className={s.container__servicesContainer__actionWrapper__icon}
-            src={arrow}
-            alt="arrow-icon"
-          />
-        </div>
+        ))}
       </section>
     </section>
   );

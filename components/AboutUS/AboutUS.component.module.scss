@@ -10,7 +10,7 @@
     gap: 4rem;
   }
   @media screen and (min-width: $large-desktop) {
-    gap: 7rem;
+    gap: 10rem;
   }
   &__imageSection {
     @include d-flex-column;

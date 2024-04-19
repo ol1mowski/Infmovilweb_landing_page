@@ -3,7 +3,7 @@
 .container {
   @include d-flex-column;
   gap: 2rem;
-  padding: $standard-padding;
+  padding: 2rem;
   background-color: $blue;
   &__header {
     @include d-flex-column;
@@ -22,47 +22,15 @@
       }
     }
   }
-  &__servicesContainer {
+  &__cardsWrapper {
     @include d-flex-column;
-    gap: $small-gap;
-    background-color: $white;
-    padding: $standard-padding;
-    border-radius: $border-med;
-    box-shadow: $box-shadow;
-    width: 80vw;
-    &__imageWrapper {
+    gap: 2rem;
+    @media screen and (min-width: $desktop) {
       @include d-flex;
-      &__img {
-        border-radius: $border-med;
-        width: 100%;
-      }
+      gap: 4rem;
     }
-    &__textWrapper {
-      @include d-flex-column;
-      gap: $standard-gap;
-      margin-top: $standard-padding;
-      align-items: flex-start;
-      width: 100%;
-    }
-    &__actionWrapper {
-      @include d-flex;
-      margin-top: $small-gap;
-      justify-content: flex-start;
-      width: 100%;
-      gap: $small-gap;
-
-      &__text {
-        @include d-flex;
-        cursor: pointer;
-        color: $orange;
-        font-size: 1.2rem;
-        font-weight: 500;
-        transition: scale, 0.7s;
-        will-change: scale;
-      }
-      &__text:hover {
-        scale: 1.05;
-      }
+    @media screen and (min-width: $large-desktop) {
+      gap: 7rem;
     }
   }
 }
