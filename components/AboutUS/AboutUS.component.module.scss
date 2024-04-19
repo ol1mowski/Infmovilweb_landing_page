@@ -5,34 +5,63 @@
   @include d-flex-column;
   padding: $standard-padding;
   gap: 2rem;
+  @media screen and (min-width: $desktop) {
+    @include d-flex;
+    gap: 4rem;
+  }
+  @media screen and (min-width: $large-desktop) {
+    gap: 7rem;
+  }
   &__imageSection {
     @include d-flex-column;
     &__img {
       border-radius: $border-med;
+      width: 90%;
+      @media screen and (min-width: $tablet) {
+        width: 30rem;
+        height: 20rem;
+      }
     }
     &__frameOne {
       border-top: 4px solid $gray;
       border-right: 4px solid $gray;
-      width: 370px;
+      width: 90%;
       height: 20px;
+      @media screen and (min-width: $tablet) {
+        width: 30rem;
+      }
     }
     &__frameTwo {
       border-top: 4px solid $orange;
       border-right: 4px solid $orange;
       height: 20px;
-      width: 200px;
+      width: 150px;
       margin: 0 auto;
+      @media screen and (min-width: $tablet) {
+        width: 15rem;
+      }
     }
   }
   &__contentSection {
     @include d-flex-column;
     padding: $standard-padding;
-    gap: 1rem;
+    gap: 2rem;
+    @media screen and (min-width: $tablet) {
+      width: 70%;
+    }
+    @media screen and (min-width: $desktop) {
+      width: 40%;
+    }
+    @media screen and (min-width: $large-desktop) {
+      width: 30rem;
+    }
     &__infoWrapper {
       @include d-flex-column;
       gap: 1rem;
       align-items: flex-start;
       width: 100%;
+      border-bottom: 2px solid $gray;
+      padding-bottom: $standard-padding;
       &__category {
         color: $orange;
         font-weight: 600;
@@ -40,6 +69,9 @@
       &__title {
         font-size: 1.5rem;
         color: $dark;
+        @media screen and (min-width: $desktop) {
+          font-size: 2rem;
+        }
       }
       &__description {
         font-size: $text-size;
@@ -57,6 +89,7 @@
         border: none;
         padding: $small-padding $standard-padding;
         font-size: $text-size;
+        color: $white;
         border-radius: $border-med;
       }
     }

@@ -11,7 +11,7 @@ function AboutUS() {
       <section className={s.container__imageSection}>
         <div className={s.container__imageSection__frameOne}></div>
         <div className={s.container__imageSection__frameTwo}></div>
-        <Image className={s.container__imageSection__img} width={370} height={375} src={aboutImage} alt="" />
+        <Image className={s.container__imageSection__img} width={300} height={290} src={aboutImage} alt="" />
       </section>
       <section className={s.container__contentSection}>
         <div className={s.container__contentSection__infoWrapper}>
