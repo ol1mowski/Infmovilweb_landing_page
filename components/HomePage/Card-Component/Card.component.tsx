@@ -1,3 +1,8 @@
+"use client";
+
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
+
 import Image, { StaticImageData } from "next/image";
 import s from "./Card.component.module.scss";
 
@@ -10,8 +15,28 @@ type CardProsps = {
 };
 
 function Card({ logo, title, description }: CardProsps) {
+  const { ref, inView } = useInView({
+    triggerOnce: true,
+    threshold: 0.5,
+  });
+
+  const animationVariants = {
+    hidden: { opacity: 0, y: 50 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  };
+
   return (
-    <div className={s.cardWrapper}>
+    <motion.div
+      ref={ref}
+      initial="hidden"
+      animate={inView ? "visible" : "hidden"}
+      variants={animationVariants}
+      className={s.cardWrapper}
+    >
       <div className={s.cardWrapper__imageWrapper}>
         <Image src={logo} alt="card-logo" />
       </div>
@@ -25,7 +50,7 @@ function Card({ logo, title, description }: CardProsps) {
           <Image src={arrow} width={22} height={22} alt="arrow-icon" />
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
 

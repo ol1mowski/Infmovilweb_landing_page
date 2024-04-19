@@ -32,6 +32,12 @@
   }
   &__logoSection {
     @include d-flex;
+    cursor: pointer;
+    transition: scale 0.7s;
+    will-change: scale;
+  }
+  &__logoSection:hover {
+    scale: 1.1;
   }
 
   &__navMenu {
@@ -55,10 +61,11 @@
         padding: $small-padding $standard-padding;
         color: $dark;
         transition: scale 0.7s;
+        will-change: scale;
         border-radius: $border-min;
       }
       &__item:hover {
-        scale: $hover-min-scale;
+        scale: 1.1;
       }
     }
   }

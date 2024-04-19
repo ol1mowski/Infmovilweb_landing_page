@@ -18,7 +18,7 @@ function HeaderInfoBar() {
             width={30}
             height={30}
             src={telephone}
-            alt=""
+            alt="telephone-icon"
           />
           <span
             className={s.container__contactSection__telephoneNumber__content}
@@ -32,7 +32,7 @@ function HeaderInfoBar() {
             width={30}
             height={30}
             src={mail}
-            alt=""
+            alt="mail-icon"
           />
           <span className={s.container__contactSection__emailAdress__content}>
             infmovilweb@gmail.com

@@ -7,6 +7,8 @@
     display: flex;
     margin-right: 1rem;
   }
+  transition: scale 0.7s;
+  will-change: scale;
 }
 .search:hover {
   scale: 1.3;

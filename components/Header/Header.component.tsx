@@ -40,24 +40,12 @@ const Header = () => {
           <div className={s.header__navMenu__nav}>
             <ul className={s.header__navMenu__items}>
               <li className={s.header__navMenu__items__item}>Home</li>
-              <li>
+              <li className={s.header__navMenu__items__item}>
                 {" "}
-                <a className={s.header__navMenu__items__item} href="">
-                  Sobre Nosotros
-                </a>
+                Sobre Nosotros
               </li>
-              <li>
-                {" "}
-                <a className={s.header__navMenu__items__item} href="">
-                  Servicios{" "}
-                </a>
-              </li>{" "}
-              <li>
-                {" "}
-                <a className={s.header__navMenu__items__item} href="">
-                  Contacto
-                </a>
-              </li>
+              <li className={s.header__navMenu__items__item}> Servicios </li>
+              <li className={s.header__navMenu__items__item}> Contacto</li>
             </ul>
             <SearchSetion />
           </div>
