@@ -54,7 +54,7 @@ $text-size: 1.1rem;
 @mixin title() {
   font-size: 1.5rem;
   color: $white;
-  @media screen and (min-width: $desktop) {
+  @media screen and (min-width: $big-tablets) {
     font-size: 2rem;
   }
 }

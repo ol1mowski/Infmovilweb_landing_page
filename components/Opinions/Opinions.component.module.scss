@@ -4,12 +4,25 @@
   @include d-flex-column;
   background-color: $white;
   padding: $standard-padding;
+  padding-top: 5rem;
   gap: 5rem;
+  align-items: flex-start;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row-reverse;
+  }
+  &__cardsWrapper {
+    @include d-flex-column;
+    gap: 3rem;
+    @media screen and (min-width: $big-tablets) {
+      flex-direction: row;
+      width: 70rem;
+    }
+  }
   &__infoSection {
     @include d-flex-column;
     align-items: flex-start;
-    width: 100%;
     gap: 1rem;
+    padding: $standard-padding;
     &__category {
       @include category;
     }

@@ -3,7 +3,7 @@
 .container {
   @include d-flex-column;
   gap: 2rem;
-  padding: 2rem;
+  padding: 5rem 2rem;
   background-color: $blue;
   &__header {
     @include d-flex-column;

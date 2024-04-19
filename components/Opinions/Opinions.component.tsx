@@ -28,7 +28,8 @@ function Opinions() {
           </span>
         </div>
       </section>
-      <section>
+      <section className={s.container__cardsWrapper}>
+        <OpiniosCard />
         <OpiniosCard />
       </section>
     </section>

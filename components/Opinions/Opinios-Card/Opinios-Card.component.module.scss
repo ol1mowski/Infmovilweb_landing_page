@@ -6,6 +6,9 @@
   border: 2px solid $gray;
   border-radius: $border-med;
   align-items: flex-start;
+  @media screen and (min-width: $mobile) {
+    width: 23rem;
+  }
   &__topSideOfOpinion {
     @include d-flex-column;
     gap: 1rem;
