@@ -1,2 +1,30 @@
-@import '@/sass/index.scss';
+@import "@/sass/index.scss";
+@import url("https://fonts.googleapis.com/css2?family=Freehand&display=swap");
 
+.container {
+  @include d-flex-column;
+  margin: 3rem 0;
+  gap: 3rem;
+  &__itemsContainer {
+    @include d-flex-column;
+    gap: 2rem;
+    &__title {
+      color: $orange;
+      font-size: 1.4rem;
+      font-weight: 400;
+    }
+    &__companyInfo {
+      font-size: $text-size;
+    }
+  }
+  &__copyrightWrapper {
+    @include d-flex-column;
+    gap: 2rem;
+    &__author {
+      font-family: "Freehand", cursive;
+      font-weight: 400;
+      font-size: 1.5rem;
+      font-style: normal;
+    }
+  }
+}

@@ -7,10 +7,10 @@ type ItemsComponentProps = {
 
 function ItemsComponent({ title, items }: ItemsComponentProps) {
   return (
-    <div className={s.container__itemsContainer__wrapper}>
-      <h4 className={s.container__itemsContainer__wrapper__title}>{title}</h4>
+    <div className={s.wrapper}>
+      <h4 className={s.wrapper__title}>{title}</h4>
       {items.map((item) => (
-        <span key={item} className={s.container__itemsContainer__wrapper__item}>
+        <span key={item} className={s.wrapper__item}>
           {item}
         </span>
       ))}

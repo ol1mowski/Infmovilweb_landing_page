@@ -1,3 +1,16 @@
-@import '@/sass/index.scss';
+@import "@/sass/index.scss";
 
-
+.wrapper {
+  @include d-flex-column;
+  gap: 1rem;
+  align-items: flex-start;
+  width: 100%;
+  &__title {
+    color: $orange;
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  &__item {
+    font-size: $text-size;
+  }
+}
