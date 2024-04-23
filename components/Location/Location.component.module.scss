@@ -9,6 +9,9 @@
   @media screen and (min-width: $desktop) {
     flex-direction: row;
   }
+  @media screen and (min-width: $large-desktop) {
+    gap: 10rem;
+  }
   &__infoSection {
     @include d-flex-column;
     align-items: flex-start;
