@@ -17,7 +17,7 @@ function AboutUS() {
           width={300}
           height={290}
           src={aboutImage}
-          alt=""
+          alt="about-company-image"
         />
       </section>
       <section className={s.container__contentSection}>
