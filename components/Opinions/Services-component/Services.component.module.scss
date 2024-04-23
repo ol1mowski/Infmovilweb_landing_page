@@ -1,0 +1,31 @@
+@import "@/sass/index.scss";
+
+.container {
+  @include d-flex-column;
+  gap: $big-gap;
+  padding: 5rem $big-padding;
+  background-color: $blue;
+  &__header {
+    @include d-flex-column;
+    gap: $small-gap;
+    align-items: flex-start;
+    width: 100%;
+    &__category {
+      @include category;
+    }
+    &__title {
+     @include title($dark);
+    }
+  }
+  &__cardsWrapper {
+    @include d-flex-column;
+    gap: $big-gap;
+    @media screen and (min-width: $desktop) {
+      @include d-flex;
+      gap: 4rem;
+    }
+    @media screen and (min-width: $large-desktop) {
+      gap: 7rem;
+    }
+  }
+}

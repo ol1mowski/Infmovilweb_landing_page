@@ -5,7 +5,7 @@
   padding-top: $small-padding;
 
   @media screen and (min-width: $tablet) {
-    margin-right: 2rem;
+    margin-right: $big-margin;
   }
 
   @media screen and (min-width: $big-tablets) {

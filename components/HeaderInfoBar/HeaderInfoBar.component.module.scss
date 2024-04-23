@@ -10,29 +10,29 @@
   }
   &__contactSection {
     @include d-flex;
-    gap: 1rem;
+    gap: $standard-gap;
     @media screen and (min-width: $tablet) {
       gap: 3rem;
     }
     &__telephoneNumber {
       @include d-flex;
-      gap: 0.5rem;
+      gap: $small-gap;
       transition: scale 0.7s;
       will-change: scale;
       cursor: pointer;
     }
     &__telephoneNumber:hover {
-      scale: 1.05;
+      scale: $hover-min-scale;
     }
     &__emailAdress {
       @include d-flex;
-      gap: 0.5rem;
+      gap: $small-gap;
       transition: scale 0.7s;
       will-change: scale;
       cursor: pointer;
     }
     &__emailAdress:hover {
-      scale: 1.05;
+      scale: $hover-min-scale;
     }
   }
   &__iconsSection {
@@ -43,14 +43,14 @@
 
     &__wrapper {
       @include d-flex;
-      gap: 1rem;
+      gap: $standard-gap;
       &__icon {
         cursor: pointer;
         transition: scale 0.7s;
         will-change: scale;
       }
       &__icon:hover {
-        scale: 1.1;
+        scale: $hover-med-scale;
       }
     }
   }
