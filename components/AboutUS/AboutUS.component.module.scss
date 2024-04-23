@@ -4,7 +4,7 @@
   margin-top: 4rem;
   @include d-flex-column;
   padding: $standard-padding;
-  gap: 2rem;
+  gap: $big-gap;
   @media screen and (min-width: $desktop) {
     @include d-flex;
     gap: 4rem;
@@ -46,7 +46,7 @@
   &__contentSection {
     @include d-flex-column;
     padding: $standard-padding;
-    gap: 2rem;
+    gap: $big-gap;
     @media screen and (min-width: $tablet) {
       width: 70%;
     }
@@ -58,25 +58,19 @@
     }
     &__infoWrapper {
       @include d-flex-column;
-      gap: 1rem;
+      gap: $standard-gap;
       align-items: flex-start;
       width: 100%;
       border-bottom: 2px solid $gray;
       padding-bottom: $standard-padding;
       &__category {
-        color: $orange;
-        font-weight: 600;
+       @include category;
       }
       &__title {
-        font-size: 1.5rem;
-        color: $dark;
-        @media screen and (min-width: $desktop) {
-          font-size: 2rem;
-        }
+        @include title($dark);
       }
       &__description {
-        font-size: $text-size;
-        color: $dark;
+        @include description;
       }
     }
     &__buttonSection {
@@ -84,14 +78,7 @@
       justify-content: flex-start;
       width: 100%;
       &__btn {
-        @include d-flex;
-        gap: $small-gap;
-        background-color: $orange;
-        border: none;
-        padding: $small-padding $standard-padding;
-        font-size: $text-size;
-        color: $white;
-        border-radius: $border-med;
+      @include btn;
       }
     }
   }

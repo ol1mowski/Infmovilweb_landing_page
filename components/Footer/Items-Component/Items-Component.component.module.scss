@@ -2,7 +2,7 @@
 
 .wrapper {
   @include d-flex-column;
-  gap: 1rem;
+  gap: $standard-gap;
   align-items: flex-start;
   width: 100%;
   &__title {

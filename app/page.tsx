@@ -5,7 +5,7 @@ import HeaderInfoBar from "@/components/HeaderInfoBar/HeaderInfoBar.component";
 import HomePage from "@/components/HomePage/HomePage.component";
 import Location from "@/components/Location/Location.component";
 import Opinions from "@/components/Opinions/Opinions.component";
-import Services from "@/components/Services-component/Services.component";
+import Services from "@/components/Opinions/Services-component/Services.component";
 
 export default function Home() {
   return (

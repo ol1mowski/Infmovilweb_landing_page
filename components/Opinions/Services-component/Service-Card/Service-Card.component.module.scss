@@ -45,11 +45,11 @@
       will-change: scale;
     }
     &__text:hover {
-      scale: 1.05;
+      scale: $hover-min-scale;
     }
   }
 }
 
 .servicesContainer:hover {
-  scale: 1.05;
+  scale: $hover-min-scale;
 }

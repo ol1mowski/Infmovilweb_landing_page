@@ -5,7 +5,7 @@
   padding: $standard-padding;
   margin-top: 5rem;
   align-items: flex-start;
-  gap: 2rem;
+  gap: $big-gap;
   @media screen and (min-width: $desktop) {
     flex-direction: row;
   }
@@ -15,18 +15,17 @@
   &__infoSection {
     @include d-flex-column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: $standard-gap;
     padding: $standard-padding;
     &__category {
       @include category;
     }
     &__title {
-      @include title;
-      color: $dark;
+      @include title($dark);
     }
     &__btn {
       @include btn;
-      margin-top: 1rem;
+      margin-top: $standard-margin;
     }
   }
   &__mapSection {

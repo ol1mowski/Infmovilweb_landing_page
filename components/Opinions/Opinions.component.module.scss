@@ -21,23 +21,22 @@
   &__infoSection {
     @include d-flex-column;
     align-items: flex-start;
-    gap: 1rem;
+    gap: $standard-gap;
     padding: $standard-padding;
     &__category {
       @include category;
     }
     &__title {
-      @include title;
-      color: $dark;
+      @include title($dark);
     }
     &__btn {
       @include btn;
-      margin-top: 1rem;
+      margin-top: $standard-margin;
     }
     &__score {
       @include d-flex;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: $standard-gap;
+      margin-top: $standard-margin;
       &__content {
         font-size: 2rem;
         font-weight: 500;

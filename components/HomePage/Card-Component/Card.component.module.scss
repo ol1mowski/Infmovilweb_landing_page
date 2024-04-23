@@ -50,11 +50,11 @@
       will-change: scale;
     }
     &__action:hover {
-      scale: 1.05;
+      scale: $hover-min-scale;
     }
   }
 }
 
 .cardWrapper:hover {
-  scale: 1.05;
+  scale: $hover-min-scale;
 }

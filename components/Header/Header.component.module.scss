@@ -12,7 +12,7 @@
   transition: all 1s ease-in;
   justify-content: space-between;
   @media screen and (min-width: $big-tablets) {
-    padding: $standard-padding 2rem;
+    padding: $standard-padding $big-padding;
   }
   box-shadow: $box-shadow;
 }
@@ -30,7 +30,7 @@
   padding: $small-padding $standard-padding;
   justify-content: space-between;
   @media screen and (min-width: $big-tablets) {
-    padding: $standard-padding 2rem;
+    padding: $standard-padding $big-padding;
   }
   &__logoSection {
     @include d-flex;
@@ -39,7 +39,7 @@
     will-change: scale;
   }
   &__logoSection:hover {
-    scale: 1.1;
+    scale: $hover-med-scale;
   }
 
   &__navMenu {
@@ -50,7 +50,7 @@
     }
     &__nav {
       @include d-flex;
-      gap: 2rem;
+      gap: $big-gap;
     }
 
     &__items {
@@ -67,7 +67,7 @@
         border-radius: $border-min;
       }
       &__item:hover {
-        scale: 1.1;
+        scale: $hover-med-scale;
       }
     }
   }

@@ -2,8 +2,8 @@
 
 .container {
   @include d-flex-column;
-  gap: 2rem;
-  padding: 5rem 2rem;
+  gap: $big-gap;
+  padding: 5rem $big-padding;
   background-color: $blue;
   &__header {
     @include d-flex-column;
@@ -11,20 +11,15 @@
     align-items: flex-start;
     width: 100%;
     &__category {
-      color: $orange;
-      font-weight: 600;
+      @include category;
     }
     &__title {
-      font-size: 1.5rem;
-      color: $white;
-      @media screen and (min-width: $desktop) {
-        font-size: 2rem;
-      }
+     @include title;
     }
   }
   &__cardsWrapper {
     @include d-flex-column;
-    gap: 2rem;
+    gap: $big-gap;
     @media screen and (min-width: $desktop) {
       @include d-flex;
       gap: 4rem;
