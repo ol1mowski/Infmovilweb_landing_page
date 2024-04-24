@@ -8,16 +8,15 @@
   z-index: 1;
   top: 0;
   left: 0;
-  transform: translateX(-100vw);
   padding: $standard-padding;
-  animation: showMenu 1s linear forwards;
+  animation: showMenu .5s linear forwards;
   &__close {
     height: 15%;
     cursor: pointer;
     @include d-flex;
     justify-content: flex-end;
     padding-right: $big-padding;
-    transition: transform .7s;
+    transition: transform 0.7s;
     will-change: transform;
   }
   &__close:hover {
@@ -52,7 +51,7 @@
       padding-left: 3rem;
       &__item {
         color: $orange;
-        font-size: 1.5rem;
+        font-size: 2rem;
         font-weight: 500;
         margin-bottom: 0.7rem;
       }
@@ -66,9 +65,11 @@
 }
 @keyframes showMenu {
   0% {
-    transform: translateX(-100vw);
+    scale: 0.1;
+    opacity: .3;
   }
   100% {
-    transform: translateX(0);
+   scale: 1;
+   opacity: 1;
   }
 }

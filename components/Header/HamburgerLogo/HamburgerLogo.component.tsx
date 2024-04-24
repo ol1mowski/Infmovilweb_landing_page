@@ -1,5 +1,3 @@
-"use client";
-
 import s from "./HamburgerLogo.module.scss";
 
 import Image from "next/image";
