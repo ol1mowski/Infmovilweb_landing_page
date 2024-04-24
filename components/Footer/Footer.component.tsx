@@ -4,7 +4,7 @@ import ItemsComponent from "./Items-Component/Items-Component.component";
 
 
 function Footer() {
-
+  
   return (
     <footer className={s.container}>
       <section className={s.container__itemsContainer}>
