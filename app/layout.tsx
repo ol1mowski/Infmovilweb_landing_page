@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import Head from "next/head";
 
-const inter = Inter({ subsets: ["latin"] });
-
-import './globals.scss';
+import "./globals.scss";
+import Root from "./Root";
 
 export const metadata: Metadata = {
   title: "Infmovilweb | servicio de TI",
@@ -16,12 +13,5 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  return (
-    <html lang="es">
-      <Head>
-        <link rel="icon" href='/favicon.ico' type="image/x-icon" />
-      </Head>
-      <body className={inter.className}>{children}</body>
-    </html>
-  );
+  return <Root children={children} />;
 }

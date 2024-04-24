@@ -14,7 +14,7 @@
       @include category;
     }
     &__title {
-     @include title($dark);
+     @include title($white);
     }
   }
   &__cardsWrapper {

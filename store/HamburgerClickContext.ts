@@ -3,13 +3,13 @@
 import { createContext } from "react";
 
 type HamburgerClickContextType = {
-  isClick: boolean;
-  setClick: (click: boolean) => void;
+  isOpen: boolean;
+  setOpen: (click: boolean) => void;
 };
 
 const HamburgerClickContext = createContext<HamburgerClickContextType>({
-  isClick: false,
-  setClick: (click: boolean) => {},
+  isOpen: false,
+  setOpen: (click: boolean) => {},
 });
 
 export default HamburgerClickContext;
