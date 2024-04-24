@@ -1,11 +1,12 @@
+
 import { collection, getDocs } from "firebase/firestore";
 
-// import { QueryClient } from "@tanstack/react-query";
+import { QueryClient } from "@tanstack/react-query";
 
 // import { ref, getDownloadURL, listAll, getStorage } from "firebase/storage";
 import { db } from "@/config/firebase";
 
-// export const queryClient = new QueryClient();
+export const queryClient = new QueryClient();
 
 // export const getImageUrl = async () => {
 //   try {

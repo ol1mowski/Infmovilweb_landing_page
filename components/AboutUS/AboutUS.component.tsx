@@ -2,6 +2,7 @@ import { fetchElements } from "@/utils/http/http";
 import AboutUSComponent from "./AboutUs-Component/AboutUs.component";
 
 async function AboutUS() {
+
   const items = await fetchElements("InfmovilwebCMS");
 
   type DataValue = {
