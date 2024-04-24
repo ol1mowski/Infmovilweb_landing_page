@@ -21,7 +21,7 @@ const HamburgerMenuComponent = () => {
         </ul>
       </nav>
       <section className={s.hamburgerMenu__logo}>
-        <Image width={200} src={infmovilwebImage} alt="infmovilweb-image" />
+        <Image width={200} height={70} src={infmovilwebImage} alt="infmovilweb-image" />
       </section>
     </menu>
   );
