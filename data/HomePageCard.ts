@@ -13,13 +13,13 @@ export const CARD_INFO = [
   {
     id: 2,
     logo: customers,
-    title: "cientos de clientes satisfechos",
+    title: "Cientos de clientes satisfechos",
     description: "nuestros clientes están satisfechos con nuestros servicios",
   },
   {
     id: 3,
     logo: repairs,
-    title: "servicio",
+    title: "Servicio",
     description:
       "Contamos con una valiosa experiencia que nos permite dar servicio profesional a los dispositivos de los clientes.",
   },
