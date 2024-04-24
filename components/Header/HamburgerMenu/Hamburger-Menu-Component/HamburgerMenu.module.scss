@@ -8,7 +8,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  transform: translateX(-100vw);
+  transform: translateX(100vw);
   padding: $standard-padding;
   animation: showMenu .7s linear forwards;
   &__close {
@@ -66,7 +66,7 @@
 }
 @keyframes showMenu {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(100vw);
   }
   100% {
     transform: translateX(0);
