@@ -8,7 +8,7 @@
   z-index: 1;
   top: 0;
   left: 0;
-  transform: translateX(-100vw);
+  transform: translateX(100vw);
   padding: $standard-padding;
   animation: showMenu .7s linear forwards;
   &__close {
@@ -18,7 +18,9 @@
     justify-content: flex-end;
     padding-right: $big-padding;
     transition: transform 0.7s;
+    margin-top: 2.5rem;
     will-change: transform;
+
   }
   &__close:hover {
     transform: translateY(-1rem);
@@ -66,7 +68,7 @@
 }
 @keyframes showMenu {
   0% {
-    transform: translateX(-100vw);
+    transform: translateX(100vw);
   }
   100% {
     transform: translateX(0);
