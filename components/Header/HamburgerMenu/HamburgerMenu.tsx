@@ -1,30 +1,23 @@
-import s from "./HamburgerMenu.module.scss";
+"use client";
 
-import close from "@/assets/icons/close_icon.png";
+import { useContext } from "react";
+import HamburgerClickContext from "@/store/HamburgerClickContext";
+import HamburgerMenuComponent from "./Hamburger-Menu-Component/Hamburger-Menu.component";
 
-import Image from "next/image";
+const HamburgerMenuWrapper = () => {
+  const { isOpen, setOpen } = useContext(HamburgerClickContext);
 
-import infmovilwebImage from '@/assets/images/infmovilweb_menuLogo.jpeg';
+  const closeMenuHandler = () => {
+    setOpen(false);
+  };
 
-const HamburgerMenuComponent = () => {
   return (
-    <menu className={s.hamburgerMenu}>
-      <section className={s.hamburgerMenu__close}>
-        <Image width="30" height="30" src={close} alt="delete-sign" />
-      </section>
-      <nav className={s.hamburgerMenu__nav}>
-        <ul className={s.hamburgerMenu__nav__items}>
-          <li className={s.hamburgerMenu__nav__items__item}>Home</li>{" "}
-          <li className={s.hamburgerMenu__nav__items__item}>Sobre Nosotros</li>{" "}
-          <li className={s.hamburgerMenu__nav__items__item}>Servicios</li>{" "}
-          <li className={s.hamburgerMenu__nav__items__item}>Contacto</li>{" "}
-        </ul>
-      </nav>
-      <section className={s.hamburgerMenu__logo}>
-        <Image width={200} height={70} src={infmovilwebImage} alt="infmovilweb-image" />
-      </section>
-    </menu>
+    <>
+      {isOpen ? (
+        <HamburgerMenuComponent closeMenuHandler={closeMenuHandler}/>
+      ) : null}
+    </>
   );
 };
 
-export default HamburgerMenuComponent;
+export default HamburgerMenuWrapper;

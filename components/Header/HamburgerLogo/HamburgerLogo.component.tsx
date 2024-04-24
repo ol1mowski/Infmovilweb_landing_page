@@ -9,21 +9,22 @@ import hamburger from "@/assets/icons/hamburger.png";
 import HamburgerClickContext from "@/store/HamburgerClickContext";
 
 function HamburgerLogo() {
-  const hamburgerSwitch = useRef<HTMLDivElement>(null);
 
-  const { setClick } = useContext(HamburgerClickContext);
+  const { setOpen } = useContext(HamburgerClickContext);
 
-  const hamburgerClickHandler = () => {
-    setClick(true);
+  const openMenuHandler = () => {
+    setOpen(true);
   };
 
   return (
-    <section
-      onClick={hamburgerClickHandler}
-      ref={hamburgerSwitch}
-      className={s.hamburgerSection}
-    >
-      <Image width='30' height='30' src={hamburger} alt="menu--v6" />
+    <section className={s.hamburgerSection}>
+      <Image
+        onClick={openMenuHandler}
+        width="30"
+        height="30"
+        src={hamburger}
+        alt="menu"
+      />
     </section>
   );
 }

@@ -2,7 +2,6 @@
 
 import s from "./Header.component.module.scss";
 import HamburgerLogo from "./HamburgerLogo/HamburgerLogo.component";
-import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 
 import logo from "@/assets/images/logo.jpeg";
 
@@ -11,6 +10,7 @@ import Image from "next/image";
 import { useEffect, useRef, useState } from "react";
 
 const Header = () => {
+
   const header = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
   const handleScroll = () => {
@@ -31,7 +31,6 @@ const Header = () => {
   }, []);
   return (
     <>
-      <section></section>
       <header ref={header} className={` ${isSticky ? s.sticky : s.header}`}>
         <section className={s.header__logoSection}>
           <Image src={logo} alt="logo of company" width={100} height={100} />
