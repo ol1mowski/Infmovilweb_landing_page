@@ -8,8 +8,9 @@
   z-index: 1;
   top: 0;
   left: 0;
+  transform: translateX(-100vw);
   padding: $standard-padding;
-  animation: showMenu .5s linear forwards;
+  animation: showMenu .7s linear forwards;
   &__close {
     height: 15%;
     cursor: pointer;
@@ -65,11 +66,9 @@
 }
 @keyframes showMenu {
   0% {
-    scale: 0.1;
-    opacity: .3;
+    transform: translateX(-100vw);
   }
   100% {
-   scale: 1;
-   opacity: 1;
+    transform: translateX(0);
   }
 }
