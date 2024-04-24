@@ -18,7 +18,9 @@
     justify-content: flex-end;
     padding-right: $big-padding;
     transition: transform 0.7s;
+    margin-top: 2.5rem;
     will-change: transform;
+
   }
   &__close:hover {
     transform: translateY(-1rem);

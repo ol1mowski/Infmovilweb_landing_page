@@ -7,14 +7,21 @@ import Image from "next/image";
 import infmovilwebImage from "@/assets/images/infmovilweb_menuLogo.jpeg";
 
 type HamburgerMenuProps = {
-    closeMenuHandler: () => void, 
-}
+  closeMenuHandler: () => void;
+};
 
 function HamburgerMenuComponent({ closeMenuHandler }: HamburgerMenuProps) {
   return (
     <menu className={s.hamburgerMenu}>
-      <section onClick={closeMenuHandler} className={s.hamburgerMenu__close}>
-        <Image width="30" height="30" src={close} alt="delete-sign" />
+      <section className={s.hamburgerMenu__close}>
+        <Image
+          onClick={closeMenuHandler}
+          className={s.hamburgerMenu__close__icon}
+          width="30"
+          height="30"
+          src={close}
+          alt="delete-sign"
+        />
       </section>
       <nav className={s.hamburgerMenu__nav}>
         <ul className={s.hamburgerMenu__nav__items}>
