@@ -20,8 +20,8 @@ const HamburgerMenuComponent = () => {
           <li className={s.hamburgerMenu__nav__items__item}>Contacto</li>{" "}
         </ul>
       </nav>
-      <section>
-        <Image src={infmovilwebImage} alt="infmovilweb-image" />
+      <section className={s.hamburgerMenu__logo}>
+        <Image width={200} src={infmovilwebImage} alt="infmovilweb-image" />
       </section>
     </menu>
   );

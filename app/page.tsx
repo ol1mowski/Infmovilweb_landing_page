@@ -13,7 +13,7 @@ export default function Home() {
     <>
       <HeaderInfoBar />
       <Header />
-      {/* <HamburgerMenu /> */}
+      <HamburgerMenu />
       <HomePage />
       <AboutUS />
       <Services />
