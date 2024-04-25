@@ -1,16 +1,40 @@
 import s from "./HomePage.component.module.scss";
 
 import Card from "./Card-Component/Card.component";
-import { CARD_INFO } from "@/data/HomePageCard";
+import { fetchElements } from "@/utils/http/http";
+import { type StaticImageData } from "next/image";
 
-function HomePage() {
+async function HomePage() {
+  const fetchItems = await fetchElements("InfmovilwebCMS");
+
+  type DataValue = {
+    Cards: Array<{
+      icon: StaticImageData;
+      description: string;
+      title: string;
+      button: { buttonText: string; buttonIcon: StaticImageData };
+    }>;
+  };
+
+  const homePageItem = fetchItems.find((item) => item.id === "HomePage");
+
+  if (!homePageItem) {
+    throw new Error("Could not find");
+  }
+
+  const data: DataValue = homePageItem;
+
+  const { Cards } = data;
+
   return (
     <section className={s.container}>
       <div className={s.container__cardsWrapper}>
-        {CARD_INFO.map((c) => (
+        {Cards.map((c) => (
           <Card
-            key={c.id}
-            logo={c.logo}
+            buttonIcon={c.button.buttonIcon}
+            buttonText={c.button.buttonText}
+            key={c.title}
+            logo={c.icon}
             description={c.description}
             title={c.title}
           />

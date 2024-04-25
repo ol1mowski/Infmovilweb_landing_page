@@ -1,14 +1,25 @@
 import Image from "next/image";
 import s from "./HeaderInfoBar.component.module.scss";
 
-import telephone from "@/assets/icons/telephone.png";
-import mail from "@/assets/icons/mail.png";
+type HeaderInfoBarProps = {
+  telephone: string;
+  telephoneIcon: string;
+  emailIcon: string;
+  email: string;
+  facebookIcon: string;
+  linkedinIcon: string;
+  shopIcon: string;
+};
 
-import facebook from "@/assets/icons/facebook.png";
-import linkedin from "@/assets/icons/linkedin.png";
-import shop from "@/assets/icons/shop.png";
-
-function HeaderInfoBar() {
+function HeaderInfoBarComponent({
+  telephone,
+  email,
+  telephoneIcon,
+  emailIcon,
+  facebookIcon,
+  linkedinIcon,
+  shopIcon,
+}: HeaderInfoBarProps) {
   return (
     <section className={s.container}>
       <section className={s.container__contactSection}>
@@ -17,13 +28,13 @@ function HeaderInfoBar() {
             className={s.container__contactSection__telephoneNumber__icon}
             width={30}
             height={30}
-            src={telephone}
+            src={telephoneIcon}
             alt="telephone-icon"
           />
           <span
             className={s.container__contactSection__telephoneNumber__content}
           >
-            928 53 56 58
+            {telephone}
           </span>
         </div>
         <div className={s.container__contactSection__emailAdress}>
@@ -31,11 +42,11 @@ function HeaderInfoBar() {
             className={s.container__contactSection__emailAdress__icon}
             width={30}
             height={30}
-            src={mail}
+            src={emailIcon}
             alt="mail-icon"
           />
           <span className={s.container__contactSection__emailAdress__content}>
-            infmovilweb@gmail.com
+            {email}
           </span>
         </div>
       </section>
@@ -43,22 +54,22 @@ function HeaderInfoBar() {
         <div className={s.container__iconsSection__wrapper}>
           <Image
             className={s.container__iconsSection__wrapper__icon}
-            src={facebook}
-            alt=""
+            src={facebookIcon}
+            alt="facebook-icon"
             width={30}
             height={30}
           />
           <Image
             className={s.container__iconsSection__wrapper__icon}
-            src={shop}
-            alt=""
+            src={shopIcon}
+            alt="shop-icon"
             width={30}
             height={30}
           />
           <Image
             className={s.container__iconsSection__wrapper__icon}
-            src={linkedin}
-            alt=""
+            src={linkedinIcon}
+            alt="linkedin-icon"
             width={30}
             height={30}
           />
@@ -68,4 +79,4 @@ function HeaderInfoBar() {
   );
 }
 
-export default HeaderInfoBar;
+export default HeaderInfoBarComponent;

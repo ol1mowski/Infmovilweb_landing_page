@@ -1,15 +1,15 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import s from "./Opinios-Card.component.module.scss";
 
-import quotes from "@/assets/icons/quotes.png";
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
 
 type OpinionsCardProps = {
   description: string;
   author: string;
+  icon: StaticImageData;
 };
 
-function OpiniosCard({ description, author }: OpinionsCardProps) {
+function OpiniosCard({ description, author, icon }: OpinionsCardProps) {
   return (
     <AnimationWrapper className={s.container}>
       <div className={s.container__topSideOfOpinion}>
@@ -21,7 +21,7 @@ function OpiniosCard({ description, author }: OpinionsCardProps) {
               }
               width={40}
               height={40}
-              src={quotes}
+              src={icon}
               alt="quotes-icon"
             />
           </div>

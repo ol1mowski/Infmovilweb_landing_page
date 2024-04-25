@@ -7,21 +7,24 @@ import logo from "@/assets/images/logo.jpeg";
 
 import SearchSetion from "./SearchSection/SearchSetion";
 import Image from "next/image";
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
+import HamburgerClickContext from "@/store/HamburgerClickContext";
 
 const Header = () => {
+  const { isOpen } = useContext(HamburgerClickContext);
 
   const header = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
   const handleScroll = () => {
     if (header.current) {
-      if (scrollY > 46) {
-        setIsSticky(true);
+      if (scrollY > 46 && !isOpen) {
+          setIsSticky(true);
       } else {
         setIsSticky(false);
       }
     }
   };
+
 
   useEffect(() => {
     addEventListener("scroll", handleScroll);

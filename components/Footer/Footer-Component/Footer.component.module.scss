@@ -16,6 +16,7 @@
     &__wrapper {
       @include d-flex-column;
       gap: $standard-gap;
+      align-items: flex-start;
 
       &__title {
         color: $orange;
@@ -24,6 +25,7 @@
       }
       &__companyInfo {
         font-size: $text-size;
+        width: 10rem;
       }
     }
   }

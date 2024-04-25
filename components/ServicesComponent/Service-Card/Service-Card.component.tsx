@@ -1,16 +1,17 @@
 import Image, { StaticImageData } from "next/image";
 import s from "./Service-Card.component.module.scss";
 
-import arrow from "@/assets/icons/arrow.png";
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
 
 type ServiceCardProps = {
   image: StaticImageData;
   title: string;
   description: string;
+  buttonText: string;
+  buttonIcon: StaticImageData;
 };
 
-function ServiceCard({ image, title, description }: ServiceCardProps) {
+function ServiceCard({ image, title, description, buttonText, buttonIcon }: ServiceCardProps) {
   return (
     <AnimationWrapper className={s.servicesContainer}>
       <div className={s.servicesContainer__imageWrapper}>
@@ -30,12 +31,14 @@ function ServiceCard({ image, title, description }: ServiceCardProps) {
       </div>
       <div className={s.servicesContainer__actionWrapper}>
         <span className={s.servicesContainer__actionWrapper__text}>
-          leer más
+          { buttonText }
         </span>
         <Image
           className={s.servicesContainer__actionWrapper__icon}
-          src={arrow}
+          src={buttonIcon}
           alt="arrow-icon"
+          width={25}
+          height={25}
         />
       </div>
     </AnimationWrapper>
