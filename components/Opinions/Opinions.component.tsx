@@ -26,8 +26,6 @@ async function Opinions() {
 
   const data: DataValue = locationItem;
 
-console.log(data);
-
 
   const { title, score, category, button, Cards } = data;
   

@@ -1,7 +1,6 @@
 import Image, { StaticImageData } from "next/image";
 import s from "./Card.component.module.scss";
 
-import arrow from "@/assets/icons/arrow.png";
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
 
 type CardProsps = {
