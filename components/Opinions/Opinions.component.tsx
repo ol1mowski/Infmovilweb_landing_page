@@ -15,7 +15,7 @@ async function Opinions() {
     category: string;
     score: string;
     title: string;
-    Cards: Array<{ author: string, opinion: string, icon: StaticImageData }>
+    Cards: Array<{ author: string; opinion: string; icon: StaticImageData }>;
   };
 
   const locationItem = fetchItems.find((item) => item.id === "Opinions");
@@ -26,9 +26,7 @@ async function Opinions() {
 
   const data: DataValue = locationItem;
 
-
   const { title, score, category, button, Cards } = data;
-  
 
   return (
     <section className={s.container}>
@@ -39,7 +37,12 @@ async function Opinions() {
 
         <button className={s.container__infoSection__btn}>
           <span>{button.buttonText}</span>{" "}
-          <Image src={arrow} alt="arrow-icon" />
+          <Image
+            width={25}
+            height={25}
+            src={button.buttonIcon}
+            alt="arrow-icon"
+          />
         </button>
 
         <div className={s.container__infoSection__score}>
@@ -52,6 +55,7 @@ async function Opinions() {
       <section className={s.container__cardsWrapper}>
         {Cards.map((o) => (
           <OpiniosCard
+            icon={o.icon}
             key={o.author}
             description={o.opinion}
             author={o.author}

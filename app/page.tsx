@@ -4,7 +4,7 @@ import HamburgerMenu from "@/components/Header/HamburgerMenu/HamburgerMenu";
 import HomePage from "@/components/HomePage/HomePage.component";
 import Location from "@/components/Location/Location.component";
 import Opinions from "@/components/Opinions/Opinions.component";
-import Services from "@/components/Services/Services.component";
+import Services from "@/components/ServicesComponent/Services.component";
 
 export default function Home() {
   return (
