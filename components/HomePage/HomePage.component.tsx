@@ -8,7 +8,12 @@ async function HomePage() {
   const fetchItems = await fetchElements("InfmovilwebCMS");
 
   type DataValue = {
-    Cards: Array<{ icon: string; description: string, title: string }>;
+    Cards: Array<{
+      icon: StaticImageData;
+      description: string;
+      title: string;
+      button: { buttonText: string; buttonIcon: StaticImageData };
+    }>;
   };
 
   const homePageItem = fetchItems.find((item) => item.id === "HomePage");
@@ -20,13 +25,14 @@ async function HomePage() {
   const data: DataValue = homePageItem;
 
   const { Cards } = data;
-  
 
   return (
     <section className={s.container}>
       <div className={s.container__cardsWrapper}>
         {Cards.map((c) => (
           <Card
+            buttonIcon={c.button.buttonIcon}
+            buttonText={c.button.buttonText}
             key={c.title}
             logo={c.icon}
             description={c.description}
