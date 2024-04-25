@@ -1,19 +1,18 @@
 import Image from "next/image";
 import s from "./HeaderInfoBar.component.module.scss";
 
-import telephoneIcon from "@/assets/icons/telephone.png";
-import mailIcon from "@/assets/icons/mail.png";
-
-import facebook from "@/assets/icons/facebook.png";
-import linkedin from "@/assets/icons/linkedin.png";
-import shop from "@/assets/icons/shop.png";
 
 type HeaderInfoBarProps = {
-  telephone: string,
-  email: string,
+    telephone: string;
+    telephoneIcon: string;
+    emailIcon: string;
+    email: string;
+    facebookIcon: string;
+    linkedinIcon: string;
+    shopIcon: string;
 }
 
-function HeaderInfoBarComponent({ telephone, email }: HeaderInfoBarProps) {
+function HeaderInfoBarComponent({ telephone, email, telephoneIcon, emailIcon, facebookIcon, linkedinIcon, shopIcon }: HeaderInfoBarProps) {
 
 
   return (
@@ -38,7 +37,7 @@ function HeaderInfoBarComponent({ telephone, email }: HeaderInfoBarProps) {
             className={s.container__contactSection__emailAdress__icon}
             width={30}
             height={30}
-            src={mailIcon}
+            src={emailIcon}
             alt="mail-icon"
           />
           <span className={s.container__contactSection__emailAdress__content}>
@@ -50,21 +49,21 @@ function HeaderInfoBarComponent({ telephone, email }: HeaderInfoBarProps) {
         <div className={s.container__iconsSection__wrapper}>
           <Image
             className={s.container__iconsSection__wrapper__icon}
-            src={facebook}
+            src={facebookIcon}
             alt="facebook-icon"
             width={30}
             height={30}
           />
           <Image
             className={s.container__iconsSection__wrapper__icon}
-            src={shop}
+            src={shopIcon}
             alt="shop-icon"
             width={30}
             height={30}
           />
           <Image
             className={s.container__iconsSection__wrapper__icon}
-            src={linkedin}
+            src={linkedinIcon}
             alt="linkedin-icon"
             width={30}
             height={30}

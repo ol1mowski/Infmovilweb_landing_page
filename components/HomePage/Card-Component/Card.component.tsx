@@ -14,7 +14,7 @@ function Card({ logo, title, description }: CardProsps) {
   return (
     <AnimationWrapper className={s.cardWrapper}>
       <div className={s.cardWrapper__imageWrapper}>
-        <Image src={logo} alt="card-logo" />
+        <Image width={50} height={50} src={logo} alt="card-logo" />
       </div>
       <div className={s.cardWrapper__textWrapper}>
         <h3 className={s.cardWrapper__textWrapper__title}>{title}</h3>

@@ -8,7 +8,7 @@ async function HomePage() {
   const fetchItems = await fetchElements("InfmovilwebCMS");
 
   type DataValue = {
-    Cards: Array<{ icon: StaticImageData; description: string, title: string }>;
+    Cards: Array<{ icon: string; description: string, title: string }>;
   };
 
   const homePageItem = fetchItems.find((item) => item.id === "HomePage");
