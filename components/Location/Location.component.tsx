@@ -1,22 +1,43 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import s from "./Location.component.module.scss";
 import arrow from "@/assets/icons/arrow.png";
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
+import { fetchElements } from "@/utils/http/http";
 
-function Location() {
+async function Location() {
+  const fetchItems = await fetchElements("InfmovilwebCMS");
+
+  type DataValue = {
+    button: { buttonText: string, buttonIcon: StaticImageData };
+    category: string;
+    description: string;
+    title: string;
+  };
+
+  const locationItem = fetchItems.find((item) => item.id === "location");
+
+  if (!locationItem) {
+    throw new Error("Could not find");
+  }
+
+  const data: DataValue = locationItem;
+
+  const { title, description, category, button } = data;
+
+
   return (
     <section className={s.container}>
       <section className={s.container__infoSection}>
-        <span className={s.container__infoSection__category}>ubicación</span>
+        <span className={s.container__infoSection__category}>{category}</span>
 
-        <h3 className={s.container__infoSection__title}>Encuéntranos</h3>
+        <h3 className={s.container__infoSection__title}>{title}</h3>
 
         <p className={s.container__infoSection__description}>
-          entra en nuestra web y solucionaremos tus problemas
+          { description }
         </p>
 
         <button className={s.container__infoSection__btn}>
-          <span>navegar</span> <Image src={arrow} alt="arrow-icon" />
+          <span>{ button.buttonText }</span> <Image src={arrow} alt="arrow-icon" />
         </button>
       </section>
 
