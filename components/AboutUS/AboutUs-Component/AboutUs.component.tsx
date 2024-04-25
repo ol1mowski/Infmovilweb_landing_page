@@ -1,9 +1,6 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import s from "./AboutUS.component.module.scss";
 
-import arrow from "@/assets/icons/arrow.png";
-
-import aboutImage from "@/assets/images/about_us.jpeg";
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
 
 
@@ -12,9 +9,11 @@ type AboutUSComponentProps = {
     description: string,
     category: string,
     buttonText: string,
+    buttonIcon: StaticImageData;
+    aboutUsImage: StaticImageData;
 }
 
-function AboutUSComponent({ title, category, description, buttonText }: AboutUSComponentProps) {
+function AboutUSComponent({ title, category, description, buttonText, buttonIcon, aboutUsImage }: AboutUSComponentProps) {
   return (
     <AnimationWrapper className={s.container}>
       <section className={s.container__imageSection}>
@@ -24,7 +23,7 @@ function AboutUSComponent({ title, category, description, buttonText }: AboutUSC
           className={s.container__imageSection__img}
           width={300}
           height={290}
-          src={aboutImage}
+          src={aboutUsImage}
           alt="about-company-image"
         />
       </section>
@@ -47,7 +46,9 @@ function AboutUSComponent({ title, category, description, buttonText }: AboutUSC
             </span>
             <Image
               className={s.container__contentSection__buttonSection__btn__img}
-              src={arrow}
+              src={buttonIcon}
+              width={25}
+              height={25}
               alt="arrow-icon"
             />
           </button>

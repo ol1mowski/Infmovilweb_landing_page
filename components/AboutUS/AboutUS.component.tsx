@@ -1,5 +1,6 @@
 import { fetchElements } from "@/utils/http/http";
 import AboutUSComponent from "./AboutUs-Component/AboutUs.component";
+import { StaticImageData } from "next/image";
 
 async function AboutUS() {
 
@@ -9,8 +10,9 @@ async function AboutUS() {
     id: string;
     category: string;
     title: string;
+    image: StaticImageData;
     description: string;
-    button: { buttonText: string };
+    button: { buttonText: string , buttonIcon: StaticImageData};
   };
 
   const aboutUsItem = items.find((item) => item.id === "AboutUs");
@@ -21,14 +23,16 @@ async function AboutUS() {
 
   const data: DataValue = aboutUsItem;
 
-  const { category, title, description, button } = data;
+  const { category, title, description, button, image } = data;
 
   return (
     <AboutUSComponent
+    aboutUsImage={image}
       category={category}
       title={title}
       description={description}
       buttonText={button.buttonText}
+      buttonIcon={button.buttonIcon}
     />
   );
 }
