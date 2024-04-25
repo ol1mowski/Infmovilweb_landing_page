@@ -1,20 +1,25 @@
 import Image from "next/image";
 import s from "./HeaderInfoBar.component.module.scss";
 
-
 type HeaderInfoBarProps = {
-    telephone: string;
-    telephoneIcon: string;
-    emailIcon: string;
-    email: string;
-    facebookIcon: string;
-    linkedinIcon: string;
-    shopIcon: string;
-}
+  telephone: string;
+  telephoneIcon: string;
+  emailIcon: string;
+  email: string;
+  facebookIcon: string;
+  linkedinIcon: string;
+  shopIcon: string;
+};
 
-function HeaderInfoBarComponent({ telephone, email, telephoneIcon, emailIcon, facebookIcon, linkedinIcon, shopIcon }: HeaderInfoBarProps) {
-
-
+function HeaderInfoBarComponent({
+  telephone,
+  email,
+  telephoneIcon,
+  emailIcon,
+  facebookIcon,
+  linkedinIcon,
+  shopIcon,
+}: HeaderInfoBarProps) {
   return (
     <section className={s.container}>
       <section className={s.container__contactSection}>
@@ -29,7 +34,7 @@ function HeaderInfoBarComponent({ telephone, email, telephoneIcon, emailIcon, fa
           <span
             className={s.container__contactSection__telephoneNumber__content}
           >
-            { telephone }
+            {telephone}
           </span>
         </div>
         <div className={s.container__contactSection__emailAdress}>
@@ -41,7 +46,7 @@ function HeaderInfoBarComponent({ telephone, email, telephoneIcon, emailIcon, fa
             alt="mail-icon"
           />
           <span className={s.container__contactSection__emailAdress__content}>
-            { email }
+            {email}
           </span>
         </div>
       </section>
