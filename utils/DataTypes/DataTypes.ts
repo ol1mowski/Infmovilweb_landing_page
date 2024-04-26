@@ -49,18 +49,18 @@ export type ServicesDataType = {
 
 export type OpinionsDataType = {
   button: { buttonText: string; buttonIcon: StaticImageData };
-  category: string;
-  score: string;
-  title: string;
+  sectionData: { category: string; score: string; title: string };
   Cards: Array<{ author: string; opinion: string; icon: StaticImageData }>;
 };
 
 export type LocationDataType = {
   button: { buttonText: string; buttonIcon: StaticImageData };
-  category: string;
-  description: string;
-  title: string;
-  companyLocation: string;
+  sectionData: {
+    category: string;
+    description: string;
+    title: string;
+    companyLocation: string;
+  };
 };
 
 export type FooterDataType = {
