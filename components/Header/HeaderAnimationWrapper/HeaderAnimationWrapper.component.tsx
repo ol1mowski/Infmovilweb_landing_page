@@ -18,29 +18,26 @@ function HeaderAnimationWrapper({
 
   const header = useRef<HTMLDivElement>(null);
   const [isSticky, setIsSticky] = useState(false);
-  const handleScroll = () => {
-    if (header.current) {
-      if (scrollY > 46 && !isOpen) {
-        setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    }
-  };
 
   useEffect(() => {
+    const handleScroll = () => {
+      if (header.current) {
+        if (scrollY > 46 && !isOpen) {
+          setIsSticky(true);
+        } else {
+          setIsSticky(false);
+        }
+      }
+    };
     addEventListener("scroll", handleScroll);
     return () => {
       removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [isOpen]);
   return (
-    <>
-    { isOpen ? null : <header ref={header} className={` ${isSticky ? stickyClass : normalClass}`}>
+    <header ref={header} className={` ${isSticky ? stickyClass : normalClass}`}>
       {children}
-    </header> }
-    </>
-    
+    </header>
   );
 }
 
