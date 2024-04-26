@@ -1,4 +1,4 @@
-import { fetchElements, getImageUrl } from "@/utils/http/http";
+import { fetchElements } from "@/utils/http/http";
 import AboutUSComponent from "./AboutUs-Component/AboutUs.component";
 import { AboutUsDataType } from "@/utils/DataTypes/DataTypes";
 
@@ -14,18 +14,16 @@ async function AboutUS() {
     throw new Error("No se encontró ningún artículo coincidente.");
   }
 
-  const { category, title, description } = aboutUsItem.sectionInfo;
+  const { category, title, image, description } = aboutUsItem.sectionInfo;
   const { button } = aboutUsItem;
 
-  if (!category || !title || !description || !button) {
+  if (!category || !title || !image || !description || !button) {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
 
-  const image: string[] = await getImageUrl("images/AboutUs");
-
   return (
     <AboutUSComponent
-      image={image[0]}
+      image={image}
       category={category}
       title={title}
       description={description}
