@@ -2,29 +2,27 @@ import s from "./HomePage.component.module.scss";
 
 import Card from "./Card-Component/Card.component";
 import { fetchElements } from "@/utils/http/http";
-import { type StaticImageData } from "next/image";
+import { HomePageDataType } from "@/utils/DataTypes/DataTypes";
+
+interface DataType extends HomePageDataType {
+  id: string;
+}
 
 async function HomePage() {
   const fetchItems = await fetchElements("InfmovilwebCMS");
+  const homePageBarItem = fetchItems.find(
+    (item) => item.id === "HomePage"
+  ) as DataType;
 
-  type DataValue = {
-    Cards: Array<{
-      icon: StaticImageData;
-      description: string;
-      title: string;
-      button: { buttonText: string; buttonIcon: StaticImageData };
-    }>;
-  };
-
-  const homePageItem = fetchItems.find((item) => item.id === "HomePage");
-
-  if (!homePageItem) {
-    throw new Error("Could not find");
+  if (!homePageBarItem) {
+    throw new Error("No se encontró ningún artículo coincidente.");
   }
 
-  const data: DataValue = homePageItem;
+  const { Cards } = homePageBarItem;
 
-  const { Cards } = data;
+  if (!Cards) {
+    throw new Error("Faltan algunas propiedades requeridas.");
+  }
 
   return (
     <section className={s.container}>

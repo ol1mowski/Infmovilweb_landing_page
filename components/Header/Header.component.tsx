@@ -1,61 +1,37 @@
-"use client";
+import { fetchElements } from "@/utils/http/http";
+import HeaderComponent from "./HeaderComponent/HeaderComponent.component";
+import { HeaderDataType } from "@/utils/DataTypes/DataTypes";
 
-import s from "./Header.component.module.scss";
-import HamburgerLogo from "./HamburgerLogo/HamburgerLogo.component";
+interface DataType extends HeaderDataType {
+  id: string;
+}
 
-import logo from "@/assets/images/logo.jpeg";
+const Header = async () => {
+  const fetchItems = await fetchElements("InfmovilwebCMS");
+  const headerItem = fetchItems.find(
+    (item) => item.id === "Header"
+  ) as DataType;
 
-import SearchSetion from "./SearchSection/SearchSetion";
-import Image from "next/image";
-import { useContext, useEffect, useRef, useState } from "react";
-import HamburgerClickContext from "@/store/HamburgerClickContext";
+  if (!headerItem) {
+    throw new Error("No se encontró ningún artículo coincidente.");
+  }
 
-const Header = () => {
-  const { isOpen } = useContext(HamburgerClickContext);
+  const { items, icons } = headerItem;
 
-  const header = useRef<HTMLDivElement>(null);
-  const [isSticky, setIsSticky] = useState(false);
-  const handleScroll = () => {
-    if (header.current) {
-      if (scrollY > 46 && !isOpen) {
-          setIsSticky(true);
-      } else {
-        setIsSticky(false);
-      }
-    }
-  };
+  if (!items || !icons) {
+    throw new Error("Faltan algunas propiedades requeridas.");
+  }
 
+  const { companyLogo, hamburgerIcon, searchIcon } = icons;
 
-  useEffect(() => {
-    addEventListener("scroll", handleScroll);
-    return () => {
-      removeEventListener("scroll", handleScroll);
-    };
-  }, []);
   return (
     <>
-      <header ref={header} className={` ${isSticky ? s.sticky : s.header}`}>
-        <section className={s.header__logoSection}>
-          <Image src={logo} alt="logo of company" width={100} height={100} />
-        </section>
-        <section className={s.header__navMenu}>
-          <div className={s.header__navMenu__nav}>
-            <ul className={s.header__navMenu__items}>
-              <li className={s.header__navMenu__items__item}>Home</li>
-              <li className={s.header__navMenu__items__item}>
-                {" "}
-                Sobre Nosotros
-              </li>
-              <li className={s.header__navMenu__items__item}> Servicios </li>
-              <li className={s.header__navMenu__items__item}> Contacto</li>
-            </ul>
-            <SearchSetion />
-          </div>
-        </section>
-        <HamburgerLogo />
-
-        {/* Hamburger Menu */}
-      </header>
+      <HeaderComponent
+        items={items}
+        companyLogo={companyLogo}
+        searchIcon={searchIcon}
+        hamburgerIcon={hamburgerIcon}
+      />
     </>
   );
 };

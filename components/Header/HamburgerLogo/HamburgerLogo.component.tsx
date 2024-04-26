@@ -1,13 +1,13 @@
+"use client";
+
 import s from "./HamburgerLogo.module.scss";
 
-import Image from "next/image";
-import { useContext, useRef } from "react";
+import Image, { type StaticImageData } from "next/image";
+import { useContext } from "react";
 
-import hamburger from "@/assets/icons/hamburger.png";
 import HamburgerClickContext from "@/store/HamburgerClickContext";
 
-function HamburgerLogo() {
-
+function HamburgerLogo({ hamburgerIcon }: { hamburgerIcon: StaticImageData }) {
   const { setOpen } = useContext(HamburgerClickContext);
 
   const openMenuHandler = () => {
@@ -20,7 +20,7 @@ function HamburgerLogo() {
         onClick={openMenuHandler}
         width="30"
         height="30"
-        src={hamburger}
+        src={hamburgerIcon}
         alt="menu"
       />
     </section>

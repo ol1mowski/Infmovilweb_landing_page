@@ -3,17 +3,23 @@ import s from "./AboutUS.component.module.scss";
 
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
 
-
 type AboutUSComponentProps = {
-    title: string,
-    description: string,
-    category: string,
-    buttonText: string,
-    buttonIcon: StaticImageData;
-    aboutUsImage: StaticImageData;
-}
+  category: string;
+  title: string;
+  image: StaticImageData;
+  description: string;
+  buttonText: string;
+  buttonIcon: StaticImageData;
+};
 
-function AboutUSComponent({ title, category, description, buttonText, buttonIcon, aboutUsImage }: AboutUSComponentProps) {
+function AboutUSComponent({
+  title,
+  category,
+  description,
+  buttonIcon,
+  buttonText,
+  image,
+}: AboutUSComponentProps) {
   return (
     <AnimationWrapper className={s.container}>
       <section className={s.container__imageSection}>
@@ -23,7 +29,7 @@ function AboutUSComponent({ title, category, description, buttonText, buttonIcon
           className={s.container__imageSection__img}
           width={300}
           height={290}
-          src={aboutUsImage}
+          src={image}
           alt="about-company-image"
         />
       </section>
@@ -42,7 +48,7 @@ function AboutUSComponent({ title, category, description, buttonText, buttonIcon
         <div className={s.container__contentSection__buttonSection}>
           <button className={s.container__contentSection__buttonSection__btn}>
             <span className={s.container__contentSection__buttonSection__text}>
-              { buttonText }
+              {buttonText}
             </span>
             <Image
               className={s.container__contentSection__buttonSection__btn__img}

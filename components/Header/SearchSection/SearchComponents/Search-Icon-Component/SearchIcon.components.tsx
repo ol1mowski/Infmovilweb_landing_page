@@ -1,21 +1,14 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import s from "./SearchIcon.components.module.scss";
 
-import img from '@/assets/icons/search.png';
-
-type SearchIconProps = {
-  showSearchSectionHandler: () => void;
-};
-
-const SearchIcon = ({ showSearchSectionHandler }: SearchIconProps) => {
+const SearchIcon = ({ searchIcon }: { searchIcon: StaticImageData }) => {
   return (
     <>
       <Image
-        onClick={showSearchSectionHandler}
         className={s.search}
         width="20"
         height="20"
-        src={img}
+        src={searchIcon}
         alt="search icon"
       />
     </>

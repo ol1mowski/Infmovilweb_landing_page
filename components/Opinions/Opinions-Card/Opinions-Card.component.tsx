@@ -1,5 +1,5 @@
 import Image, { StaticImageData } from "next/image";
-import s from "./Opinios-Card.component.module.scss";
+import s from "./Opinions-Card.component.module.scss";
 
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
 
@@ -9,7 +9,7 @@ type OpinionsCardProps = {
   icon: StaticImageData;
 };
 
-function OpiniosCard({ description, author, icon }: OpinionsCardProps) {
+function OpinionsCard({ description, author, icon }: OpinionsCardProps) {
   return (
     <AnimationWrapper className={s.container}>
       <div className={s.container__topSideOfOpinion}>
@@ -42,4 +42,4 @@ function OpiniosCard({ description, author, icon }: OpinionsCardProps) {
   );
 }
 
-export default OpiniosCard;
+export default OpinionsCard;
