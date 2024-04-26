@@ -5,6 +5,8 @@ import s from "./HamburgerLogo.module.scss";
 import Image, { type StaticImageData } from "next/image";
 import { useContext } from "react";
 
+import hamburgerIconI from '@/assets/icons/hamburger.png';
+
 import HamburgerClickContext from "@/store/HamburgerClickContext";
 
 function HamburgerLogo({ hamburgerIcon }: { hamburgerIcon: StaticImageData }) {
@@ -20,7 +22,7 @@ function HamburgerLogo({ hamburgerIcon }: { hamburgerIcon: StaticImageData }) {
         onClick={openMenuHandler}
         width="30"
         height="30"
-        src={hamburgerIcon}
+        src={hamburgerIconI}
         alt="menu"
       />
     </section>
