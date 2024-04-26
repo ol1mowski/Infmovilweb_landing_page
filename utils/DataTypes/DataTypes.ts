@@ -1,12 +1,11 @@
 import { type StaticImageData } from "next/image";
 
 export type HeaderBarDataType = {
-  icons: {
-    facebookIcon: StaticImageData;
-    linkedinIcon: StaticImageData;
-    shopIcon: StaticImageData;
-  };
-  companyContact: Array<{ icon: StaticImageData; content: string }>;
+  icons: Array<{
+    id: string;
+    icon: StaticImageData;
+  }>;
+  companyContact: Array<{ id: string; icon: StaticImageData; content: string }>;
 };
 
 export type HeaderDataType = {

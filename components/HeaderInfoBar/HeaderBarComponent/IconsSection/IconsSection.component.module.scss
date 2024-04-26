@@ -1,0 +1,12 @@
+@import "@/sass/index.scss";
+
+.icon {
+  cursor: pointer;
+  transition: scale 0.7s;
+  will-change: scale;
+}
+@import "@/sass/index.scss";
+
+.icon:hover {
+  scale: $hover-med-scale;
+}

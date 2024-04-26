@@ -30,18 +30,9 @@
     @media screen and (min-width: $small-desktop) {
       @include d-flex;
     }
-
     &__wrapper {
       @include d-flex;
       gap: $standard-gap;
-      &__icon {
-        cursor: pointer;
-        transition: scale 0.7s;
-        will-change: scale;
-      }
-      &__icon:hover {
-        scale: $hover-med-scale;
-      }
     }
   }
 }
