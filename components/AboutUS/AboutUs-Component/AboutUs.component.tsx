@@ -6,7 +6,7 @@ import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.componen
 type AboutUSComponentProps = {
   category: string;
   title: string;
-  image: string;
+  image: StaticImageData;
   description: string;
   buttonText: string;
   buttonIcon: StaticImageData;
