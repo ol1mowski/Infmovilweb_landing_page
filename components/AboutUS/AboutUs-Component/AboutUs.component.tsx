@@ -1,17 +1,25 @@
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import s from "./AboutUS.component.module.scss";
 
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
-import { AboutUsDataType } from "@/utils/DataTypes/DataTypes";
 
+type AboutUSComponentProps = {
+  category: string;
+  title: string;
+  image: StaticImageData;
+  description: string;
+  buttonText: string;
+  buttonIcon: StaticImageData;
+};
 
 function AboutUSComponent({
   title,
   category,
   description,
-  button,
+  buttonIcon,
+  buttonText,
   image,
-}: AboutUsDataType) {
+}: AboutUSComponentProps) {
   return (
     <AnimationWrapper className={s.container}>
       <section className={s.container__imageSection}>
@@ -40,11 +48,11 @@ function AboutUSComponent({
         <div className={s.container__contentSection__buttonSection}>
           <button className={s.container__contentSection__buttonSection__btn}>
             <span className={s.container__contentSection__buttonSection__text}>
-              {button.buttonText}
+              {buttonText}
             </span>
             <Image
               className={s.container__contentSection__buttonSection__btn__img}
-              src={button.buttonIcon}
+              src={buttonIcon}
               width={25}
               height={25}
               alt="arrow-icon"

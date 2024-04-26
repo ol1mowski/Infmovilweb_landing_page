@@ -1,17 +1,10 @@
 import { fetchElements } from "@/utils/http/http";
 import AboutUSComponent from "./AboutUs-Component/AboutUs.component";
-import { type StaticImageData } from "next/image";
+import { AboutUsDataType } from "@/utils/DataTypes/DataTypes";
 
-export type DataType = {
+interface DataType extends AboutUsDataType {
   id: string;
-  sectionInfo: {
-    category: string;
-    title: string;
-    image: StaticImageData;
-    description: string;
-  };
-  button: { buttonText: string; buttonIcon: StaticImageData };
-};
+}
 
 async function AboutUS() {
   const items = await fetchElements("InfmovilwebCMS");
@@ -34,7 +27,8 @@ async function AboutUS() {
       category={category}
       title={title}
       description={description}
-      button={button}
+      buttonText={button.buttonText}
+      buttonIcon={button.buttonIcon}
     />
   );
 }

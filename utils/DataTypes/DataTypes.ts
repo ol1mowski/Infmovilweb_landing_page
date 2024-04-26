@@ -33,10 +33,12 @@ export type HomePageDataType = {
 };
 
 export type AboutUsDataType = {
-  category: string;
-  title: string;
-  image: StaticImageData;
-  description: string;
+  sectionInfo: {
+    category: string;
+    title: string;
+    image: StaticImageData;
+    description: string;
+  };
   button: { buttonText: string; buttonIcon: StaticImageData };
 };
 
