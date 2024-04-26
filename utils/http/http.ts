@@ -4,6 +4,7 @@ import { collection, getDocs } from "firebase/firestore";
 import { QueryClient } from "@tanstack/react-query";
 
 import { db } from "@/config/firebase";
+import { getDownloadURL, getStorage, listAll, ref } from "firebase/storage";
 
 export const queryClient = new QueryClient();
 
@@ -23,3 +24,26 @@ export function fetchElements(element: string) {
   const collectionName = element;
   return fetchData(collectionName);
 }
+
+
+
+export const getImageUrl = async (path: string) => {
+  try {
+    const storage = getStorage();
+    const imagesFolder = path; // image folder path
+    const folderRef = ref(storage, imagesFolder);
+
+    const files = await listAll(folderRef);
+
+    const imageUrls = await Promise.all(
+      files.items.map(async (fileRef) => {
+        return await getDownloadURL(fileRef);
+      })
+    );
+
+    return imageUrls;
+  } catch (error) {
+    console.error("Error fetching images:", error);
+    throw error;
+  }
+};
