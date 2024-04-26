@@ -2,7 +2,7 @@ import Image, { StaticImageData } from "next/image";
 import s from "./Opinions.component.module.scss";
 
 import star from "@/assets/icons/star.png";
-import OpiniosCard from "../Opinions-Card/Opinios-Card.component";
+import OpinionsCard from "../Opinions-Card/Opinions-Card.component";
 
 type OpinionsComponentProps = {
   buttonText: string;
@@ -39,7 +39,7 @@ function OpinionsComponent({
       </section>
       <section className={s.container__cardsWrapper}>
         {Cards.map((o) => (
-          <OpiniosCard
+          <OpinionsCard
             icon={o.icon}
             key={o.author}
             description={o.opinion}

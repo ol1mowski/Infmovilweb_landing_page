@@ -18,7 +18,7 @@ async function Opinions() {
 
   const { button, sectionData, Cards } = opinionsItem;
 
-  if (!button || !sectionData) {
+  if (!button || !sectionData || !Cards) {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
 
