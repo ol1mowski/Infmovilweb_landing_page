@@ -1,7 +1,9 @@
+'use client'
+
 import s from "./HamburgerLogo.module.scss";
 
 import Image from "next/image";
-import { useContext, useRef } from "react";
+import { useContext } from "react";
 
 import hamburger from "@/assets/icons/hamburger.png";
 import HamburgerClickContext from "@/store/HamburgerClickContext";
