@@ -35,9 +35,12 @@ function HeaderAnimationWrapper({
     };
   }, []);
   return (
-    <header ref={header} className={` ${isSticky ? stickyClass : normalClass}`}>
+    <>
+    { isOpen ? null : <header ref={header} className={` ${isSticky ? stickyClass : normalClass}`}>
       {children}
-    </header>
+    </header> }
+    </>
+    
   );
 }
 
