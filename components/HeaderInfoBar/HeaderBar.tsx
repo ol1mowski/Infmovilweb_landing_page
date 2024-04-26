@@ -22,16 +22,11 @@ async function HeaderBarFetch() {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
 
-  const { telephoneIcon, emailIcon, shopIcon, linkedinIcon, facebookIcon } =
-    icons;
-  const { telephoneNumber, email } = companyContact;
+  const { shopIcon, linkedinIcon, facebookIcon } = icons;
 
   return (
     <HeaderInfoBarComponent
-      telephone={telephoneNumber}
-      email={email}
-      telephoneIcon={telephoneIcon}
-      emailIcon={emailIcon}
+      companyContact={companyContact}
       facebookIcon={facebookIcon}
       linkedinIcon={linkedinIcon}
       shopIcon={shopIcon}

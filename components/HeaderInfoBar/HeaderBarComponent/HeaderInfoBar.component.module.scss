@@ -14,16 +14,6 @@
     @media screen and (min-width: $tablet) {
       gap: 3rem;
     }
-    &__telephoneNumber {
-      @include d-flex;
-      gap: $small-gap;
-      transition: scale 0.7s;
-      will-change: scale;
-      cursor: pointer;
-    }
-    &__telephoneNumber:hover {
-      scale: $hover-min-scale;
-    }
     &__emailAdress {
       @include d-flex;
       gap: $small-gap;

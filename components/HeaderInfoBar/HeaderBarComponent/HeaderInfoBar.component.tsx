@@ -1,54 +1,26 @@
 import Image, { type StaticImageData } from "next/image";
 import s from "./HeaderInfoBar.component.module.scss";
+import ContactSection from "./ContactSection/ContactSection.component";
 
 type HeaderInfoBarProps = {
-  telephone: string;
-  telephoneIcon: StaticImageData;
-  emailIcon: StaticImageData;
-  email: string;
+  companyContact: Array<{ icon: StaticImageData; content: string }>;
   facebookIcon: StaticImageData;
   linkedinIcon: StaticImageData;
   shopIcon: StaticImageData;
 };
 
 function HeaderInfoBarComponent({
-  telephone,
-  email,
-  telephoneIcon,
-  emailIcon,
   facebookIcon,
   linkedinIcon,
   shopIcon,
+  companyContact,
 }: HeaderInfoBarProps) {
   return (
     <section className={s.container}>
       <section className={s.container__contactSection}>
-        <div className={s.container__contactSection__telephoneNumber}>
-          <Image
-            className={s.container__contactSection__telephoneNumber__icon}
-            width={30}
-            height={30}
-            src={telephoneIcon}
-            alt="telephone-icon"
-          />
-          <span
-            className={s.container__contactSection__telephoneNumber__content}
-          >
-            {telephone}
-          </span>
-        </div>
-        <div className={s.container__contactSection__emailAdress}>
-          <Image
-            className={s.container__contactSection__emailAdress__icon}
-            width={30}
-            height={30}
-            src={emailIcon}
-            alt="mail-icon"
-          />
-          <span className={s.container__contactSection__emailAdress__content}>
-            {email}
-          </span>
-        </div>
+        {companyContact.map((item) => (
+          <ContactSection icon={item.icon} info={item.content} />
+        ))}
       </section>
       <section className={s.container__iconsSection}>
         <div className={s.container__iconsSection__wrapper}>
