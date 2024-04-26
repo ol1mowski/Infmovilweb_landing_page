@@ -4,15 +4,16 @@ import { type StaticImageData } from "next/image";
 
 export type DataType = {
   id: string;
-  category: string;
-  title: string;
-  image: StaticImageData;
-  description: string;
+  sectionInfo: {
+    category: string;
+    title: string;
+    image: StaticImageData;
+    description: string;
+  };
   button: { buttonText: string; buttonIcon: StaticImageData };
 };
 
 async function AboutUS() {
-
   const items = await fetchElements("InfmovilwebCMS");
   const aboutUsItem = items.find((item) => item.id === "AboutUs") as DataType;
 
@@ -20,7 +21,8 @@ async function AboutUS() {
     throw new Error("No se encontró ningún artículo coincidente.");
   }
 
-  const { category, title, image, description, button } = aboutUsItem;
+  const { category, title, image, description } = aboutUsItem.sectionInfo;
+  const { button } = aboutUsItem;
 
   if (!category || !title || !image || !description || !button) {
     throw new Error("Faltan algunas propiedades requeridas.");
