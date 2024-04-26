@@ -1,14 +1,14 @@
-import Image from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import s from "./HeaderInfoBar.component.module.scss";
 
 type HeaderInfoBarProps = {
   telephone: string;
-  telephoneIcon: string;
-  emailIcon: string;
+  telephoneIcon: StaticImageData;
+  emailIcon: StaticImageData;
   email: string;
-  facebookIcon: string;
-  linkedinIcon: string;
-  shopIcon: string;
+  facebookIcon: StaticImageData;
+  linkedinIcon: StaticImageData;
+  shopIcon: StaticImageData;
 };
 
 function HeaderInfoBarComponent({

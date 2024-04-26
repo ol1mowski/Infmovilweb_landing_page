@@ -8,7 +8,7 @@ export type HeaderBarDataType = {
     linkedinIcon: StaticImageData;
     shopIcon: StaticImageData;
   };
-  companyContect: {
+  companyContact: {
     telephoneNumber: string;
     email: string;
   };
