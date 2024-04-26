@@ -6,6 +6,7 @@ import logo from "@/assets/images/logo.jpeg";
 import SearchSetion from "./SearchSection/SearchSetion";
 import Image from "next/image";
 import HeaderAnimationWrapper from "./HeaderAnimationWrapper/HeaderAnimationWrapper.component";
+import HeaderItem from "./HeaderItem/HeaderItem.component";
 
 const Header = () => {
   return (
@@ -17,13 +18,7 @@ const Header = () => {
         <section className={s.header__navMenu}>
           <div className={s.header__navMenu__nav}>
             <ul className={s.header__navMenu__items}>
-              <li className={s.header__navMenu__items__item}>Home</li>
-              <li className={s.header__navMenu__items__item}>
-                {" "}
-                Sobre Nosotros
-              </li>
-              <li className={s.header__navMenu__items__item}> Servicios </li>
-              <li className={s.header__navMenu__items__item}> Contacto</li>
+              <HeaderItem item="Home"/>
             </ul>
             <SearchSetion />
           </div>

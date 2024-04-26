@@ -56,19 +56,6 @@
     &__items {
       @include d-flex;
       list-style-type: none;
-      &__item {
-        font-size: 1.2rem;
-        font-weight: 500;
-        cursor: pointer;
-        padding: $small-padding $standard-padding;
-        color: $dark;
-        transition: scale 0.7s;
-        will-change: scale;
-        border-radius: $border-min;
-      }
-      &__item:hover {
-        scale: $hover-med-scale;
-      }
     }
   }
 }
