@@ -1,30 +1,37 @@
-import s from "./Header.component.module.scss";
-import HamburgerLogo from "./HamburgerLogo/HamburgerLogo.component";
+import { fetchElements } from "@/utils/http/http";
+import HeaderComponent from "./HeaderComponent/HeaderComponent.component";
+import { HeaderDataType } from "@/utils/DataTypes/DataTypes";
 
-import logo from "@/assets/images/logo.jpeg";
+interface DataType extends HeaderDataType {
+  id: string;
+}
 
-import SearchSetion from "./SearchSection/SearchSetion";
-import Image from "next/image";
-import HeaderAnimationWrapper from "./HeaderAnimationWrapper/HeaderAnimationWrapper.component";
-import HeaderItem from "./HeaderItem/HeaderItem.component";
+const Header = async () => {
+  const fetchItems = await fetchElements("InfmovilwebCMS");
+  const headerItem = fetchItems.find(
+    (item) => item.id === "Header"
+  ) as DataType;
 
-const Header = () => {
+  if (!headerItem) {
+    throw new Error("No se encontró ningún artículo coincidente.");
+  }
+
+  const { items, icons } = headerItem;
+
+  if (!items || !icons) {
+    throw new Error("Faltan algunas propiedades requeridas.");
+  }
+
+  const { companyLogo, hamburgerIcon, searchIcon } = icons;
+
   return (
     <>
-      <HeaderAnimationWrapper stickyClass={s.sticky} normalClass={s.header}>
-        <section className={s.header__logoSection}>
-          <Image src={logo} alt="logo of company" width={100} height={100} />
-        </section>
-        <section className={s.header__navMenu}>
-          <div className={s.header__navMenu__nav}>
-            <ul className={s.header__navMenu__items}>
-              <HeaderItem item="Home"/>
-            </ul>
-            <SearchSetion />
-          </div>
-        </section>
-        <HamburgerLogo />
-      </HeaderAnimationWrapper>
+      <HeaderComponent
+        items={items}
+        companyLogo={companyLogo}
+        searchIcon={searchIcon}
+        hamburgerIcon={hamburgerIcon}
+      />
     </>
   );
 };

@@ -32,15 +32,6 @@
   @media screen and (min-width: $big-tablets) {
     padding: $standard-padding $big-padding;
   }
-  &__logoSection {
-    @include d-flex;
-    cursor: pointer;
-    transition: scale 0.7s;
-    will-change: scale;
-  }
-  &__logoSection:hover {
-    scale: $hover-med-scale;
-  }
 
   &__navMenu {
     display: none;
