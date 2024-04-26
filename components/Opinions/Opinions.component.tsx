@@ -1,68 +1,39 @@
-import Image, { StaticImageData } from "next/image";
-import s from "./Opinions.component.module.scss";
-
-import arrow from "@/assets/icons/arrow.png";
-
-import star from "@/assets/icons/star.png";
-import OpiniosCard from "./Opinios-Card/Opinios-Card.component";
 import { fetchElements } from "@/utils/http/http";
+import { OpinionsDataType } from "@/utils/DataTypes/DataTypes";
+import OpinionsComponent from "./OpinionsComponent/OpinionsComponent.component";
+
+interface DataType extends OpinionsDataType {
+  id: string;
+}
 
 async function Opinions() {
   const fetchItems = await fetchElements("InfmovilwebCMS");
+  const opinionsItem = fetchItems.find(
+    (item) => item.id === "Opinions"
+  ) as DataType;
 
-  type DataValue = {
-    button: { buttonText: string; buttonIcon: StaticImageData };
-    category: string;
-    score: string;
-    title: string;
-    Cards: Array<{ author: string; opinion: string; icon: StaticImageData }>;
-  };
-
-  const locationItem = fetchItems.find((item) => item.id === "Opinions");
-
-  if (!locationItem) {
-    throw new Error("Could not find");
+  if (!opinionsItem) {
+    throw new Error("No se encontró ningún artículo coincidente.");
   }
 
-  const data: DataValue = locationItem;
+  const { button, sectionData, Cards } = opinionsItem;
 
-  const { title, score, category, button, Cards } = data;
+  if (!button || !sectionData) {
+    throw new Error("Faltan algunas propiedades requeridas.");
+  }
+
+  const { category, title, score } = sectionData;
+  const { buttonIcon, buttonText } = button;
 
   return (
-    <section className={s.container}>
-      <section className={s.container__infoSection}>
-        <span className={s.container__infoSection__category}>{category}</span>
-
-        <h3 className={s.container__infoSection__title}>{title}</h3>
-
-        <button className={s.container__infoSection__btn}>
-          <span>{button.buttonText}</span>{" "}
-          <Image
-            width={25}
-            height={25}
-            src={button.buttonIcon}
-            alt="arrow-icon"
-          />
-        </button>
-
-        <div className={s.container__infoSection__score}>
-          <Image src={star} alt="star-icon" />
-          <span className={s.container__infoSection__score__content}>
-            {score}
-          </span>
-        </div>
-      </section>
-      <section className={s.container__cardsWrapper}>
-        {Cards.map((o) => (
-          <OpiniosCard
-            icon={o.icon}
-            key={o.author}
-            description={o.opinion}
-            author={o.author}
-          />
-        ))}
-      </section>
-    </section>
+    <OpinionsComponent
+      category={category}
+      title={title}
+      score={score}
+      buttonIcon={buttonIcon}
+      buttonText={buttonText}
+      Cards={Cards}
+    />
   );
 }
 
