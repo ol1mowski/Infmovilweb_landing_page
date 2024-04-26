@@ -1,38 +1,38 @@
 import { fetchElements } from "@/utils/http/http";
 import AboutUSComponent from "./AboutUs-Component/AboutUs.component";
-import { StaticImageData } from "next/image";
+import { type StaticImageData } from "next/image";
+
+export type DataType = {
+  id: string;
+  category: string;
+  title: string;
+  image: StaticImageData;
+  description: string;
+  button: { buttonText: string; buttonIcon: StaticImageData };
+};
 
 async function AboutUS() {
 
   const items = await fetchElements("InfmovilwebCMS");
-
-  type DataValue = {
-    id: string;
-    category: string;
-    title: string;
-    image: StaticImageData;
-    description: string;
-    button: { buttonText: string , buttonIcon: StaticImageData};
-  };
-
-  const aboutUsItem = items.find((item) => item.id === "AboutUs");
+  const aboutUsItem = items.find((item) => item.id === "AboutUs") as DataType;
 
   if (!aboutUsItem) {
-    throw new Error("Could not find");
+    throw new Error("No se encontró ningún artículo coincidente.");
   }
 
-  const data: DataValue = aboutUsItem;
+  const { category, title, image, description, button } = aboutUsItem;
 
-  const { category, title, description, button, image } = data;
+  if (!category || !title || !image || !description || !button) {
+    throw new Error("Faltan algunas propiedades requeridas.");
+  }
 
   return (
     <AboutUSComponent
-    aboutUsImage={image}
+      image={image}
       category={category}
       title={title}
       description={description}
-      buttonText={button.buttonText}
-      buttonIcon={button.buttonIcon}
+      button={button}
     />
   );
 }

@@ -1,19 +1,17 @@
-import Image, { StaticImageData } from "next/image";
+import Image from "next/image";
 import s from "./AboutUS.component.module.scss";
 
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
+import { AboutUsDataType } from "@/utils/DataTypes/DataTypes";
 
 
-type AboutUSComponentProps = {
-    title: string,
-    description: string,
-    category: string,
-    buttonText: string,
-    buttonIcon: StaticImageData;
-    aboutUsImage: StaticImageData;
-}
-
-function AboutUSComponent({ title, category, description, buttonText, buttonIcon, aboutUsImage }: AboutUSComponentProps) {
+function AboutUSComponent({
+  title,
+  category,
+  description,
+  button,
+  image,
+}: AboutUsDataType) {
   return (
     <AnimationWrapper className={s.container}>
       <section className={s.container__imageSection}>
@@ -23,7 +21,7 @@ function AboutUSComponent({ title, category, description, buttonText, buttonIcon
           className={s.container__imageSection__img}
           width={300}
           height={290}
-          src={aboutUsImage}
+          src={image}
           alt="about-company-image"
         />
       </section>
@@ -42,11 +40,11 @@ function AboutUSComponent({ title, category, description, buttonText, buttonIcon
         <div className={s.container__contentSection__buttonSection}>
           <button className={s.container__contentSection__buttonSection__btn}>
             <span className={s.container__contentSection__buttonSection__text}>
-              { buttonText }
+              {button.buttonText}
             </span>
             <Image
               className={s.container__contentSection__buttonSection__btn__img}
-              src={buttonIcon}
+              src={button.buttonIcon}
               width={25}
               height={25}
               alt="arrow-icon"
