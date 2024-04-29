@@ -1,0 +1,65 @@
+@import "@/sass/index.scss";
+
+.container {
+  position: fixed;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: $white;
+  box-shadow: $box-shadow;
+  padding: $big-padding;
+  border-radius: $border-med;
+  z-index: 101;
+  display: flex;
+  flex-direction: column;
+  gap: $standard-gap;
+  &__close {
+    @include d-flex;
+    justify-content: flex-end;
+    width: 100%;
+    &__wrapper {
+      @include d-flex;
+      background-color: $gray;
+      border-radius: 50%;
+      padding: $small-padding;
+      cursor: pointer;
+      transition: scale, box-shadow, 0.7s;
+    }
+    &__wrapper:hover {
+      box-shadow: $box-shadow;
+      scale: $hover-min-scale;
+    }
+  }
+  &__content {
+    @include d-flex-column;
+    gap: $small-gap;
+    &__title_success {  
+      color: $green;
+      font-size: 2rem;
+    }
+    &__title_fail {
+      color: $red;
+      font-size: 2rem;
+    }
+  }
+  &__buttons {
+    @include d-flex;
+    gap: $big-gap;
+    &__btn_cancel {
+      @include btn();
+      border: 1px solid $red;
+      background-color: transparent;
+      color: $dark;
+    }
+    &__btn_cancel:hover {
+      scale: $hover-med-scale;
+    }
+    &__btn_close {
+      @include btn();
+      background-color: $red;
+    }
+    &__btn_close:hover {
+      scale: $hover-med-scale;
+    }
+  }
+}

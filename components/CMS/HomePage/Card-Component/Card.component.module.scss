@@ -1,0 +1,75 @@
+@import "@/sass/index.scss";
+
+.cardWrapper {
+  @include d-flex-column;
+  background-color: #fff;
+  padding: 2rem $standard-padding;
+  width: 20rem;
+  height: 23rem;
+  gap: $standard-gap;
+  border-radius: $border-med;
+  box-shadow: $box-shadow;
+  transition: scale, 0.7s;
+  will-change: scale;
+  cursor: pointer;
+  &__imageWrapper {
+    @include d-flex;
+    border: 2px solid $gray;
+    padding: 1.5rem;
+    border-radius: 50%;
+  }
+  &__textWrapper {
+    @include d-flex-column;
+    gap: $small-gap;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 1.75rem;
+    &__title {
+      width: 100%;
+      color: $orange;
+      font-weight: 400;
+      font-size: 1.4rem;
+      border: none;
+    }
+    &__description {
+      font-size: $text-size;
+      border: none;
+      font-family: "Times New Roman", Times, serif;
+      height: 100%;
+      width: 100%;
+    }
+  }
+  &__actionWrapper {
+    @include d-flex;
+    margin-top: $small-gap;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 1.75rem;
+
+    &__action {
+      @include d-flex;
+      cursor: pointer;
+      gap: $small-gap;
+      color: $orange;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: scale, 0.7s;
+      will-change: scale;
+      justify-content: flex-start;
+      &__text {
+        color: $orange;
+        width: 40%;
+        height: 10%;
+        border: none;
+        font-size: $text-size;
+      }
+    }
+    &__action:hover {
+      scale: $hover-min-scale;
+    }
+  }
+}
+
+.cardWrapper:hover {
+  scale: $hover-min-scale;
+}

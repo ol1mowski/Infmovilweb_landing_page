@@ -1,0 +1,39 @@
+@import "@/sass/index.scss";
+
+.container {
+  background-color: $white;
+  padding: $standard-padding;
+  @include d-flex;
+  @media screen and (min-width: $tablet) {
+    justify-content: space-between;
+  }
+  &__title {
+    font-size: 2rem;
+    color: $orange;
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
+  }
+  &__buttonWrapper {
+    @include d-flex;
+    gap: $standard-gap;
+    &__btn {
+      @include btn();
+    }
+    &__btn_leave {
+      background-color: $red;
+    }
+    &__btn_save {
+      background-color: $green;
+    }
+    &__btn_see {
+      border: 1px solid $green;
+      background-color: transparent;
+      color: $dark;
+    }
+    &__btn:hover {
+      scale: $hover-med-scale;
+    }
+  }
+}
