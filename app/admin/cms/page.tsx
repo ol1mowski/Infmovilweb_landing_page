@@ -12,8 +12,8 @@ import PopUp from "@/components/CMS/UI/PopUp/PopUp.component";
 function page() {
   return (
     <>
-    <h1>Soon</h1>
-      {/* <AdminBar />
+    {/* <h1>Soon</h1> */}
+      <AdminBar />
       <HeaderBarFetch />
       <PopUp />
       <Header />
@@ -22,7 +22,7 @@ function page() {
       <Services />
       <Opinions />
       <Location />
-      <Footer /> */}
+      <Footer />
     </>
   );
 }
