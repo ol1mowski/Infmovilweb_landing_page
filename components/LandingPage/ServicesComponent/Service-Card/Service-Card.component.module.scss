@@ -1,0 +1,55 @@
+@import "@/sass/index.scss";
+
+.servicesContainer {
+  @include d-flex-column;
+  gap: $small-gap;
+  background-color: $white;
+  padding: $standard-padding;
+  border-radius: $border-med;
+  box-shadow: $box-shadow;
+  width: 80vw;
+  cursor: pointer;
+  transition: scale .7s;
+  will-change: scale;
+  @media screen and (min-width: $mobile) {
+    width: 22rem;
+  }
+  &__imageWrapper {
+    @include d-flex;
+    &__img {
+      border-radius: $border-med;
+      width: 100%;
+    }
+  }
+  &__textWrapper {
+    @include d-flex-column;
+    gap: $standard-gap;
+    margin-top: $standard-padding;
+    align-items: flex-start;
+    width: 100%;
+  }
+  &__actionWrapper {
+    @include d-flex;
+    margin-top: $small-gap;
+    justify-content: flex-start;
+    width: 100%;
+    gap: $small-gap;
+
+    &__text {
+      @include d-flex;
+      cursor: pointer;
+      color: $orange;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: scale, 0.7s;
+      will-change: scale;
+    }
+    &__text:hover {
+      scale: $hover-min-scale;
+    }
+  }
+}
+
+.servicesContainer:hover {
+  scale: $hover-min-scale;
+}

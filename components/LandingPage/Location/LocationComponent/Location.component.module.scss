@@ -1,0 +1,31 @@
+@import "@/sass/index.scss";
+
+.container {
+  @include d-flex-column;
+  padding: $standard-padding;
+  margin-top: 5rem;
+  align-items: flex-start;
+  gap: $big-gap;
+  @media screen and (min-width: $desktop) {
+    flex-direction: row;
+  }
+  @media screen and (min-width: $large-desktop) {
+    gap: 10rem;
+  }
+  &__infoSection {
+    @include d-flex-column;
+    align-items: flex-start;
+    gap: $standard-gap;
+    padding: $standard-padding;
+    &__category {
+      @include category;
+    }
+    &__title {
+      @include title($dark);
+    }
+    &__btn {
+      @include btn;
+      margin-top: $standard-margin;
+    }
+  }
+}

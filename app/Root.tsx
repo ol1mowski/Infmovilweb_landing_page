@@ -1,5 +1,5 @@
-import Header from "@/components/Header/Header.component";
-import HeaderBar from "@/components/HeaderInfoBar/HeaderBar";
+import Header from "@/components/LandingPage/Header/Header.component";
+import HeaderBar from "@/components/LandingPage/HeaderInfoBar/HeaderBar";
 import RootWrapper from "./RootWrapper";
 import ReactQueryProvider from "./ReactQueryProvider";
 
@@ -13,8 +13,6 @@ function Root({
       <html lang="pl-PL">
         <body>
           <RootWrapper>
-            <HeaderBar />
-            <Header />
             {children}
           </RootWrapper>
         </body>

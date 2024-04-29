@@ -1,0 +1,44 @@
+@import "@/sass/index.scss";
+
+.container {
+  @include d-flex-column;
+  padding: $small-padding $standard-padding;
+  border: 2px solid $gray;
+  border-radius: $border-med;
+  align-items: flex-start;
+  @media screen and (min-width: $mobile) {
+    width: 23rem;
+  }
+  &__topSideOfOpinion {
+    @include d-flex-column;
+    gap: $standard-gap;
+    padding: $standard-padding;
+    border-bottom: 1px solid $gray;
+    &__quoteIcon {
+      @include d-flex;
+      justify-content: flex-start;
+      width: 100%;
+      &__wrapper {
+        @include d-flex;
+        background-color: $orange;
+        padding: $standard-padding;
+        border-radius: 50%;
+        width: 5rem;
+        height: 5rem;
+      }
+    }
+    &__content {
+      @include d-flex-column;
+      gap: $standard-gap;
+      align-items: flex-start;
+      font-size: $text-size;
+      &__user {
+        font-weight: 500;
+        font-size: 1.3rem;
+      }
+    }
+  }
+  &__bottomSideOpinion {
+    padding: $standard-padding;
+  }
+}

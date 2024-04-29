@@ -1,0 +1,15 @@
+@import "@/sass/index.scss";
+
+.container {
+  background-color: $white;
+  padding: $standard-padding;
+  @include d-flex;
+  justify-content: space-around;
+  &__buttonWrapper {
+    @include d-flex;
+    gap: $standard-gap;
+    &__btn {
+        @include btn();
+    }
+  }
+}
