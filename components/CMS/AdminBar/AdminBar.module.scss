@@ -22,13 +22,13 @@
       @include btn();
     }
     &__btn_leave {
-      background-color: #ff5252;
+      background-color: $red;
     }
     &__btn_save {
-      background-color: #65e765;
+      background-color: $green;
     }
     &__btn_see {
-      border: 1px solid #65e765;
+      border: 1px solid $green;
       background-color: transparent;
       color: $dark;
     }
