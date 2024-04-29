@@ -33,6 +33,14 @@
   &__content {
     @include d-flex-column;
     gap: $small-gap;
+    &__title_success {
+      color: #65e765;
+      font-size: 2rem;
+    }
+    &__title_fail {
+      color: #ff5252;
+      font-size: 2rem;
+    }
   }
   &__buttons {
     @include d-flex;
