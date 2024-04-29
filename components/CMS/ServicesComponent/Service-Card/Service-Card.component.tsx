@@ -1,7 +1,10 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import s from "./Service-Card.component.module.scss";
 
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
+import { useState } from "react";
 
 type ServiceCardProps = {
   image: StaticImageData;
@@ -11,7 +14,17 @@ type ServiceCardProps = {
   buttonIcon: StaticImageData;
 };
 
-function ServiceCard({ image, title, description, buttonText, buttonIcon }: ServiceCardProps) {
+function ServiceCard({
+  image,
+  title,
+  description,
+  buttonText,
+  buttonIcon,
+}: ServiceCardProps) {
+  const [titleValue, setTitleValue] = useState<string>(title);
+  const [descriptionValue, setDescriptionValue] = useState<string>(description);
+  const [buttonTextValue, setButtonTextValue] = useState<string>(buttonText);
+
   return (
     <AnimationWrapper className={s.servicesContainer}>
       <div className={s.servicesContainer__imageWrapper}>
@@ -24,15 +37,26 @@ function ServiceCard({ image, title, description, buttonText, buttonIcon }: Serv
         />
       </div>
       <div className={s.servicesContainer__textWrapper}>
-        <h3 className={s.servicesContainer__textWrapper__title}>{title}</h3>
-        <p className={s.servicesContainer__textWrapper__description}>
-          {description}
-        </p>
+        <input
+          type="text"
+          value={titleValue}
+          onChange={(e) => setTitleValue(e.target.value)}
+          className={s.servicesContainer__textWrapper__title}
+        />
+        <textarea
+          value={descriptionValue}
+          wrap="true"
+          onChange={(e) => setDescriptionValue(e.target.value)}
+          className={s.servicesContainer__textWrapper__description}
+        />
       </div>
       <div className={s.servicesContainer__actionWrapper}>
-        <span className={s.servicesContainer__actionWrapper__text}>
-          { buttonText }
-        </span>
+            <input
+              type="text"
+              value={buttonTextValue}
+              onChange={(e) => setButtonTextValue(e.target.value)}
+              className={s.servicesContainer__actionWrapper__text}
+            />
         <Image
           className={s.servicesContainer__actionWrapper__icon}
           src={buttonIcon}
