@@ -1,10 +1,13 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import s from "./AboutUS.component.module.scss";
 
-import image from '@/assets/images/about_us.jpeg';
+import image from "@/assets/images/about_us.jpeg";
 
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
-import buttonIcon from '@/assets/icons/arrow.png';
+import buttonIcon from "@/assets/icons/arrow.png";
+import { useState } from "react";
 
 type AboutUSComponentProps = {
   category: string;
@@ -21,6 +24,11 @@ function AboutUSComponent({
   description,
   buttonText,
 }: AboutUSComponentProps) {
+  const [categoryValue, setCategoryValue] = useState<string>(category);
+  const [titleValue, setTitleValue] = useState<string>(title);
+  const [descriptionValue, setDescriptionValue] = useState<string>(description);
+  const [buttonTextValue, setButtonTextValue] = useState<string>(buttonText);
+
   return (
     <AnimationWrapper className={s.container}>
       <section className={s.container__imageSection}>
@@ -36,21 +44,35 @@ function AboutUSComponent({
       </section>
       <section className={s.container__contentSection}>
         <div className={s.container__contentSection__infoWrapper}>
-          <span className={s.container__contentSection__infoWrapper__category}>
-            {category}
-          </span>
-          <h3 className={s.container__contentSection__infoWrapper__title}>
-            {title}
-          </h3>
-          <p className={s.container__contentSection__infoWrapper__description}>
-            {description}
-          </p>
+          <input
+            type="text"
+            value={categoryValue}
+            onChange={(e) => setCategoryValue(e.target.value)}
+            className={s.container__contentSection__infoWrapper__category}
+          />
+
+          <input
+            type="text"
+            value={titleValue}
+            onChange={(e) => setTitleValue(e.target.value)}
+            className={s.container__contentSection__infoWrapper__title}
+          />
+          <textarea
+            value={descriptionValue}
+            wrap="true"
+            onChange={(e) => setDescriptionValue(e.target.value)}
+            className={s.container__contentSection__infoWrapper__description}
+          />
         </div>
         <div className={s.container__contentSection__buttonSection}>
           <button className={s.container__contentSection__buttonSection__btn}>
-            <span className={s.container__contentSection__buttonSection__text}>
-              {buttonText}
-            </span>
+            <input
+              type="text"
+              value={buttonTextValue}
+              onChange={(e) => setButtonTextValue(e.target.value)}
+              className={s.container__contentSection__buttonSection__text}
+            />
+
             <Image
               className={s.container__contentSection__buttonSection__btn__img}
               src={buttonIcon}

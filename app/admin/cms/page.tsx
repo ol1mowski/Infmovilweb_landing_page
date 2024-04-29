@@ -1,3 +1,4 @@
+import AboutUS from "@/components/CMS/AboutUS/AboutUS.component";
 import AdminBar from "@/components/CMS/AdminBar/AdminBar";
 import Header from "@/components/CMS/Header/Header.component";
 import HeaderBarFetch from "@/components/CMS/HeaderInfoBar/HeaderBar";
@@ -11,6 +12,7 @@ function page() {
       <HeaderBarFetch />
       <Header />
       <HomePage />
+      <AboutUS />
     </>
   );
 }
