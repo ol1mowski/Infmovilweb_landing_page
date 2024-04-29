@@ -4,12 +4,30 @@
   background-color: $white;
   padding: $standard-padding;
   @include d-flex;
-  justify-content: space-around;
+  justify-content: space-between;
+  &__title {
+    font-size: 2rem;
+    color: $orange;
+  }
   &__buttonWrapper {
     @include d-flex;
     gap: $standard-gap;
     &__btn {
         @include btn();
+    }
+    &__btn_leave {
+        background-color: #FF5252;
+    }
+    &__btn_save {
+        background-color: #65E765;
+    }
+    &__btn_see {
+        border: 1px solid #65E765;
+        background-color: transparent;
+        color: $dark;
+    }
+    &__btn:hover {
+        scale: $hover-med-scale;
     }
   }
 }

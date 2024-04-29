@@ -83,6 +83,9 @@ $text-size: 1.1rem;
   padding: $small-padding $standard-padding;
   font-size: $text-size;
   color: $white;
+  cursor: pointer;
+  transition: scale, .7s;
+  will-change: scale;
   border-radius: $border-med;
 }
 
