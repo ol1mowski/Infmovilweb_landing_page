@@ -1,5 +1,8 @@
+'use client'
+
 import Image, { type StaticImageData } from "next/image";
 import s from "./ContactSection.component.module.scss";
+import { useState } from "react";
 
 type ContactSectionProps = {
   icon: StaticImageData;
@@ -7,6 +10,8 @@ type ContactSectionProps = {
 };
 
 function ContactSection({ icon, info }: ContactSectionProps) {
+  const [value, setvalue] = useState<string>(info);
+
   return (
     <div className={s.contactWrapper}>
       <Image
@@ -16,9 +21,12 @@ function ContactSection({ icon, info }: ContactSectionProps) {
         src={icon}
         alt="telephone-icon"
       />
-      <span className={s.contactWrapper__content}>
-        {info}
-      </span>
+      <input
+        type="text"
+        className={s.contactWrapper__content}
+        value={value}
+        onChange={(e) => setvalue(e.target.value)}
+      />
     </div>
   );
 }
