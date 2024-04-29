@@ -8,12 +8,12 @@ import Location from "@/components/CMS/Location/Location.component";
 import Opinions from "@/components/CMS/Opinions/Opinions.component";
 import Services from "@/components/CMS/ServicesComponent/Services.component";
 import PopUp from "@/components/CMS/UI/PopUp/PopUp.component";
-import React from "react";
 
 function page() {
   return (
     <>
-      <AdminBar />
+    <h1>Soon</h1>
+      {/* <AdminBar />
       <HeaderBarFetch />
       <PopUp />
       <Header />
@@ -22,7 +22,7 @@ function page() {
       <Services />
       <Opinions />
       <Location />
-      <Footer />
+      <Footer /> */}
     </>
   );
 }

@@ -44,19 +44,22 @@ function ServiceCard({
           className={s.servicesContainer__textWrapper__title}
         />
         <textarea
+          defaultValue={""}
           value={descriptionValue}
           wrap="true"
           onChange={(e) => setDescriptionValue(e.target.value)}
           className={s.servicesContainer__textWrapper__description}
-        />
+        >
+          {" "}
+        </textarea>
       </div>
       <div className={s.servicesContainer__actionWrapper}>
-            <input
-              type="text"
-              value={buttonTextValue}
-              onChange={(e) => setButtonTextValue(e.target.value)}
-              className={s.servicesContainer__actionWrapper__text}
-            />
+        <input
+          type="text"
+          value={buttonTextValue}
+          onChange={(e) => setButtonTextValue(e.target.value)}
+          className={s.servicesContainer__actionWrapper__text}
+        />
         <Image
           className={s.servicesContainer__actionWrapper__icon}
           src={buttonIcon}

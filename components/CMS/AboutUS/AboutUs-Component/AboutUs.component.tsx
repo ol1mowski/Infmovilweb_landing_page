@@ -58,11 +58,12 @@ function AboutUSComponent({
             className={s.container__contentSection__infoWrapper__title}
           />
           <textarea
+            defaultValue={""}
             value={descriptionValue}
             wrap="true"
             onChange={(e) => setDescriptionValue(e.target.value)}
             className={s.container__contentSection__infoWrapper__description}
-          />
+          ></textarea>
         </div>
         <div className={s.container__contentSection__buttonSection}>
           <button className={s.container__contentSection__buttonSection__btn}>

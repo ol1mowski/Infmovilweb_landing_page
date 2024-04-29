@@ -1,5 +1,3 @@
-import Header from "@/components/LandingPage/Header/Header.component";
-import HeaderBar from "@/components/LandingPage/HeaderInfoBar/HeaderBar";
 import RootWrapper from "./RootWrapper";
 import ReactQueryProvider from "./ReactQueryProvider";
 

@@ -38,6 +38,7 @@ function Card({
           onChange={(e) => setTitleValue(e.target.value)}
         />
         <textarea
+          defaultValue={""}
           value={descriptionValue}
           onChange={(e) => setDescriptionValue(e.target.value)}
           className={s.cardWrapper__textWrapper__description}
