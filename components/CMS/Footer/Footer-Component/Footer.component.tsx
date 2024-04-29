@@ -30,11 +30,12 @@ function FooterComponent({ items, title, description }: FooterComponentProps) {
           />
 
           <textarea
+            defaultValue={""}
             value={descriptionValue}
             wrap="true"
             onChange={(e) => setDescriptionValue(e.target.value)}
             className={s.container__itemsContainer__wrapper__companyInfo}
-          />
+          ></textarea>
         </div>
       </section>
       <FooterCopyright />

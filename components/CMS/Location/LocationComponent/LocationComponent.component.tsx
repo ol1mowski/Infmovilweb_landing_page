@@ -44,18 +44,21 @@ function LocationComponent({
           className={s.container__infoSection__title}
         />
         <textarea
+          defaultValue={""}
           value={descriptionValue}
           wrap="true"
           onChange={(e) => setDescriptionValue(e.target.value)}
           className={s.container__infoSection__description}
-        />
+        >
+          {" "}
+        </textarea>
         <button className={s.container__infoSection__btn}>
-            <input
-              type="text"
-              value={buttonTextValue}
-              onChange={(e) => setButtonTextValue(e.target.value)}
-              className={s.container__infoSection__btn__text}
-            />
+          <input
+            type="text"
+            value={buttonTextValue}
+            onChange={(e) => setButtonTextValue(e.target.value)}
+            className={s.container__infoSection__btn__text}
+          />
           <Image width={25} height={25} src={buttonIcon} alt="arrow-icon" />
         </button>
       </section>
