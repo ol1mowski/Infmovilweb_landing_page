@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import FooterCopyright from "../FooterCopyright/FooterCopyright.component";
 import ItemsComponent from "../Items-Component/Items-Component.component";
 import s from "./Footer.component.module.scss";
@@ -9,6 +12,9 @@ type FooterComponentProps = {
 };
 
 function FooterComponent({ items, title, description }: FooterComponentProps) {
+  const [titleValue, setTitleValue] = useState<string>(title);
+  const [descriptionValue, setDescriptionValue] = useState<string>(description);
+
   return (
     <footer className={s.container}>
       <section className={s.container__itemsContainer}>
@@ -16,12 +22,19 @@ function FooterComponent({ items, title, description }: FooterComponentProps) {
           <ItemsComponent key={i.id} items={i.items} title={i.title} />
         ))}
         <div className={s.container__itemsContainer__wrapper}>
-          <h4 className={s.container__itemsContainer__wrapper__title}>
-            {title}
-          </h4>
-          <p className={s.container__itemsContainer__wrapper__companyInfo}>
-            {description}
-          </p>
+          <input
+            type="text"
+            value={titleValue}
+            onChange={(e) => setTitleValue(e.target.value)}
+            className={s.container__itemsContainer__wrapper__title}
+          />
+
+          <textarea
+            value={descriptionValue}
+            wrap="true"
+            onChange={(e) => setDescriptionValue(e.target.value)}
+            className={s.container__itemsContainer__wrapper__companyInfo}
+          />
         </div>
       </section>
       <FooterCopyright />

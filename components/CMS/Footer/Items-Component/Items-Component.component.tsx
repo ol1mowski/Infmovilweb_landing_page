@@ -1,4 +1,8 @@
+"use client";
+
+import { useState } from "react";
 import s from "./Items-Component.component.module.scss";
+import Item from "./Item.component";
 
 type ItemsComponentProps = {
   title: string;
@@ -6,13 +10,17 @@ type ItemsComponentProps = {
 };
 
 function ItemsComponent({ title, items }: ItemsComponentProps) {
+  const [titleValue, setTitleValue] = useState<string>(title);
   return (
     <div className={s.wrapper}>
-      <h4 className={s.wrapper__title}>{title}</h4>
+      <input
+        type="text"
+        value={titleValue}
+        onChange={(e) => setTitleValue(e.target.value)}
+        className={s.wrapper__title}
+      />
       {items.map((item) => (
-        <span key={item} className={s.wrapper__item}>
-          {item}
-        </span>
+        <Item key={item} item={item} />
       ))}
     </div>
   );

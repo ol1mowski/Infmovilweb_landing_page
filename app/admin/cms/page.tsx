@@ -1,5 +1,6 @@
 import AboutUS from "@/components/CMS/AboutUS/AboutUS.component";
 import AdminBar from "@/components/CMS/AdminBar/AdminBar";
+import Footer from "@/components/CMS/Footer/Footer.component";
 import Header from "@/components/CMS/Header/Header.component";
 import HeaderBarFetch from "@/components/CMS/HeaderInfoBar/HeaderBar";
 import HomePage from "@/components/CMS/HomePage/HomePage.component";
@@ -19,6 +20,7 @@ function page() {
       <Services />
       <Opinions />
       <Location />
+      <Footer />
     </>
   );
 }
