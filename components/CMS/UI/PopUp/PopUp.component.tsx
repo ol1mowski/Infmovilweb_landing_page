@@ -1,21 +1,23 @@
 import Image from 'next/image'
 import s from './PopUp.component.module.scss';
 
+import close from '@/assets/icons/close_icon.png';
+
 function PopUp() {
   return (
-   <section>
-    <section>
-      <div>
-        <Image src={''} alt='' />
+   <section className={s.container}>
+    <section className={s.container__close}>
+      <div className={s.container__close__wrapper}>
+        <Image width={20} height={20} src={close} alt='close-icon' />
       </div>
     </section>
-    <section>
-      <h2>Are You Sure ?</h2>
-      <p>Are you surecyou want to leave this admin panel</p>
+    <section className={s.container__content}>
+      <h2 className={s.container__content__title}>Are You Sure ?</h2>
+      <p className={s.container__content__description}>Are you sure you want to leave this admin panel</p>
     </section>
-    <section>
-      <button>Cancel</button>
-      <button>Leave</button>
+    <section className={s.container__buttons}>
+      <button className={s.container__buttons__btn_cancel}>Cancel</button>
+      <button className={s.container__buttons__btn_close}>Leave</button>
     </section>
    </section>
   )
