@@ -29,9 +29,14 @@
       color: $orange;
       font-weight: 400;
       font-size: 1.4rem;
+      border: none;
     }
     &__description {
       font-size: $text-size;
+      border: none;
+      font-family: "Times New Roman", Times, serif;
+      height: 100%;
+      width: 100%;
     }
   }
   &__actionWrapper {
@@ -50,6 +55,14 @@
       font-weight: 500;
       transition: scale, 0.7s;
       will-change: scale;
+      justify-content: flex-start;
+      &__text {
+        color: $orange;
+        width: 40%;
+        height: 10%;
+        border: none;
+        font-size: $text-size;
+      }
     }
     &__action:hover {
       scale: $hover-min-scale;
