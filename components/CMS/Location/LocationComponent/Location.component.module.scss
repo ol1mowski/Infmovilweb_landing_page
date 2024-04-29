@@ -19,13 +19,28 @@
     padding: $standard-padding;
     &__category {
       @include category;
+      border: none;
     }
     &__title {
       @include title($dark);
+      border: none;
+    }
+    &__description {
+      border: none;
+      font-size: $text-size;
+      width: 100%;
+      font-family: "Times New Roman", Times, serif;
     }
     &__btn {
       @include btn;
       margin-top: $standard-margin;
+      &__text {
+        border: none;
+        background: transparent;
+        color: $white;
+        width: 30%;
+        font-size: $text-size;
+      }
     }
   }
 }
