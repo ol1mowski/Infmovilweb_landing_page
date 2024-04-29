@@ -13,7 +13,7 @@ function FooterComponent({ items, title, description }: FooterComponentProps) {
     <footer className={s.container}>
       <section className={s.container__itemsContainer}>
         {items.map((i) => (
-          <ItemsComponent key={i.id} items={i.items} title={i.title} />
+          <ItemsComponent key={Math.random()} items={i.items} title={i.title} />
         ))}
         <div className={s.container__itemsContainer__wrapper}>
           <h4 className={s.container__itemsContainer__wrapper__title}>
@@ -28,5 +28,4 @@ function FooterComponent({ items, title, description }: FooterComponentProps) {
     </footer>
   );
 }
-
 export default FooterComponent;
