@@ -5,9 +5,11 @@
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-attachment: fixed;
   padding-top: 10rem;
   padding-bottom: 3rem;
+  @media screen and (min-width: $small-desktop) {
+    background-attachment: fixed;
+  }
   &__cardsWrapper {
     @include d-flex-column;
     gap: $big-gap;
