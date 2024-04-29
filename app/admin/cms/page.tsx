@@ -7,6 +7,7 @@ import HomePage from "@/components/CMS/HomePage/HomePage.component";
 import Location from "@/components/CMS/Location/Location.component";
 import Opinions from "@/components/CMS/Opinions/Opinions.component";
 import Services from "@/components/CMS/ServicesComponent/Services.component";
+import PopUp from "@/components/CMS/UI/PopUp/PopUp.component";
 import React from "react";
 
 function page() {
@@ -14,6 +15,7 @@ function page() {
     <>
       <AdminBar />
       <HeaderBarFetch />
+      <PopUp />
       <Header />
       <HomePage />
       <AboutUS />
