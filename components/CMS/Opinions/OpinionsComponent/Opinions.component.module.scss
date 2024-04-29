@@ -25,13 +25,21 @@
     padding: $standard-padding;
     &__category {
       @include category;
+      border: none;
     }
     &__title {
       @include title($dark);
+      border: none;
     }
     &__btn {
       @include btn;
       margin-top: $standard-margin;
+      &__text {
+        border: none;
+        background: transparent;
+        color: $white;
+        font-size: $text-size;
+      }
     }
     &__score {
       @include d-flex;

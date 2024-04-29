@@ -1,8 +1,11 @@
+"use client";
+
 import Image, { StaticImageData } from "next/image";
 import s from "./Opinions.component.module.scss";
 
 import star from "@/assets/icons/star.png";
 import OpinionsCard from "../Opinions-Card/Opinions-Card.component";
+import { useState } from "react";
 
 type OpinionsComponentProps = {
   buttonText: string;
@@ -21,13 +24,32 @@ function OpinionsComponent({
   score,
   Cards,
 }: OpinionsComponentProps) {
+  const [categoryValue, setCategoryValue] = useState<string>(category);
+  const [titleValue, setTitleValue] = useState<string>(title);
+  const [buttonTextValue, setButtonTextValue] = useState<string>(buttonText);
+
   return (
     <section className={s.container}>
       <section className={s.container__infoSection}>
-        <span className={s.container__infoSection__category}>{category}</span>
-        <h3 className={s.container__infoSection__title}>{title}</h3>
+        <input
+          type="text"
+          value={categoryValue}
+          onChange={(e) => setCategoryValue(e.target.value)}
+          className={s.container__infoSection__category}
+        />
+        <input
+          type="text"
+          value={titleValue}
+          onChange={(e) => setTitleValue(e.target.value)}
+          className={s.container__infoSection__title}
+        />
         <button className={s.container__infoSection__btn}>
-          <span>{buttonText}</span>{" "}
+          <input
+            type="text"
+            value={buttonTextValue}
+            onChange={(e) => setButtonTextValue(e.target.value)}
+            className={s.container__infoSection__btn__text}
+          />
           <Image width={25} height={25} src={buttonIcon} alt="arrow-icon" />
         </button>
         <div className={s.container__infoSection__score}>
