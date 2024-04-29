@@ -4,30 +4,36 @@
   background-color: $white;
   padding: $standard-padding;
   @include d-flex;
-  justify-content: space-between;
+  @media screen and (min-width: $tablet) {
+    justify-content: space-between;
+  }
   &__title {
     font-size: 2rem;
     color: $orange;
+    display: none;
+    @media screen and (min-width: $tablet) {
+      display: block;
+    }
   }
   &__buttonWrapper {
     @include d-flex;
     gap: $standard-gap;
     &__btn {
-        @include btn();
+      @include btn();
     }
     &__btn_leave {
-        background-color: #FF5252;
+      background-color: #ff5252;
     }
     &__btn_save {
-        background-color: #65E765;
+      background-color: #65e765;
     }
     &__btn_see {
-        border: 1px solid #65E765;
-        background-color: transparent;
-        color: $dark;
+      border: 1px solid #65e765;
+      background-color: transparent;
+      color: $dark;
     }
     &__btn:hover {
-        scale: $hover-med-scale;
+      scale: $hover-med-scale;
     }
   }
 }
