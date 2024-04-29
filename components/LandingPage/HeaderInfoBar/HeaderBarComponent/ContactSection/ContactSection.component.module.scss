@@ -6,6 +6,9 @@
   transition: scale 0.7s;
   will-change: scale;
   cursor: pointer;
+  &__content {
+    color: $white;
+  }
 }
 
 .contactWrapper:hover {
