@@ -1,27 +1,25 @@
 import { FooterDataType } from "@/utils/DataTypes/DataTypes";
 import FooterComponent from "./Footer-Component/Footer.component";
-import { fetchElements } from "@/utils/http/http";
 
 interface DataType extends FooterDataType {
   id: string;
 }
 
 async function Footer() {
-  const fetchItems = await fetchElements("InfmovilwebCMS");
-  const footerItem = fetchItems.find(
-    (item) => item.id === "footer"
-  ) as DataType;
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/footer");
 
-  if (!footerItem) {
-    throw new Error("No se encontró ningún artículo coincidente.");
+  const fetchedItems: FooterDataType = await fetchItems.json();
+
+  if (!fetchedItems) {
+    throw new Error("Fetching failed...");
   }
 
-  const { items, companyInfoData } = footerItem;
-  
-  if (!items || !companyInfoData) {
+  const { companyInfoData, items } = fetchedItems[0];
+
+  if (!companyInfoData || !items) {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
-  
+
   const { title, description } = companyInfoData;
 
   return (

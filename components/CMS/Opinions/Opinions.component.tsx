@@ -15,8 +15,6 @@ async function Opinions() {
     throw new Error("Fetching failed...");
   }
 
-  console.log(fetchedItems);
-
   const { sectionInfo, Cards, button } = fetchedItems[0];
 
   if (!Cards || !sectionInfo) {

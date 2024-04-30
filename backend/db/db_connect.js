@@ -6,6 +6,7 @@ const { AboutUs } = require("./Schemas/aboutUs");
 const { Services } = require("./Schemas/services");
 const { Opinions } = require("./Schemas/Opinions");
 const { Location } = require("./Schemas/location");
+const { Footer } = require("./Schemas/footer");
 
 mongoose.connect("mongodb://localhost:27017/Infmovilweb", {
   useNewUrlParser: true,
@@ -20,4 +21,5 @@ module.exports = {
   AboutUs: AboutUs,
   Services: Services,
   Location: Location,
+  Footer: Footer,
 };
