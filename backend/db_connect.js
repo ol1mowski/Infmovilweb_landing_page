@@ -6,8 +6,19 @@ mongoose.connect("mongodb://localhost:27017/Infmovilweb", {
 });
 
 const headerbarSchema = new mongoose.Schema({
-  telephone: String,
-  email: String,
+  icons: [
+    {
+      id: String,
+      icon: String,
+    },
+  ],
+  companyContact: [
+    {
+      id: String,
+      icon: String,
+      content: String,
+    },
+  ],
 });
 
 const HeaderBar = mongoose.model("HeaderBar", headerbarSchema);
