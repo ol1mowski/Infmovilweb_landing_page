@@ -1,24 +1,18 @@
 {
-  "name": "kurs-node",
+  "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "main": "db.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "nodemon index.js -e js,json,ejs",
-    "debug": "nodemon --inspect index.js -e js,json"
+    "start": "nodemon index.js"
   },
-  "author": "TworcaStron.pl",
+  "keywords": [],
+  "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "description": "",
   "dependencies": {
-    "chalk": "^3.0.0",
-    "ejs": "^3.1.6",
-    "express": "^4.17.1",
-    "express-ejs-layouts": "^2.5.0",
-    "mongoose": "^5.13.22"
-  },
-  "devDependencies": {
-    "nodemon": "^2.0.7"
+    "express": "^4.19.2",
+    "mongoose": "^8.3.3",
+    "nodemon": "^3.1.0"
   }
 }
