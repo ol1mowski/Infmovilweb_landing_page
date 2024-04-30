@@ -62,7 +62,7 @@ export type OpinionsDataType = [{
 
 export type LocationDataType = [{
   button: { buttonText: string; buttonIcon: StaticImageData };
-  sectionData: {
+  sectionInfo: {
     category: string;
     description: string;
     title: string;

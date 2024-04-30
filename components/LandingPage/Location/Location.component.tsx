@@ -1,28 +1,22 @@
-import { fetchElements } from "@/utils/http/http";
 import { LocationDataType } from "@/utils/DataTypes/DataTypes";
 import LocationComponent from "./LocationComponent/LocationComponent.component";
 
-interface DataType extends LocationDataType {
-  id: string;
-}
-
 async function Location() {
-  const fetchItems = await fetchElements("InfmovilwebCMS");
-  const locationItem = fetchItems.find(
-    (item) => item.id === "location"
-  ) as DataType;
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/location");
 
-  if (!locationItem) {
-    throw new Error("No se encontró ningún artículo coincidente.");
+  const fetchedItems: LocationDataType = await fetchItems.json();
+
+  if (!fetchedItems) {
+    throw new Error("Fetching failed...");
   }
 
-  const { button, sectionData } = locationItem;
+  const { sectionInfo, button } = fetchedItems[0];
 
-  if (!button || !sectionData) {
+  if (!button || !sectionInfo) {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
 
-  const { category, title, description, companyLocation } = sectionData;
+  const { category, title, description, companyLocation } = sectionInfo;
   const { buttonIcon, buttonText } = button;
 
   return (
