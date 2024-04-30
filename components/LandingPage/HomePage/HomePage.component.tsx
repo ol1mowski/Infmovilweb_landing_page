@@ -1,24 +1,19 @@
 import s from "./HomePage.component.module.scss";
 
 import Card from "./Card-Component/Card.component";
-import { fetchElements } from "@/utils/http/http";
+
 import { HomePageDataType } from "@/utils/DataTypes/DataTypes";
 
-interface DataType extends HomePageDataType {
-  id: string;
-}
-
 async function HomePage() {
-  const fetchItems = await fetchElements("InfmovilwebCMS");
-  const homePageBarItem = fetchItems.find(
-    (item) => item.id === "HomePage"
-  ) as DataType;
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/homepage");
 
-  if (!homePageBarItem) {
-    throw new Error("No se encontró ningún artículo coincidente.");
+  const fetchedItems: HomePageDataType = await fetchItems.json();
+
+  if (!fetchedItems) {
+    throw new Error("Fetching failed...");
   }
 
-  const { Cards } = homePageBarItem;
+  const { Cards } = fetchedItems[0];
 
   if (!Cards) {
     throw new Error("Faltan algunas propiedades requeridas.");

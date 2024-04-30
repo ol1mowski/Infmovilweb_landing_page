@@ -2,9 +2,8 @@ const express = require("express");
 
 const port = 8080;
 
-const { HeaderBar } = require("./headerBar.js");
+const { HeaderBar, HomePage, Header } = require("./db/db_connect.js");
 
-const { Header } = require("./header.js");
 
 const path = require("path");
 
@@ -28,6 +27,17 @@ app.get("/api/header", (req, res) => {
   (async function getData() {
     try {
       const docs = await Header.find();
+      res.status(200).json(docs);
+    } catch (err) {
+      res.status(500).json({ error: err });
+    }
+  })();
+});
+
+app.get("/api/homepage", (req, res) => {
+  (async function getData() {
+    try {
+      const docs = await HomePage.find();
       res.status(200).json(docs);
     } catch (err) {
       res.status(500).json({ error: err });

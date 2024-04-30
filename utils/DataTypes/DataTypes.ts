@@ -25,14 +25,14 @@ export type HeaderDataType = [
   }
 ];
 
-export type HomePageDataType = {
+export type HomePageDataType = [{
   Cards: Array<{
     icon: StaticImageData;
     description: string;
     title: string;
     button: { buttonText: string; buttonIcon: StaticImageData };
   }>;
-};
+}];
 
 export type AboutUsDataType = {
   sectionInfo: {
