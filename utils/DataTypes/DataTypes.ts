@@ -34,7 +34,7 @@ export type HomePageDataType = [{
   }>;
 }];
 
-export type AboutUsDataType = {
+export type AboutUsDataType = [{
   sectionInfo: {
     category: string;
     title: string;
@@ -42,9 +42,9 @@ export type AboutUsDataType = {
     description: string;
   };
   button: { buttonText: string; buttonIcon: StaticImageData };
-};
+}];
 
-export type ServicesDataType = {
+export type ServicesDataType = [{
   sectionData: { category: string; title: string };
   Cards: Array<{
     description: string;
@@ -52,15 +52,15 @@ export type ServicesDataType = {
     image: StaticImageData;
     button: { buttonText: string; buttonIcon: StaticImageData };
   }>;
-};
+}];
 
-export type OpinionsDataType = {
+export type OpinionsDataType = [{
   button: { buttonText: string; buttonIcon: StaticImageData };
   sectionData: { category: string; score: string; title: string };
   Cards: Array<{ author: string; opinion: string; icon: StaticImageData }>;
-};
+}];
 
-export type LocationDataType = {
+export type LocationDataType = [{
   button: { buttonText: string; buttonIcon: StaticImageData };
   sectionData: {
     category: string;
@@ -68,9 +68,9 @@ export type LocationDataType = {
     title: string;
     companyLocation: string;
   };
-};
+}];
 
-export type FooterDataType = {
+export type FooterDataType = [{
   companyInfoData: { title: string; description: string };
   items: Array<{ id: string; items: string[]; title: string }>;
-};
+}];

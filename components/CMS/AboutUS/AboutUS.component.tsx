@@ -7,19 +7,21 @@ interface DataType extends AboutUsDataType {
 }
 
 async function AboutUS() {
-  const items = await fetchElements("InfmovilwebCMS");
-  const aboutUsItem = items.find((item) => item.id === "AboutUs") as DataType;
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/aboutus");
 
-  if (!aboutUsItem) {
-    throw new Error("No se encontró ningún artículo coincidente.");
+  const fetchedItems: AboutUsDataType = await fetchItems.json();
+
+  if (!fetchedItems) {
+    throw new Error("Fetching failed...");
   }
 
-  const { category, title, image, description } = aboutUsItem.sectionInfo;
-  const { button } = aboutUsItem;
+  const { sectionInfo, button } = fetchedItems[0];
 
-  if (!category || !title || !image || !description || !button) {
+  if (!sectionInfo || !button) {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
+
+  const { image, category, description, title } = sectionInfo;
 
   return (
     <AboutUSComponent

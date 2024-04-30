@@ -6,6 +6,7 @@ const { HeaderBar, HomePage, Header } = require("./db/db_connect.js");
 
 
 const path = require("path");
+const { AboutUs } = require("./db/Schemas/aboutUs.js");
 
 const app = express();
 
@@ -44,6 +45,18 @@ app.get("/api/homepage", (req, res) => {
     }
   })();
 });
+
+app.get("/api/aboutus", (req, res) => {
+  (async function getData() {
+    try {
+      const docs = await AboutUs.find();
+      res.status(200).json(docs);
+    } catch (err) {
+      res.status(500).json({ error: err });
+    }
+  })();
+});
+
 
 app.listen(8080, () => {
   console.log(`Server work at ${port}`);
