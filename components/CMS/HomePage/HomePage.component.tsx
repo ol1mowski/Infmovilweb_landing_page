@@ -5,7 +5,9 @@ import { HomePageDataType } from "@/utils/DataTypes/DataTypes";
 
 
 async function HomePage() {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/homepage");
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/homepage", {
+    cache: 'no-store',
+  });
 
   const fetchedItems: HomePageDataType = await fetchItems.json();
 

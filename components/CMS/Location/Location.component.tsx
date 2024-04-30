@@ -3,7 +3,9 @@ import LocationComponent from "./LocationComponent/LocationComponent.component";
 
 
 async function Location() {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/location");
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/location", {
+    cache: 'no-store',
+  });
 
   const fetchedItems: LocationDataType = await fetchItems.json();
 

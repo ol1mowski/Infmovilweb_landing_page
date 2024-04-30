@@ -3,7 +3,9 @@ import ServiceContent from "./ServiceContent/ServiceContent.component";
 
 
 async function Services() {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/services");
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/services", {
+    cache: 'no-store',
+  });
 
   const fetchedItems: ServicesDataType = await fetchItems.json();
 

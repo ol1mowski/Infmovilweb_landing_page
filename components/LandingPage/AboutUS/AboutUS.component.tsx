@@ -3,7 +3,9 @@ import { AboutUsDataType } from "@/utils/DataTypes/DataTypes";
 
 
 async function AboutUS() {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/aboutus");
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/aboutus", {
+    cache: 'no-store',
+  });
 
   const fetchedItems: AboutUsDataType = await fetchItems.json();
 

@@ -2,7 +2,9 @@ import HeaderComponent from "./HeaderComponent/HeaderComponent.component";
 import { HeaderDataType } from "@/utils/DataTypes/DataTypes";
 
 const Header = async () => {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/header");
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/header", {
+    cache: 'no-store',
+  });
 
   const fetchedItems: HeaderDataType = await fetchItems.json();
 

@@ -3,7 +3,9 @@ import FooterComponent from "./Footer-Component/Footer.component";
 
 
 async function Footer() {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/footer");
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/footer", {
+    cache: 'no-store',
+  });
 
   const fetchedItems: FooterDataType = await fetchItems.json();
 

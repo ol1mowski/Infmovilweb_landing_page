@@ -2,7 +2,9 @@ import { OpinionsDataType } from "@/utils/DataTypes/DataTypes";
 import OpinionsComponent from "./OpinionsComponent/OpinionsComponent.component";
 
 async function Opinions() {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/opinions");
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/opinions", {
+    cache: 'no-store',
+  });
 
   const fetchedItems: OpinionsDataType = await fetchItems.json();
 
