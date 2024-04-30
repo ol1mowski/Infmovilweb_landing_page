@@ -1,28 +1,25 @@
-import { fetchElements } from "@/utils/http/http";
 import { ServicesDataType } from "@/utils/DataTypes/DataTypes";
 import ServiceContent from "./ServiceContent/ServiceContent.component";
 
-interface DataType extends ServicesDataType {
-  id: string;
-}
-
 async function Services() {
-  const fetchItems = await fetchElements("InfmovilwebCMS");
-  const servicesItem = fetchItems.find(
-    (item) => item.id === "Sobre Nosotros"
-  ) as DataType;
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/services");
 
-  if (!servicesItem) {
-    throw new Error("No se encontró ningún artículo coincidente.");
+  const fetchedItems: ServicesDataType = await fetchItems.json();
+
+  if (!fetchedItems) {
+    throw new Error("Fetching failed...");
   }
 
-  const { sectionData, Cards } = servicesItem;
+  console.log(fetchedItems);
+  
 
-  if (!Cards || !sectionData) {
+  const { sectionInfo, Cards } = fetchedItems[0];
+
+  if (!Cards || !sectionInfo) {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
 
-  const { category, title } = sectionData;
+  const { category, title } = sectionInfo;
 
   return <ServiceContent category={category} title={title} Cards={Cards} />;
 }

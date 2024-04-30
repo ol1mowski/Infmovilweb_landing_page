@@ -45,7 +45,7 @@ export type AboutUsDataType = [{
 }];
 
 export type ServicesDataType = [{
-  sectionData: { category: string; title: string };
+  sectionInfo: { category: string; title: string };
   Cards: Array<{
     description: string;
     title: string;
