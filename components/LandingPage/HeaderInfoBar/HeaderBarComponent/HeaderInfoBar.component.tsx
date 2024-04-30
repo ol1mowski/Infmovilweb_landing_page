@@ -4,7 +4,7 @@ import ContactSection from "./ContactSection/ContactSection.component";
 import { HeaderBarDataType } from "@/utils/DataTypes/DataTypes";
 import IconsSection from "./IconsSection/IconsSection.component";
 
-function HeaderInfoBarComponent({ companyContact, icons }: HeaderBarDataType) {
+function HeaderInfoBarComponent({ companyContact, icons }: HeaderBarDataType[0]) {
   return (
     <section className={s.container}>
       <section className={s.container__contactSection}>
