@@ -14,14 +14,16 @@ export type HeaderBarDataType = [
   }
 ];
 
-export type HeaderDataType = {
-  icons: {
-    companyLogo: StaticImageData;
-    hamburgerIcon: StaticImageData;
-    searchIcon: StaticImageData;
-  };
-  items: string[];
-};
+export type HeaderDataType = [
+  {
+    icons: {
+      companyLogo: StaticImageData;
+      hamburgerIcon: StaticImageData;
+      searchIcon: StaticImageData;
+    };
+    items: string[];
+  }
+];
 
 export type HomePageDataType = {
   Cards: Array<{

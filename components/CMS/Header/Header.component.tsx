@@ -1,28 +1,22 @@
-import { fetchElements } from "@/utils/http/http";
 import HeaderComponent from "./HeaderComponent/HeaderComponent.component";
 import { HeaderDataType } from "@/utils/DataTypes/DataTypes";
 
-interface DataType extends HeaderDataType {
-  id: string;
-}
-
 const Header = async () => {
-  const fetchItems = await fetchElements("InfmovilwebCMS");
-  const headerItem = fetchItems.find(
-    (item) => item.id === "Header"
-  ) as DataType;
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/header");
 
-  if (!headerItem) {
-    throw new Error("No se encontró ningún artículo coincidente.");
+  const fetchedItems: HeaderDataType = await fetchItems.json();
+
+  if (!fetchedItems) {
+    throw new Error("Fetching failed...");
   }
 
-  const { items, icons } = headerItem;
+  const { icons, items } = fetchedItems[0];
 
   if (!items || !icons) {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
 
-  const { companyLogo, hamburgerIcon, searchIcon } = icons;
+  const { companyLogo, searchIcon, hamburgerIcon } = icons;
 
   return (
     <>
