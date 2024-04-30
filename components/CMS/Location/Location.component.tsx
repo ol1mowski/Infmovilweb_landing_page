@@ -1,10 +1,6 @@
-import { fetchElements } from "@/utils/http/http";
 import { LocationDataType } from "@/utils/DataTypes/DataTypes";
 import LocationComponent from "./LocationComponent/LocationComponent.component";
 
-interface DataType extends LocationDataType {
-  id: string;
-}
 
 async function Location() {
   const fetchItems = await fetch("http://127.0.0.1:8080/api/location");

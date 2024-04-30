@@ -1,9 +1,6 @@
 import { FooterDataType } from "@/utils/DataTypes/DataTypes";
 import FooterComponent from "./Footer-Component/Footer.component";
 
-interface DataType extends FooterDataType {
-  id: string;
-}
 
 async function Footer() {
   const fetchItems = await fetch("http://127.0.0.1:8080/api/footer");

@@ -9,8 +9,6 @@ async function Services() {
   if (!fetchedItems) {
     throw new Error("Fetching failed...");
   }
-
-  console.log(fetchedItems);
   
 
   const { sectionInfo, Cards } = fetchedItems[0];

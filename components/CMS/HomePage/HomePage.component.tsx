@@ -1,12 +1,8 @@
 import s from "./HomePage.component.module.scss";
 
 import Card from "./Card-Component/Card.component";
-import { fetchElements } from "@/utils/http/http";
 import { HomePageDataType } from "@/utils/DataTypes/DataTypes";
 
-interface DataType extends HomePageDataType {
-  id: string;
-}
 
 async function HomePage() {
   const fetchItems = await fetch("http://127.0.0.1:8080/api/homepage");
