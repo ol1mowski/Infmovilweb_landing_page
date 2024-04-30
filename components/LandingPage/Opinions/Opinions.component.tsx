@@ -1,28 +1,24 @@
-import { fetchElements } from "@/utils/http/http";
 import { OpinionsDataType } from "@/utils/DataTypes/DataTypes";
 import OpinionsComponent from "./OpinionsComponent/OpinionsComponent.component";
 
-interface DataType extends OpinionsDataType {
-  id: string;
-}
-
 async function Opinions() {
-  const fetchItems = await fetchElements("InfmovilwebCMS");
-  const opinionsItem = fetchItems.find(
-    (item) => item.id === "Opinions"
-  ) as DataType;
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/opinions");
 
-  if (!opinionsItem) {
-    throw new Error("No se encontró ningún artículo coincidente.");
+  const fetchedItems: OpinionsDataType = await fetchItems.json();
+
+  if (!fetchedItems) {
+    throw new Error("Fetching failed...");
   }
 
-  const { button, sectionData, Cards } = opinionsItem;
+  console.log(fetchedItems);
 
-  if (!button || !sectionData || !Cards) {
+  const { sectionInfo, Cards, button } = fetchedItems[0];
+
+  if (!Cards || !sectionInfo) {
     throw new Error("Faltan algunas propiedades requeridas.");
   }
 
-  const { category, title, score } = sectionData;
+  const { category, title, score } = sectionInfo;
   const { buttonIcon, buttonText } = button;
 
   return (

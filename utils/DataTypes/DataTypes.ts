@@ -56,7 +56,7 @@ export type ServicesDataType = [{
 
 export type OpinionsDataType = [{
   button: { buttonText: string; buttonIcon: StaticImageData };
-  sectionData: { category: string; score: string; title: string };
+  sectionInfo: { category: string; score: string; title: string };
   Cards: Array<{ author: string; opinion: string; icon: StaticImageData }>;
 }];
 
