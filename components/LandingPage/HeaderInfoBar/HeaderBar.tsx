@@ -1,22 +1,16 @@
-import { fetchElements } from "@/utils/http/http";
 import HeaderInfoBarComponent from "./HeaderBarComponent/HeaderInfoBar.component";
 import { HeaderBarDataType } from "@/utils/DataTypes/DataTypes";
 
-interface DataType extends HeaderBarDataType {
-  id: string;
-}
-
 async function HeaderBarFetch() {
-  const fetchItems = await fetchElements("InfmovilwebCMS");
-  const headerBarItem = fetchItems.find(
-    (item) => item.id === "HeaderBar"
-  ) as DataType;
+  const fetchItems = await fetch("http://127.0.0.1:8080/api/headerbar");
 
-  if (!headerBarItem) {
-    throw new Error("No se encontró ningún artículo coincidente.");
+  const items: HeaderBarDataType = await fetchItems.json();
+
+  if (!items) {
+    throw new Error("Fetching failed...");
   }
 
-  const { companyContact, icons } = headerBarItem;
+  const { companyContact, icons } = items[0];
 
   if (!companyContact || !icons) {
     throw new Error("Faltan algunas propiedades requeridas.");
