@@ -17,7 +17,8 @@ function PopUp() {
   if (status === "ok") {
     statusClass = s.container__content__title_success;
     info = "Data was success saved !";
-  } else {
+  }
+  if (status === "fail") {
     statusClass = s.container__content__title_fail;
     info = "Something went wront ! Please try again !";
   }

@@ -14,11 +14,20 @@ const {
 } = require("./db/db_connect.js");
 
 const path = require("path");
+const bodyParser = require("body-parser");
 
 const app = express();
 
+app.use((req, res, next) => {
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, PUT, DELETE");
+  res.setHeader("Access-Control-Allow-Headers", "Content-Type");
+  next();
+});
+
 app.use(express.static(path.join(__dirname, "public")));
 app.use(express.static("public"));
+app.use(bodyParser.json());
 
 app.get("/api/headerbar", (req, res) => {
   (async function getData() {
@@ -106,6 +115,16 @@ app.get("/api/footer", (req, res) => {
       res.status(500).json({ error: err });
     }
   })();
+});
+
+app.post("/api/save", (req, res) => {
+  const receivedData = req.body;
+
+  if (receivedData) {
+    res.status(200).json({ message: "Ok" });
+  } else {
+    res.status(500).json({ message: "Fail" });
+  }
 });
 
 app.listen(8080, () => {

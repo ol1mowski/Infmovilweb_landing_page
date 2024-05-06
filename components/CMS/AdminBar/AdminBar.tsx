@@ -8,12 +8,37 @@ import PopUpClickContext from "@/store/PopUpClickContent";
 function AdminBar() {
   const { setPopUp } = useContext(PopUpClickContext);
 
-  const showSavePopUpHandler = () => {
-    setPopUp(true, "save", "ok");
+  const showSavePopUpHandler = async () => {
+    try {
+      const request = await fetch("http://127.0.0.1:8080/api/save", {
+        method: "POST",
+        body: JSON.stringify({
+          message: "Ok",
+        }),
+        headers: {
+          "Content-type": "application/json",
+        },
+      });
+
+      // Validate response status
+      if (!request.ok) {
+        setPopUp(true, "save", "fail");
+      }
+
+      const res = await request.json();
+
+      if (res.message === "Ok") {
+        setPopUp(true, "save", "ok");
+      } else {
+        setPopUp(true, "save", "fail");
+      }
+    } catch (err) {
+      setPopUp(true, "save", "fail");
+    }
   };
 
   const showLeavePopUpHandler = () => {
-    setPopUp(true, "leave", 'ok');
+    setPopUp(true, "leave", "ok");
   };
 
   return (
