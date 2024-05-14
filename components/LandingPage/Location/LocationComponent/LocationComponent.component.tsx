@@ -20,7 +20,7 @@ function LocationComponent({
   buttonText,
 }: LocationComponentProps) {
   return (
-    <section className={s.container}>
+    <section id="location" className={s.container}>
       <section className={s.container__infoSection}>
         <span className={s.container__infoSection__category}>{category}</span>
         <h3 className={s.container__infoSection__title}>{title}</h3>

@@ -5,6 +5,7 @@ export type HeaderBarDataType = [
     icons: Array<{
       id: string;
       icon: StaticImageData;
+      link: string;
     }>;
     companyContact: Array<{
       id: string;

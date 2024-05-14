@@ -15,7 +15,7 @@ type ServiceContentProps = {
 
 function ServiceContent({ Cards, category, title }: ServiceContentProps) {
   return (
-    <section className={s.container}>
+    <section id="services" className={s.container}>
       <section className={s.container__header}>
         <span className={s.container__header__category}>{category}</span>
         <h2 className={s.container__header__title}>{title}</h2>

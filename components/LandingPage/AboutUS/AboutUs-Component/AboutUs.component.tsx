@@ -23,7 +23,7 @@ function AboutUSComponent({
 }: AboutUSComponentProps) {
   return (
     <AnimationWrapper className={s.container}>
-      <section className={s.container__imageSection}>
+      <section id="about" className={s.container__imageSection}>
         <div className={s.container__imageSection__frameOne}></div>
         <div className={s.container__imageSection__frameTwo}></div>
         <Image

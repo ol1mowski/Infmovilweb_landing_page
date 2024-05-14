@@ -22,7 +22,7 @@ function OpinionsComponent({
   Cards,
 }: OpinionsComponentProps) {
   return (
-    <section className={s.container}>
+    <section id="opinion" className={s.container}>
       <section className={s.container__infoSection}>
         <span className={s.container__infoSection__category}>{category}</span>
         <h3 className={s.container__infoSection__title}>{title}</h3>
