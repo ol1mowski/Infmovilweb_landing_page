@@ -3,12 +3,13 @@
 
 .container {
   @include d-flex-column;
-  margin: 3rem 0;
+  margin: 5rem 0;
   gap: 3rem;
   padding-top: $big-padding;
   border-top: 2px solid $gray;
   &__itemsContainer {
     @include d-flex-column;
+    align-items: flex-start;
     @media screen and (min-width: $desktop) {
       flex-direction: row;
     }

@@ -5,7 +5,7 @@ const footerSchema = new mongoose.Schema({
     title: String,
     description: String,
   },
-  items: [{ items: [String], title: String }],
+  items: [{ items: [{  }], title: String }],
 });
 
 const Footer = mongoose.model("Footer", footerSchema);
