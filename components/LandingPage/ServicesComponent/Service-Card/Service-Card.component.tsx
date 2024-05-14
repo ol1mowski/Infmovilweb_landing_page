@@ -29,18 +29,6 @@ function ServiceCard({ image, title, description, buttonText, buttonIcon }: Serv
           {description}
         </p>
       </div>
-      <div className={s.servicesContainer__actionWrapper}>
-        <span className={s.servicesContainer__actionWrapper__text}>
-          { buttonText }
-        </span>
-        <Image
-          className={s.servicesContainer__actionWrapper__icon}
-          src={buttonIcon}
-          alt="arrow-icon"
-          width={25}
-          height={25}
-        />
-      </div>
     </AnimationWrapper>
   );
 }

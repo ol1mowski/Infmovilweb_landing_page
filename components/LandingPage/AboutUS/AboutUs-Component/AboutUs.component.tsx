@@ -1,10 +1,10 @@
 import Image, { StaticImageData } from "next/image";
 import s from "./AboutUS.component.module.scss";
 
-import image from '@/assets/images/about_us.jpeg';
+import image from "@/assets/images/about_us.jpeg";
 
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
-import buttonIcon from '@/assets/icons/arrow.png';
+import buttonIcon from "@/assets/icons/arrow.png";
 
 type AboutUSComponentProps = {
   category: string;
@@ -47,18 +47,22 @@ function AboutUSComponent({
           </p>
         </div>
         <div className={s.container__contentSection__buttonSection}>
-          <button className={s.container__contentSection__buttonSection__btn}>
-            <span className={s.container__contentSection__buttonSection__text}>
-              {buttonText}
-            </span>
-            <Image
-              className={s.container__contentSection__buttonSection__btn__img}
-              src={buttonIcon}
-              width={25}
-              height={25}
-              alt="arrow-icon"
-            />
-          </button>
+          <a href="#services">
+            <button className={s.container__contentSection__buttonSection__btn}>
+              <span
+                className={s.container__contentSection__buttonSection__text}
+              >
+                {buttonText}
+              </span>
+              <Image
+                className={s.container__contentSection__buttonSection__btn__img}
+                src={buttonIcon}
+                width={25}
+                height={25}
+                alt="arrow-icon"
+              />
+            </button>
+          </a>
         </div>
       </section>
     </AnimationWrapper>
