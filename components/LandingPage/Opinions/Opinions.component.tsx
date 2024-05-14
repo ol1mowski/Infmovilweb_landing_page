@@ -19,14 +19,13 @@ async function Opinions() {
   }
 
   const { category, title, score } = sectionInfo;
-  const { buttonIcon, buttonText } = button;
+  const { buttonText } = button;
 
   return (
     <OpinionsComponent
       category={category}
       title={title}
       score={score}
-      buttonIcon={buttonIcon}
       buttonText={buttonText}
       Cards={Cards}
     />

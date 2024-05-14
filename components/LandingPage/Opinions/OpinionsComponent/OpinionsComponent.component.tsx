@@ -3,10 +3,10 @@ import s from "./Opinions.component.module.scss";
 
 import star from "@/assets/icons/star.png";
 import OpinionsCard from "../Opinions-Card/Opinions-Card.component";
+import ButtonComponent from "@/UI/ButtonComponent/ButtonComponent.component";
 
 type OpinionsComponentProps = {
   buttonText: string;
-  buttonIcon: StaticImageData;
   Cards: Array<{ author: string; opinion: string; icon: StaticImageData }>;
   category: string;
   score: string;
@@ -16,7 +16,6 @@ type OpinionsComponentProps = {
 function OpinionsComponent({
   category,
   title,
-  buttonIcon,
   buttonText,
   score,
   Cards,
@@ -30,10 +29,7 @@ function OpinionsComponent({
           href="https://www.google.com/maps/place/INFMOVILWEB/@28.737026,-13.8717759,17z/data=!4m8!3m7!1s0xc463502049f0711:0xf040117382faf600!8m2!3d28.737026!4d-13.869201!9m1!1b1!16s%2Fg%2F11x9ptdtk?entry=ttu"
           target="_blank"
         >
-          <button className={s.container__infoSection__btn}>
-            <span>{buttonText}</span>{" "}
-            <Image width={25} height={25} src={buttonIcon} alt="arrow-icon" />
-          </button>
+          <ButtonComponent buttonText={buttonText} />
         </a>
         <div className={s.container__infoSection__score}>
           <Image src={star} alt="star-icon" />

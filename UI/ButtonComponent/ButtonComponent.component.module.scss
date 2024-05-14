@@ -1,0 +1,14 @@
+@import "@/sass/index.scss";
+
+.btn {
+  @include btn;
+  transition: scale, background-color, color, border, .7s;
+  will-change: scale, background-color, color, border;
+}
+
+.btn:hover {
+    scale: $hover-med-scale;
+    background-color: transparent;
+    color: $orange;
+    border: 1px solid $orange;
+}
