@@ -9,7 +9,7 @@ function HeaderInfoBarComponent({ companyContact, icons }: HeaderBarDataType[0])
     <section className={s.container}>
       <section className={s.container__contactSection}>
         {companyContact.map((item) => (
-          <ContactSection key={item.id} icon={item.icon} info={item.content} />
+          <ContactSection key={item.id} icon={item.icon} info={item.content} link={item.link}/>
         ))}
       </section>
       <section className={s.container__iconsSection}>
