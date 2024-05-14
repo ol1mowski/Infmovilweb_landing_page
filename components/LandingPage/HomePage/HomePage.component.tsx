@@ -6,7 +6,7 @@ import { HomePageDataType } from "@/utils/DataTypes/DataTypes";
 
 async function HomePage() {
   const fetchItems = await fetch("http://127.0.0.1:8080/api/homepage", {
-    cache: 'no-store',
+    cache: "no-store",
   });
 
   const fetchedItems: HomePageDataType = await fetchItems.json();
@@ -30,6 +30,7 @@ async function HomePage() {
             buttonText={c.button.buttonText}
             key={c.title}
             logo={c.icon}
+            link={c.link}
             description={c.description}
             title={c.title}
           />

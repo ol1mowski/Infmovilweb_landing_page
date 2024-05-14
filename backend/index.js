@@ -13,7 +13,7 @@ const {
   Footer,
 } = require("./db/db_connect.js");
 
-const path = require("path");
+
 const bodyParser = require("body-parser");
 
 const app = express();
@@ -25,8 +25,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use(express.static(path.join(__dirname, "public")));
-app.use(express.static("public"));
 app.use(bodyParser.json());
 
 app.get("/api/headerbar", (req, res) => {

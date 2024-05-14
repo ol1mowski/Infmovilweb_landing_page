@@ -9,9 +9,17 @@ type CardProsps = {
   description: string;
   buttonText: string;
   buttonIcon: StaticImageData;
+  link: string;
 };
 
-function Card({ logo, title, description, buttonText, buttonIcon }: CardProsps) {
+function Card({
+  logo,
+  title,
+  description,
+  buttonText,
+  buttonIcon,
+  link,
+}: CardProsps) {
   return (
     <AnimationWrapper className={s.cardWrapper}>
       <div className={s.cardWrapper__imageWrapper}>
@@ -22,10 +30,12 @@ function Card({ logo, title, description, buttonText, buttonIcon }: CardProsps) 
         <p className={s.cardWrapper__textWrapper__description}>{description}</p>
       </div>
       <div className={s.cardWrapper__actionWrapper}>
-        <div className={s.cardWrapper__actionWrapper__action}>
-          <span>{buttonText}</span>{" "}
-          <Image src={buttonIcon} width={22} height={22} alt="arrow-icon" />
-        </div>
+        <a href={link}>
+          <div className={s.cardWrapper__actionWrapper__action}>
+            <span>{buttonText}</span>{" "}
+            <Image src={buttonIcon} width={22} height={22} alt="arrow-icon" />
+          </div>
+        </a>
       </div>
     </AnimationWrapper>
   );

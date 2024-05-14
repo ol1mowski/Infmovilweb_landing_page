@@ -1,10 +1,7 @@
-import Image, { StaticImageData } from "next/image";
+import Image, { type StaticImageData } from "next/image";
 import s from "./AboutUS.component.module.scss";
 
-import image from "@/assets/images/about_us.jpeg";
-
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
-import buttonIcon from "@/assets/icons/arrow.png";
 
 type AboutUSComponentProps = {
   category: string;
@@ -20,6 +17,8 @@ function AboutUSComponent({
   category,
   description,
   buttonText,
+  buttonIcon,
+  image,
 }: AboutUSComponentProps) {
   return (
     <AnimationWrapper className={s.container}>

@@ -33,6 +33,7 @@ export type HomePageDataType = [
       icon: StaticImageData;
       description: string;
       title: string;
+      link: string;
       button: { buttonText: string; buttonIcon: StaticImageData };
     }>;
   }

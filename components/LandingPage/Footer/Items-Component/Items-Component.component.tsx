@@ -6,8 +6,6 @@ type ItemsComponentProps = {
 };
 
 function ItemsComponent({ title, items }: ItemsComponentProps) {
-  console.log(items);
-
   return (
     <div className={s.wrapper}>
       <h4 className={s.wrapper__title}>{title}</h4>
