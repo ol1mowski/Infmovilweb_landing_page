@@ -9,7 +9,7 @@
   box-shadow: $box-shadow;
   width: 80vw;
   cursor: pointer;
-  transition: scale .7s;
+  transition: scale 0.7s;
   will-change: scale;
   @media screen and (min-width: $mobile) {
     width: 22rem;
@@ -27,6 +27,12 @@
     margin-top: $standard-padding;
     align-items: flex-start;
     width: 100%;
+    @include textFont;
+    &__title {
+      @include headerFont;
+      color: $orange;
+      font-size: 1.4rem
+    }
   }
   &__actionWrapper {
     @include d-flex;
@@ -43,6 +49,7 @@
       font-weight: 500;
       transition: scale, 0.7s;
       will-change: scale;
+      @include textFont;
     }
     &__text:hover {
       scale: $hover-min-scale;

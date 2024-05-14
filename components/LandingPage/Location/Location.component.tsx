@@ -19,7 +19,7 @@ async function Location() {
   }
 
   const { category, title, description, companyLocation } = sectionInfo;
-  const { buttonIcon, buttonText } = button;
+  const { buttonText } = button;
 
   return (
     <LocationComponent
@@ -27,7 +27,6 @@ async function Location() {
       category={category}
       title={title}
       companyLocation={companyLocation}
-      buttonIcon={buttonIcon}
       buttonText={buttonText}
     />
   );

@@ -9,7 +9,6 @@ type LocationComponentProps = {
   title: string;
   companyLocation: string;
   buttonText: string;
-  buttonIcon: StaticImageData;
 };
 
 function LocationComponent({

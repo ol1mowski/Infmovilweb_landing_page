@@ -12,9 +12,11 @@
     width: 100%;
     &__category {
       @include category;
+      @include headerFont;
     }
     &__title {
-     @include title($white);
+      @include title($white);
+      @include headerFont;
     }
   }
   &__cardsWrapper {

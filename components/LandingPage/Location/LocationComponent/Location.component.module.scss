@@ -17,11 +17,15 @@
     align-items: flex-start;
     gap: $standard-gap;
     padding: $standard-padding;
+    @include textFont;
+
     &__category {
       @include category;
+      @include headerFont;
     }
     &__title {
       @include title($dark);
+      @include headerFont;
     }
     &__btn {
       @include btn;

@@ -5,6 +5,7 @@
   padding: $small-padding $standard-padding;
   border: 2px solid $gray;
   border-radius: $border-med;
+  @include textFont;
   align-items: flex-start;
   @media screen and (min-width: $mobile) {
     width: 23rem;

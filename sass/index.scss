@@ -1,3 +1,19 @@
+//fonts
+
+@mixin headerFont() {
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@mixin textFont() {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  line-height: 1.4rem;
+  letter-spacing: 1px;
+}
+
 //colors
 
 $orange: #ff4a00;
@@ -12,10 +28,10 @@ $green: #65e765;
 $box-shadow-low: #e0e1e322 10px 5px 15px;
 $box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
 
-//margin 
+//margin
 $standard-margin: 1rem;
 $big-margin: 2rem;
-$small-margin: .5rem;
+$small-margin: 0.5rem;
 
 //padding
 
@@ -49,7 +65,7 @@ $small-gap: 0.5rem;
 $standard-gap: 1rem;
 $big-gap: 2rem;
 
-$text-size: 1.1rem;
+$text-size: 1rem;
 
 //mixins
 
@@ -57,7 +73,6 @@ $text-size: 1.1rem;
   color: $orange;
   font-weight: 600;
 }
-
 
 @mixin description() {
   font-size: $text-size;
@@ -86,7 +101,7 @@ $text-size: 1.1rem;
   font-size: $text-size;
   color: $white;
   cursor: pointer;
-  transition: scale, .7s;
+  transition: scale, 0.7s;
   will-change: scale;
   border-radius: $border-med;
 }

@@ -22,10 +22,11 @@
       &__title {
         color: $orange;
         font-size: 1.4rem;
-        font-weight: 400;
+        @include headerFont;
       }
       &__companyInfo {
         font-size: $text-size;
+        @include textFont;
         width: 10rem;
       }
     }

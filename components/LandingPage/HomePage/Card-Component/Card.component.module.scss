@@ -25,13 +25,14 @@
     width: 100%;
     padding-left: 1.75rem;
     &__title {
+      @include headerFont;
       width: 100%;
       color: $orange;
-      font-weight: 400;
       font-size: 1.4rem;
     }
     &__description {
       font-size: $text-size;
+      @include textFont;
     }
   }
   &__actionWrapper {

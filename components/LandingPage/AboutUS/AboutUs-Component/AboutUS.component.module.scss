@@ -64,13 +64,16 @@
       border-bottom: 2px solid $gray;
       padding-bottom: $standard-padding;
       &__category {
-       @include category;
+        @include category;
+        @include headerFont;
       }
       &__title {
         @include title($dark);
+        @include headerFont;
       }
       &__description {
         @include description;
+        @include textFont;
       }
     }
     &__buttonSection {
@@ -78,7 +81,7 @@
       justify-content: flex-start;
       width: 100%;
       &__btn {
-      @include btn;
+        @include btn;
       }
     }
   }
