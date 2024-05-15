@@ -1,4 +1,4 @@
-import AboutUS from "@/components/LandingPage/AboutUS/AboutUS.component";
+import AboutUS from "@/components/LandingPage/AboutUS/AboutUS.dataFetching";
 import Footer from "@/components/LandingPage/Footer/Footer.component";
 import HamburgerMenu from "@/components/LandingPage/Header/HamburgerMenu/HamburgerMenu";
 import Header from "@/components/LandingPage/Header/Header.component";

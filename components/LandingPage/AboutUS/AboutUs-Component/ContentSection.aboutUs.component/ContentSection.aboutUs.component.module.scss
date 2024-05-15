@@ -1,0 +1,44 @@
+@import "@/sass/index.scss";
+
+.contentSection {
+  @include d-flex-column;
+  padding: $standard-padding;
+  gap: $big-gap;
+  @media screen and (min-width: $tablet) {
+    width: 70%;
+  }
+  @media screen and (min-width: $desktop) {
+    width: 40%;
+  }
+  @media screen and (min-width: $large-desktop) {
+    width: 30rem;
+  }
+  &__infoWrapper {
+    @include d-flex-column;
+    gap: $standard-gap;
+    align-items: flex-start;
+    width: 100%;
+    border-bottom: 2px solid $gray;
+    padding-bottom: $standard-padding;
+    &__category {
+      @include category;
+      @include headerFont;
+    }
+    &__title {
+      @include title($dark);
+      @include headerFont;
+    }
+    &__description {
+      @include description;
+      @include textFont;
+    }
+  }
+  &__buttonSection {
+    @include d-flex;
+    justify-content: flex-start;
+    width: 100%;
+    &__btn {
+      @include btn;
+    }
+  }
+}

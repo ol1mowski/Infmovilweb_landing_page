@@ -1,0 +1,32 @@
+@import "@/sass/index.scss";
+
+.imageSection {
+  @include d-flex-column;
+  &__img {
+    border-radius: $border-med;
+    width: 90%;
+    @media screen and (min-width: $tablet) {
+      width: 30rem;
+      height: 20rem;
+    }
+  }
+  &__frameOne {
+    border-top: 4px solid $gray;
+    border-right: 4px solid $gray;
+    width: 90%;
+    height: 20px;
+    @media screen and (min-width: $tablet) {
+      width: 30rem;
+    }
+  }
+  &__frameTwo {
+    border-top: 4px solid $orange;
+    border-right: 4px solid $orange;
+    height: 20px;
+    width: 150px;
+    margin: 0 auto;
+    @media screen and (min-width: $tablet) {
+      width: 15rem;
+    }
+  }
+}
