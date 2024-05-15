@@ -23,7 +23,7 @@ export type HeaderDataType = [
       hamburgerIcon: StaticImageData;
       searchIcon: StaticImageData;
     };
-    items: string[];
+    items: Array<{ name: string; link: string }>;
   }
 ];
 

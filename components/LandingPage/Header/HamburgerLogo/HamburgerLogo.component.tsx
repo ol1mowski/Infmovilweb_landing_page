@@ -9,7 +9,7 @@ import hamburgerIconI from '@/assets/icons/hamburger.png';
 
 import HamburgerClickContext from "@/store/HamburgerClickContext";
 
-function HamburgerLogo({ hamburgerIcon }: { hamburgerIcon: StaticImageData }) {
+function HamburgerLogo() {
   const { setOpen } = useContext(HamburgerClickContext);
 
   const openMenuHandler = () => {

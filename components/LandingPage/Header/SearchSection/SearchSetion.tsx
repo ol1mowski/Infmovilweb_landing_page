@@ -1,9 +1,8 @@
 import SearchIcon from "./SearchComponents/Search-Icon-Component/SearchIcon.components";
-import { type StaticImageData } from "next/image";
 
 import searchIconI from '@/assets/icons/search.png';
 
-const SearchSetion = ({ searchIcon }: { searchIcon: StaticImageData }) => {
+const SearchSetion = () => {
   return (
     <>
       <SearchIcon searchIcon={searchIconI} />

@@ -6,24 +6,17 @@ import SearchSetion from "../SearchSection/SearchSetion";
 import HamburgerLogo from "../HamburgerLogo/HamburgerLogo.component";
 import CompanyLogo from "../CompanyLogo/CompanyLogo.component";
 
-import { type StaticImageData } from "next/image";
 
 type HeaderComponentProps = {
   items: Array<{ name: string; link: string }>;
-  companyLogo: StaticImageData;
-  hamburgerIcon: StaticImageData;
-  searchIcon: StaticImageData;
 };
 
 function HeaderComponent({
   items,
-  companyLogo,
-  hamburgerIcon,
-  searchIcon,
 }: HeaderComponentProps) {
   return (
     <HeaderAnimationWrapper stickyClass={s.sticky} normalClass={s.header}>
-      <CompanyLogo logo={companyLogo} />
+      <CompanyLogo />
       <section className={s.header__navMenu}>
         <div className={s.header__navMenu__nav}>
           <ul className={s.header__navMenu__items}>
@@ -31,10 +24,10 @@ function HeaderComponent({
               <HeaderItem key={item.name} item={item} />
             ))}
           </ul>
-          <SearchSetion searchIcon={searchIcon} />
+          <SearchSetion />
         </div>
       </section>
-      <HamburgerLogo hamburgerIcon={hamburgerIcon} />
+      <HamburgerLogo />
     </HeaderAnimationWrapper>
   );
 }
