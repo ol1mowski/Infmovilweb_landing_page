@@ -9,9 +9,13 @@ import ScrollLink from "@/utils/ScrollLink/ScrollLink.component";
 
 type HamburgerMenuProps = {
   closeMenuHandler: () => void;
+  items: Array<{ name: string; link: string }>;
 };
 
-function HamburgerMenuComponent({ closeMenuHandler }: HamburgerMenuProps) {
+function HamburgerMenuComponent({
+  closeMenuHandler,
+  items,
+}: HamburgerMenuProps) {
   return (
     <menu className={s.hamburgerMenu}>
       <section className={s.hamburgerMenu__close}>
@@ -26,20 +30,11 @@ function HamburgerMenuComponent({ closeMenuHandler }: HamburgerMenuProps) {
       </section>
       <nav className={s.hamburgerMenu__nav}>
         <ul className={s.hamburgerMenu__nav__items}>
-          <ScrollLink link={"#home"}>
-            <li className={s.hamburgerMenu__nav__items__item}>Home</li>
-          </ScrollLink>
-          <ScrollLink link={"#about"}>
-            <li className={s.hamburgerMenu__nav__items__item}>
-              Sobre Nosotros
-            </li>
-          </ScrollLink>
-          <ScrollLink link={"#services"}>
-            <li className={s.hamburgerMenu__nav__items__item}>Servicios</li>
-          </ScrollLink>
-          <ScrollLink link={"#contact"}>
-            <li className={s.hamburgerMenu__nav__items__item}>Contacto</li>
-          </ScrollLink>
+          {items.map((item) => (
+            <ScrollLink link={item.link}>
+              <li className={s.hamburgerMenu__nav__items__item}>{item.name}</li>
+            </ScrollLink>
+          ))}
         </ul>
       </nav>
       <section className={s.hamburgerMenu__logo}>

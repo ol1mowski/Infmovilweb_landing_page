@@ -1,6 +1,6 @@
 import AboutUS from "@/components/LandingPage/AboutUS/AboutUS.dataFetching";
 import Footer from "@/components/LandingPage/Footer/Footer.dataFetching";
-import HamburgerMenu from "@/components/LandingPage/Header/HamburgerMenu/HamburgerMenu";
+import HamburgerMenu from "@/components/LandingPage/Header/HamburgerMenu/HamburgerMenu.dataFetching";
 import Header from "@/components/LandingPage/Header/Header.dataFetching";
 import HeaderBarFetch from "@/components/LandingPage/HeaderInfoBar/HeaderBar.dataFetching";
 import HomePage from "@/components/LandingPage/HomePage/HomePage.dataFetching";

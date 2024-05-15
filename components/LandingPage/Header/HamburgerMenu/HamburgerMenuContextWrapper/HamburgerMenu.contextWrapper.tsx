@@ -2,9 +2,9 @@
 
 import { useContext } from "react";
 import HamburgerClickContext from "@/store/HamburgerClickContext";
-import HamburgerMenuComponent from "./Hamburger-Menu-Component/Hamburger-Menu.component";
+import HamburgerMenuComponent from "../Hamburger-Menu-Component/Hamburger-Menu.component";
 
-const HamburgerMenuWrapper = () => {
+const HamburgerMenuContextWrapper = ({ items }: {items: { name: string, link: string }[]}) => {
   const { isOpen, setOpen } = useContext(HamburgerClickContext);
 
   const closeMenuHandler = () => {
@@ -14,10 +14,10 @@ const HamburgerMenuWrapper = () => {
   return (
     <>
       {isOpen ? (
-        <HamburgerMenuComponent closeMenuHandler={closeMenuHandler}/>
+        <HamburgerMenuComponent items={items} closeMenuHandler={closeMenuHandler}/>
       ) : null}
     </>
   );
 };
 
-export default HamburgerMenuWrapper;
+export default HamburgerMenuContextWrapper;
