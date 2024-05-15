@@ -1,5 +1,5 @@
-import Image, { StaticImageData } from "next/image";
 import s from "./Location.component.module.scss";
+
 import LocationMap from "../LocationMap/LocationMap.component";
 import ButtonComponent from "@/UI/ButtonComponent/ButtonComponent.component";
 

@@ -1,8 +1,7 @@
-import s from "./HomePage.component.module.scss";
-
 import Card from "./Card-Component/Card.component";
 
 import { type HomePageDataType } from "@/utils/DataTypes/DataTypes";
+import HomePageComponent from "./HomePageComponent/HomePageComponent.component";
 
 async function HomePage() {
   try {
@@ -27,21 +26,19 @@ async function HomePage() {
     }
 
     return (
-      <section id="home" className={s.container}>
-        <div className={s.container__cardsWrapper}>
-          {Cards.map((c) => (
-            <Card
-              buttonIcon={c.button.buttonIcon}
-              buttonText={c.button.buttonText}
-              key={c.title}
-              logo={c.icon}
-              link={c.link}
-              description={c.description}
-              title={c.title}
-            />
-          ))}
-        </div>
-      </section>
+      <HomePageComponent>
+        {Cards.map((c) => (
+          <Card
+            buttonIcon={c.button.buttonIcon}
+            buttonText={c.button.buttonText}
+            key={c.title}
+            logo={c.icon}
+            link={c.link}
+            description={c.description}
+            title={c.title}
+          />
+        ))}
+      </HomePageComponent>
     );
   } catch (error) {
     console.error("Error fetching header bar data:", error);
