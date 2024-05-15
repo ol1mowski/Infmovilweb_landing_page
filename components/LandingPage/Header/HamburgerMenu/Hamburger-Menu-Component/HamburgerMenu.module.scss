@@ -55,8 +55,15 @@
       &__item {
         color: $orange;
         font-size: 2rem;
-        font-weight: 500;
         margin-bottom: 0.7rem;
+        @include headerFont;
+        cursor: pointer;
+        transition: color, scale, .7s;
+        will-change: color, scale;
+      }
+      &__item:hover {
+        scale: $hover-med-scale;
+        color: $dark;
       }
     }
   }
