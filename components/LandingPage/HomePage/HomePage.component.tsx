@@ -22,7 +22,7 @@ async function HomePage() {
   }
 
   return (
-    <section className={s.container}>
+    <section id="home" className={s.container}>
       <div className={s.container__cardsWrapper}>
         {Cards.map((c) => (
           <Card
