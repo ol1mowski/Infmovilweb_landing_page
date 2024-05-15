@@ -5,6 +5,8 @@
   @include d-flex-column;
   padding: $standard-padding;
   gap: $big-gap;
+  scroll-behavior: smooth;
+  scroll-margin: 2rem;
   @media screen and (min-width: $desktop) {
     @include d-flex;
     gap: 4rem;

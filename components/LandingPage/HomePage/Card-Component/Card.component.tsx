@@ -1,7 +1,9 @@
-import Image, { StaticImageData } from "next/image";
 import s from "./Card.component.module.scss";
 
+import Image, { type StaticImageData } from "next/image";
+
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
+import ScrollLink from "@/utils/ScrollLink/ScrollLink.component";
 
 type CardProsps = {
   logo: StaticImageData;
@@ -11,7 +13,6 @@ type CardProsps = {
   buttonIcon: StaticImageData;
   link: string;
 };
-
 function Card({
   logo,
   title,
@@ -30,12 +31,16 @@ function Card({
         <p className={s.cardWrapper__textWrapper__description}>{description}</p>
       </div>
       <div className={s.cardWrapper__actionWrapper}>
-        <a href={link}>
+        <ScrollLink
+          className={s.cardWrapper__actionWrapper__link}
+          link={link}
+          title={title}
+        >
           <div className={s.cardWrapper__actionWrapper__action}>
             <span>{buttonText}</span>{" "}
             <Image src={buttonIcon} width={22} height={22} alt="arrow-icon" />
           </div>
-        </a>
+        </ScrollLink>
       </div>
     </AnimationWrapper>
   );
