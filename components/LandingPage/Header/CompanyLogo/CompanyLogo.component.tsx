@@ -7,7 +7,7 @@ function CompanyLogo() {
   return (
     <section className={s.logoSection}>
       <Image src={logoI
-      } alt="logo of company" width={100} height={100} />
+      } alt="logo of company" width={100} priority height={100} />
     </section>
   );
 }

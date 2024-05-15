@@ -1,7 +1,7 @@
 import s from "./HeaderInfoBar.component.module.scss";
 
 import ContactSection from "./ContactSection/ContactSection.component";
-import { HeaderBarDataType } from "@/utils/DataTypes/DataTypes";
+import { type HeaderBarDataType } from "@/utils/DataTypes/DataTypes";
 import IconsSection from "./IconsSection/IconsSection.component";
 
 function HeaderInfoBarComponent({ companyContact, icons }: HeaderBarDataType[0]) {

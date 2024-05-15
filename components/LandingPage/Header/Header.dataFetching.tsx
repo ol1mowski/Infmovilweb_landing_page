@@ -6,6 +6,11 @@ const Header = async () => {
     const response = await fetch("http://127.0.0.1:8080/api/header", {
       cache: "no-store",
     });
+
+    if (!response.ok) {
+      throw new Error(`Fetching failed with status: ${response.status}`);
+    }
+
     const fetchedItems: HeaderDataType = await response.json();
 
     if (!fetchedItems || !fetchedItems.length) {
