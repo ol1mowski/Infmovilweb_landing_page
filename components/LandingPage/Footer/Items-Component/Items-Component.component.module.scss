@@ -16,5 +16,10 @@
   &__item {
     @include textFont;
     font-size: $text-size;
+    transition: color, 0.7s;
+    will-change: color;
+  }
+  &__item:hover {
+    color: $orange;
   }
 }
