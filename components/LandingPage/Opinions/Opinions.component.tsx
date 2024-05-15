@@ -1,32 +1,29 @@
-import { OpinionsDataType } from "@/utils/DataTypes/DataTypes";
+import { type OpinionsDataType } from "@/utils/DataTypes/DataTypes";
 import OpinionsComponent from "./OpinionsComponent/OpinionsComponent.component";
 
-async function Opinions() {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/opinions", {
-    cache: 'no-store',
+async function fetchOpinionsData() {
+  const response = await fetch("http://127.0.0.1:8080/api/opinions", {
+    cache: "no-store",
   });
-
-  const fetchedItems: OpinionsDataType = await fetchItems.json();
-
-  if (!fetchedItems) {
-    throw new Error("Fetching failed...");
+  if (!response.ok) {
+    throw new Error(`Fetching failed with status ${response.status}`);
   }
+  return response.json();
+}
+
+async function Opinions() {
+  const fetchedItems: OpinionsDataType = await fetchOpinionsData();
 
   const { sectionInfo, Cards, button } = fetchedItems[0];
 
-  if (!Cards || !sectionInfo) {
-    throw new Error("Faltan algunas propiedades requeridas.");
+  if (!Cards || !sectionInfo || !button) {
+    throw new Error("Brakuje niektórych wymaganych właściwości.");
   }
-
-  const { category, title, score } = sectionInfo;
-  const { buttonText } = button;
 
   return (
     <OpinionsComponent
-      category={category}
-      title={title}
-      score={score}
-      buttonText={buttonText}
+      sectionInfo={sectionInfo}
+      button={button}
       Cards={Cards}
     />
   );

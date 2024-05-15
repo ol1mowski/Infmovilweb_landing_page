@@ -1,25 +1,21 @@
-import Image, { StaticImageData } from "next/image";
 import s from "./Opinions.component.module.scss";
+
+import Image from "next/image";
+
+import { type OpinionsDataType } from "@/utils/DataTypes/DataTypes";
 
 import star from "@/assets/icons/star.png";
 import OpinionsCard from "../Opinions-Card/Opinions-Card.component";
 import ButtonComponent from "@/UI/ButtonComponent/ButtonComponent.component";
 
-type OpinionsComponentProps = {
-  buttonText: string;
-  Cards: Array<{ author: string; opinion: string; icon: StaticImageData }>;
-  category: string;
-  score: string;
-  title: string;
-};
-
 function OpinionsComponent({
-  category,
-  title,
-  buttonText,
-  score,
+  sectionInfo,
+  button,
   Cards,
-}: OpinionsComponentProps) {
+}: OpinionsDataType[0]) {
+  const { category, title, score } = sectionInfo;
+  const { buttonText } = button;
+
   return (
     <section id="opinion" className={s.container}>
       <section className={s.container__infoSection}>
