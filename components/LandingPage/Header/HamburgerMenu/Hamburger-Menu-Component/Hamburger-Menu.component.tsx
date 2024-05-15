@@ -5,6 +5,7 @@ import close from "@/assets/icons/close_icon.png";
 import Image from "next/image";
 
 import infmovilwebImage from "@/assets/images/infmovilweb_menuLogo.jpeg";
+import ScrollLink from "@/utils/ScrollLink/ScrollLink.component";
 
 type HamburgerMenuProps = {
   closeMenuHandler: () => void;
@@ -25,10 +26,20 @@ function HamburgerMenuComponent({ closeMenuHandler }: HamburgerMenuProps) {
       </section>
       <nav className={s.hamburgerMenu__nav}>
         <ul className={s.hamburgerMenu__nav__items}>
-          <li className={s.hamburgerMenu__nav__items__item}>Home</li>{" "}
-          <li className={s.hamburgerMenu__nav__items__item}>Sobre Nosotros</li>{" "}
-          <li className={s.hamburgerMenu__nav__items__item}>Servicios</li>{" "}
-          <li className={s.hamburgerMenu__nav__items__item}>Contacto</li>{" "}
+          <ScrollLink link={"#home"}>
+            <li className={s.hamburgerMenu__nav__items__item}>Home</li>
+          </ScrollLink>
+          <ScrollLink link={"#about"}>
+            <li className={s.hamburgerMenu__nav__items__item}>
+              Sobre Nosotros
+            </li>
+          </ScrollLink>
+          <ScrollLink link={"#services"}>
+            <li className={s.hamburgerMenu__nav__items__item}>Servicios</li>
+          </ScrollLink>
+          <ScrollLink link={"#contact"}>
+            <li className={s.hamburgerMenu__nav__items__item}>Contacto</li>
+          </ScrollLink>
         </ul>
       </nav>
       <section className={s.hamburgerMenu__logo}>

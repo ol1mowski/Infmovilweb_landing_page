@@ -9,7 +9,7 @@ import CompanyLogo from "../CompanyLogo/CompanyLogo.component";
 import { type StaticImageData } from "next/image";
 
 type HeaderComponentProps = {
-  items: string[];
+  items: Array<{ name: string; link: string }>;
   companyLogo: StaticImageData;
   hamburgerIcon: StaticImageData;
   searchIcon: StaticImageData;
@@ -28,7 +28,7 @@ function HeaderComponent({
         <div className={s.header__navMenu__nav}>
           <ul className={s.header__navMenu__items}>
             {items.map((item) => (
-              <HeaderItem key={item} item={item} />
+              <HeaderItem key={item.name} item={item} />
             ))}
           </ul>
           <SearchSetion searchIcon={searchIcon} />
