@@ -1,28 +1,26 @@
-import { ServicesDataType } from "@/utils/DataTypes/DataTypes";
+import { type ServicesDataType } from "@/utils/DataTypes/DataTypes";
 import ServiceContent from "./ServiceContent/ServiceContent.component";
 
 async function Services() {
-  const fetchItems = await fetch("http://127.0.0.1:8080/api/services", {
-    next: {
-      revalidate: 5
+  try {
+    const response = await fetch("http://127.0.0.1:8080/api/services");
+    const fetchedItems: ServicesDataType = await response.json();
+
+    if (!fetchedItems || !fetchedItems.length) {
+      throw new Error("No data fetched.");
     }
-  });
 
-  const fetchedItems: ServicesDataType = await fetchItems.json();
+    const { sectionInfo, Cards } = fetchedItems[0];
 
-  if (!fetchedItems) {
-    throw new Error("Fetching failed...");
+    if (!Cards || !sectionInfo) {
+      throw new Error("Missing required properties.");
+    }
+
+    return <ServiceContent sectionInfo={sectionInfo} Cards={Cards} />;
+  } catch (error) {
+    console.error("Error fetching services:", error);
+    throw error;
   }
-
-  const { sectionInfo, Cards } = fetchedItems[0];
-
-  if (!Cards || !sectionInfo) {
-    throw new Error("Faltan algunas propiedades requeridas.");
-  }
-
-  const { category, title } = sectionInfo;
-
-  return <ServiceContent category={category} title={title} Cards={Cards} />;
 }
 
 export default Services;

@@ -1,19 +1,13 @@
-import { type StaticImageData } from "next/image";
-import ServiceCard from "../Service-Card/Service-Card.component";
 import s from "./Services.component.module.scss";
 
-type ServiceContentProps = {
-  category: string;
-  title: string;
-  Cards: Array<{
-    description: string;
-    title: string;
-    image: StaticImageData;
-    button: { buttonText: string; buttonIcon: StaticImageData };
-  }>;
-};
+import ServiceCard from "../Service-Card/Service-Card.component";
+import { type ServicesDataType } from "@/utils/DataTypes/DataTypes";
 
-function ServiceContent({ Cards, category, title }: ServiceContentProps) {
+
+function ServiceContent({ Cards, sectionInfo }: ServicesDataType[0]) {
+
+  const { title, category } = sectionInfo;
+
   return (
     <section id="services" className={s.container}>
       <section className={s.container__header}>
