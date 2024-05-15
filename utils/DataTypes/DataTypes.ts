@@ -86,6 +86,10 @@ export type LocationDataType = [
 export type FooterDataType = [
   {
     companyInfoData: { title: string; description: string };
-    items: Array<{ id: string; items: string[]; title: string }>;
+    items: Array<{
+      id: string;
+      items: Array<{ name: string; link: string }>;
+      title: string;
+    }>;
   }
 ];

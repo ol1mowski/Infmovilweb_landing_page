@@ -1,19 +1,27 @@
-import FooterCopyright from "../FooterCopyright/FooterCopyright.component";
-import ItemsComponent from "../Items-Component/Items-Component.component";
 import s from "./Footer.component.module.scss";
 
-type FooterComponentProps = {
-  items: Array<{ id: string; items: string[]; title: string }>;
+import { type FooterDataType } from "@/utils/DataTypes/DataTypes";
+
+import FooterCopyright from "../FooterCopyright/FooterCopyright.component";
+import ItemsComponent from "../Items-Component/Items-Component.component";
+
+type FooterDataTypeLocal = FooterDataType[0];
+
+interface FooterComponentProps extends FooterDataTypeLocal {
   title: string;
   description: string;
-};
+}
 
-function FooterComponent({ items, title, description }: FooterComponentProps) {
+function FooterComponent({
+  items,
+  title,
+  description,
+}: Omit<FooterComponentProps, "companyInfoData">) {
   return (
     <footer className={s.container}>
       <section className={s.container__itemsContainer}>
         {items.map((i) => (
-          <ItemsComponent key={Math.random()} items={i.items} title={i.title} />
+          <ItemsComponent key={i.title} items={i.items} title={i.title} />
         ))}
         <div className={s.container__itemsContainer__wrapper}>
           <h4 className={s.container__itemsContainer__wrapper__title}>
