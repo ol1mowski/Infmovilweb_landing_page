@@ -8,8 +8,8 @@ function ScrollLink({
   children,
 }: {
   link: string;
-  className: string;
-  title: string;
+  className?: string;
+  title?: string;
   children: ReactNode;
 }) {
   const scrollToElementStart = (

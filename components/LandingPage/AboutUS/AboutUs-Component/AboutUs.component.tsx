@@ -3,6 +3,7 @@ import s from "./AboutUS.component.module.scss";
 
 import AnimationWrapper from "@/utils/AnimationWrapper/AnimationWrapper.component";
 import ButtonComponent from "@/UI/ButtonComponent/ButtonComponent.component";
+import ScrollLink from "@/utils/ScrollLink/ScrollLink.component";
 
 type AboutUSComponentProps = {
   category: string;
@@ -47,9 +48,9 @@ function AboutUSComponent({
           </p>
         </div>
         <div className={s.container__contentSection__buttonSection}>
-          <a href="#services">
-           <ButtonComponent buttonText={buttonText} />
-          </a>
+          <ScrollLink link="#services">
+            <ButtonComponent buttonText={buttonText} />
+          </ScrollLink>
         </div>
       </section>
     </AnimationWrapper>
