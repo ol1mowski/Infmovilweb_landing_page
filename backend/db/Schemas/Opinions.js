@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const opinionsSchema = new mongoose.Schema({
-  sectionData: { category: String, title: String, score: String },
+  sectionInfo: { category: String, title: String, score: String },
   Cards: [
     {
       author: String,

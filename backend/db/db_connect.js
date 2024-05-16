@@ -8,10 +8,15 @@ const { Opinions } = require("./Schemas/Opinions");
 const { Location } = require("./Schemas/location");
 const { Footer } = require("./Schemas/footer");
 
-mongoose.connect("mongodb://localhost:27017/Infmovilweb", {
+require("dotenv").config();
+
+const uri = process.env.URL;
+
+mongoose.connect(uri, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
+
 
 module.exports = {
   HeaderBar: HeaderBar,

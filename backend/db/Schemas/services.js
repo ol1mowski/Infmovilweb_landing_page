@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const servicesSchema = new mongoose.Schema({
-  sectionData: { category: String, title: String },
+  sectionInfo: { category: String, title: String },
   Cards: [
     {
       description: String,
