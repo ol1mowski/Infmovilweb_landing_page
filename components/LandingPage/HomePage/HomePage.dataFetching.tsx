@@ -2,24 +2,13 @@ import Card from "./Card-Component/Card.component";
 
 import { type HomePageDataType } from "@/utils/DataTypes/DataTypes";
 import HomePageComponent from "./HomePageComponent/HomePageComponent.component";
+import { getHomePageData } from "@/db/db_connect";
 
 async function HomePage() {
   try {
-    const fetchItems = await fetch("http://127.0.0.1:8080/api/homepage", {
-      cache: "no-store",
-    });
+    const fetchItems = (await getHomePageData()) as HomePageDataType;
 
-    if (!fetchItems.ok) {
-      throw new Error(`Fetching failed with status: ${fetchItems.status}`);
-    }
-
-    const fetchedItems: HomePageDataType = await fetchItems.json();
-
-    if (!fetchedItems) {
-      throw new Error("Fetching failed...");
-    }
-
-    const { Cards } = fetchedItems[0];
+    const { Cards } = fetchItems[0];
 
     if (!Cards) {
       throw new Error("Faltan algunas propiedades requeridas.");

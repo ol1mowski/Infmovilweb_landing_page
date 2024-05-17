@@ -1,4 +1,7 @@
+require("dotenv").config();
+
 const { mongoose } = require("mongoose");
+
 const { HeaderBar } = require("./Schemas/headerBar");
 const { Header } = require("./Schemas/header");
 const { AboutUs } = require("./Schemas/aboutUs");
@@ -8,8 +11,7 @@ const { Opinions } = require("./Schemas/Opinions");
 const { Location } = require("./Schemas/location");
 const { Footer } = require("./Schemas/footer");
 
-const uri =
-  "mongodb+srv://Olim:Hugo2004@cluster0.2qjo7tz.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0";
+const uri = process.env.DB_URL;
 
 try {
   mongoose.connect(uri, {

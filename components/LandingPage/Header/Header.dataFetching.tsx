@@ -1,26 +1,15 @@
+import { getHeaderData } from "@/db/db_connect";
 import HeaderComponent from "./HeaderComponent/HeaderComponent.component";
 import { type HeaderDataType } from "@/utils/DataTypes/DataTypes";
 
 const Header = async () => {
   try {
-    const response = await fetch("http://127.0.0.1:8080/api/header", {
-      cache: "no-store",
-    });
+    const response = (await getHeaderData()) as HeaderDataType;
 
-    if (!response.ok) {
-      throw new Error(`Fetching failed with status: ${response.status}`);
-    }
-
-    const fetchedItems: HeaderDataType = await response.json();
-
-    if (!fetchedItems || !fetchedItems.length) {
-      throw new Error("Fetching failed...");
-    }
-
-    const { items } = fetchedItems[0];
+    const { items } = response[0];
 
     if (!items) {
-      throw new Error("Brak niektórych wymaganych właściwości.");
+      throw new Error("Error with DB data fetching");
     }
 
     return (
@@ -29,8 +18,8 @@ const Header = async () => {
       </>
     );
   } catch (error) {
-    console.error("Error fetching header data:", error);
-    throw error;
+    console.error("Data loading erro [-]", error);
+    return <HeaderComponent items={[]} />;
   }
 };
 

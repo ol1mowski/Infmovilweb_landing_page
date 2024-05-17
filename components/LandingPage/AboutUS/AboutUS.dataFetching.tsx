@@ -1,21 +1,10 @@
+import { getAboutUsData } from "@/db/db_connect";
 import AboutUSComponent from "./AboutUs-Component/AboutUs.component";
 import { type AboutUsDataType } from "@/utils/DataTypes/DataTypes";
 
-async function fetchAboutUsData() {
-  const response = await fetch("http://127.0.0.1:8080/api/aboutus", {
-    cache: 'no-store',
-  });
-
-  if (!response.ok) {
-    throw new Error(`Fetching failed with status: ${response.status}`);
-  }
-
-  return response.json();
-}
-
 async function AboutUS() {
   try {
-    const fetchedItems = await fetchAboutUsData() as AboutUsDataType;
+    const fetchedItems = (await getAboutUsData()) as AboutUsDataType;
 
     if (!fetchedItems.length) {
       throw new Error("No data received from the server.");

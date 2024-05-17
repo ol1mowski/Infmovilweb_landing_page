@@ -1,16 +1,12 @@
 import { type ServicesDataType } from "@/utils/DataTypes/DataTypes";
 import ServiceContent from "./ServiceContent/ServiceContent.component";
+import { getServicesData } from "@/db/db_connect";
 
 async function Services() {
   try {
-    const response = await fetch("http://127.0.0.1:8080/api/services");
-    const fetchedItems: ServicesDataType = await response.json();
+    const response = (await getServicesData()) as ServicesDataType;
 
-    if (!fetchedItems || !fetchedItems.length) {
-      throw new Error("No data fetched.");
-    }
-
-    const { sectionInfo, Cards } = fetchedItems[0];
+    const { sectionInfo, Cards } = response[0];
 
     if (!Cards || !sectionInfo) {
       throw new Error("Missing required properties.");
