@@ -1,12 +1,12 @@
-import AboutUS from "@/components/LandingPage/AboutUS/AboutUS.dataFetching";
-import Footer from "@/components/LandingPage/Footer/Footer.dataFetching";
-import HamburgerMenu from "@/components/LandingPage/Header/HamburgerMenu/HamburgerMenu.dataFetching";
-import Header from "@/components/LandingPage/Header/Header.dataFetching";
-import HeaderBarFetch from "@/components/LandingPage/HeaderInfoBar/HeaderBar.dataFetching";
-import HomePage from "@/components/LandingPage/HomePage/HomePage.dataFetching";
-import Location from "@/components/LandingPage/Location/Location.dataFetching";
-import Opinions from "@/components/LandingPage/Opinions/Opinions.component";
-import Services from "@/components/LandingPage/ServicesComponent/Services.component";
+import AboutUS from "@/components/Pages/AboutUS/AboutUS.dataFetching";
+import Footer from "@/components/Pages/Footer/Footer.dataFetching";
+import HamburgerMenu from "@/components/Pages/Header/HamburgerMenu/HamburgerMenu.dataFetching";
+import Header from "@/components/Pages/Header/Header.dataFetching";
+import HeaderBarFetch from "@/components/Pages/HeaderInfoBar/HeaderBar.dataFetching";
+import HomePage from "@/components/Pages/HomePage/HomePage.dataFetching";
+import Location from "@/components/Pages/Location/Location.dataFetching";
+import Opinions from "@/components/Pages/Opinions/Opinions.component";
+import Services from "@/components/Pages/ServicesComponent/Services.component";
 
 function LandingPage() {
   return (
