@@ -1,19 +1,6 @@
 const express = require("express");
 const port = 8080;
 
-const {
-  HeaderBar,
-  HomePage,
-  Header,
-  Services,
-  AboutUs,
-  Opinions,
-  Location,
-  Footer,
-} = require("./db/db_connect.js");
-
-
-const bodyParser = require("body-parser");
 
 const app = express();
 
@@ -30,6 +17,7 @@ app.get("/api/headerbar", (req, res) => {
   (async function getData() {
     try {
       const docs = await HeaderBar.find();
+      console.log(docs);
       res.status(200).json(docs);
     } catch (err) {
       res.status(500).json({ error: err });

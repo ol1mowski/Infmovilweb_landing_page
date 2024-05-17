@@ -1,32 +1,24 @@
 import HeaderInfoBarComponent from "./HeaderBarComponent/HeaderInfoBar.component";
 import { type HeaderBarDataType } from "@/utils/DataTypes/DataTypes";
 
+import { getHeaderBarData } from "@/db/db_connect";
+
 async function HeaderBarFetch() {
   try {
-    const response = await fetch("http://127.0.0.1:8080/api/headerbar", {
-      cache: 'no-store',
-    });
+    const response = await getHeaderBarData();
 
-    if (!response.ok) {
-      throw new Error(`Fetching failed with status: ${response.status}`);
-    }
-
-    const items: HeaderBarDataType = await response.json();
-
-    if (!items.length) {
-      throw new Error("No data received.");
-    }
-
-    const { companyContact, icons } = items[0];
+    const { companyContact, icons } = response[0];
 
     if (!companyContact || !icons) {
       throw new Error("Niektóre wymagane właściwości są brakujące.");
     }
 
-    return <HeaderInfoBarComponent companyContact={companyContact} icons={icons} />;
+    return (
+      <HeaderInfoBarComponent companyContact={companyContact} icons={icons} />
+    );
   } catch (error) {
     console.error("Error fetching header bar data:", error);
-    throw error; 
+    throw error;
   }
 }
 
