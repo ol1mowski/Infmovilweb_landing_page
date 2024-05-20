@@ -1,0 +1,25 @@
+@import "@/sass/index.scss";
+
+.wrapper {
+  @include d-flex-column;
+  gap: $standard-gap;
+  align-items: flex-start;
+  width: 100%;
+  &__title {
+    color: $orange;
+    font-size: 1.4rem;
+    @include headerFont;
+  }
+  &__linkItem {
+    color: $dark;
+  }
+  &__item {
+    @include textFont;
+    font-size: $text-size;
+    transition: color, 0.7s;
+    will-change: color;
+  }
+  &__item:hover {
+    color: $orange;
+  }
+}

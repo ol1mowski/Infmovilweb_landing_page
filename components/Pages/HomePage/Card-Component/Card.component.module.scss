@@ -1,0 +1,62 @@
+@import "@/sass/index.scss";
+
+.cardWrapper {
+  @include d-flex-column;
+  background-color: #fff;
+  padding: 2rem $standard-padding;
+  width: 20rem;
+  height: 23rem;
+  gap: $standard-gap;
+  border-radius: $border-med;
+  box-shadow: $box-shadow;
+  transition: scale, 0.7s;
+  will-change: scale;
+  cursor: pointer;
+  &__imageWrapper {
+    @include d-flex;
+    border: 2px solid $gray;
+    padding: 1.5rem;
+    border-radius: 50%;
+  }
+  &__textWrapper {
+    @include d-flex-column;
+    gap: $small-gap;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 1.75rem;
+    &__title {
+      @include headerFont;
+      width: 100%;
+      color: $orange;
+      font-size: 1.4rem;
+    }
+    &__description {
+      font-size: $text-size;
+      @include textFont;
+    }
+  }
+  &__actionWrapper {
+    @include d-flex;
+    margin-top: $small-gap;
+    justify-content: flex-start;
+    width: 100%;
+    padding-left: 1.75rem;
+    &__action {
+      @include d-flex;
+      cursor: pointer;
+      gap: $small-gap;
+      color: $orange;
+      font-size: 1.2rem;
+      font-weight: 500;
+      transition: scale, 0.7s;
+      will-change: scale;
+    }
+    &__action:hover {
+      scale: $hover-min-scale;
+    }
+  }
+}
+
+.cardWrapper:hover {
+  scale: $hover-min-scale;
+}

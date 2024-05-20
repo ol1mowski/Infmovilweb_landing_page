@@ -9,8 +9,6 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@tanstack/react-query": "^5.32.0",
-    "firebase": "^10.11.0",
     "framer-motion": "^11.1.5",
     "next": "14.2.1",
     "react": "^18",
@@ -22,6 +20,7 @@
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
+    "@types/react-scroll": "^1.8.10",
     "eslint": "^8",
     "eslint-config-next": "14.2.1",
     "typescript": "^5"

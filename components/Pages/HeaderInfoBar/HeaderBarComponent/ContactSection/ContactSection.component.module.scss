@@ -1,0 +1,17 @@
+@import "@/sass/index.scss";
+
+.contactWrapper {
+  @include d-flex;
+  gap: $small-gap;
+  transition: scale 0.7s;
+  will-change: scale;
+  cursor: pointer;
+  &__content {
+    color: $white;
+    @include textFont;
+  }
+}
+
+.contactWrapper:hover {
+  scale: $hover-min-scale;
+}

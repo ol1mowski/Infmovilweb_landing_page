@@ -1,5 +1,4 @@
 import RootWrapper from "./RootWrapper";
-import ReactQueryProvider from "./ReactQueryProvider";
 
 function Root({
   children,
@@ -7,15 +6,11 @@ function Root({
   children: React.ReactNode;
 }>) {
   return (
-    <ReactQueryProvider>
-      <html lang="pl-PL">
-        <body>
-          <RootWrapper>
-            {children}
-          </RootWrapper>
-        </body>
-      </html>
-    </ReactQueryProvider>
+    <html lang="pl-PL">
+      <body>
+        <RootWrapper>{children}</RootWrapper>
+      </body>
+    </html>
   );
 }
 

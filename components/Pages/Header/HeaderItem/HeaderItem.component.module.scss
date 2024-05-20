@@ -1,0 +1,17 @@
+@import "@/sass/index.scss";
+
+.item {
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: $small-padding $standard-padding;
+  color: $dark;
+  transition: scale, color,  0.7s;
+  will-change: scale;
+  border-radius: $border-min;
+  @include textFont;
+  font-weight: 400;
+}
+.item:hover {
+  scale: $hover-med-scale;
+  color: $orange;
+}

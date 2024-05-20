@@ -1,0 +1,34 @@
+@import "@/sass/index.scss";
+@import url("https://fonts.googleapis.com/css2?family=Freehand&display=swap");
+
+.container {
+  @include d-flex-column;
+  margin: 5rem 0;
+  gap: 3rem;
+  padding-top: $big-padding;
+  border-top: 2px solid $gray;
+  &__itemsContainer {
+    @include d-flex-column;
+    align-items: flex-start;
+    @media screen and (min-width: $desktop) {
+      flex-direction: row;
+    }
+    gap: $big-gap;
+    &__wrapper {
+      @include d-flex-column;
+      gap: $standard-gap;
+      align-items: flex-start;
+
+      &__title {
+        color: $orange;
+        font-size: 1.4rem;
+        @include headerFont;
+      }
+      &__companyInfo {
+        font-size: $text-size;
+        @include textFont;
+        width: 10rem;
+      }
+    }
+  }
+}
