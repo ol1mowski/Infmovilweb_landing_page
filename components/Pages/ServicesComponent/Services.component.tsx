@@ -4,7 +4,7 @@ import { getServicesData } from "@/db/db_connect";
 
 async function Services() {
   try {
-    const response = (await getServicesData()) as ServicesDataType;
+    const response = (await getServicesData()) as unknown as ServicesDataType;
 
     const { sectionInfo, Cards } = response[0];
 

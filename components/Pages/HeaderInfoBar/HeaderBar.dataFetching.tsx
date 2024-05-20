@@ -5,7 +5,7 @@ import { getHeaderBarData } from "@/db/db_connect";
 
 async function HeaderBarFetch() {
   try {
-    const response = (await getHeaderBarData()) as HeaderBarDataType;
+    const response = (await getHeaderBarData()) as unknown as HeaderBarDataType;
 
     const { companyContact, icons } = response[0];
 

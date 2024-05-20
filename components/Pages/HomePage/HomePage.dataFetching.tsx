@@ -6,7 +6,7 @@ import { getHomePageData } from "@/db/db_connect";
 
 async function HomePage() {
   try {
-    const fetchItems = (await getHomePageData()) as HomePageDataType;
+    const fetchItems = (await getHomePageData()) as unknown as HomePageDataType;
 
     const { Cards } = fetchItems[0];
 

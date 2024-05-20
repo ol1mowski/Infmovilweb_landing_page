@@ -4,7 +4,7 @@ import { getLoactionData } from "@/db/db_connect";
 
 async function Location() {
   try {
-    const response = (await getLoactionData()) as LocationDataType;
+    const response = (await getLoactionData()) as unknown as LocationDataType;
 
     const { sectionInfo, button } = response[0];
 

@@ -4,7 +4,7 @@ import { type HeaderDataType } from "@/Types/DataTypes";
 
 const Header = async () => {
   try {
-    const response = (await getHeaderData()) as HeaderDataType;
+    const response = (await getHeaderData()) as unknown as HeaderDataType;
 
     const { items } = response[0];
 

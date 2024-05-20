@@ -5,7 +5,7 @@ import { getFooterData } from "@/db/db_connect";
 
 async function Footer() {
   try {
-    const response = (await getFooterData()) as FooterDataType;
+    const response = (await getFooterData()) as unknown as FooterDataType;
 
     const { companyInfoData, items } = response[0];
 

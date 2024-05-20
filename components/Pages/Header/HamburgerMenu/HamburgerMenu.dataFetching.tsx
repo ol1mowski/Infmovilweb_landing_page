@@ -4,7 +4,7 @@ import { getHeaderData } from "@/db/db_connect";
 
 async function HamburgerMenu() {
   try {
-    const response = (await getHeaderData()) as HeaderDataType;
+    const response = (await getHeaderData()) as unknown as HeaderDataType;
 
     const { items } = response[0];
 

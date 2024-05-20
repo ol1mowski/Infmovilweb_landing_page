@@ -1,12 +1,12 @@
 import { getAboutUsData } from "@/db/db_connect";
 import AboutUSComponent from "./AboutUs-Component/AboutUs.component";
-import { type AboutUsDataType } from "@/Types/DataTypes";
+import { AboutUsDataType } from "@/Types/DataTypes";
 
 async function AboutUS() {
   try {
-    const fetchedItems = (await getAboutUsData()) as AboutUsDataType;
+    const fetchedItems = (await getAboutUsData()) as unknown as AboutUsDataType;
 
-    if (!fetchedItems.length) {
+    if (!Array.isArray(fetchedItems) || !fetchedItems.length) {
       throw new Error("No data received from the server.");
     }
 

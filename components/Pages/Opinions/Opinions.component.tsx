@@ -3,7 +3,7 @@ import OpinionsComponent from "./OpinionsComponent/OpinionsComponent.component";
 import { getOpinionsData } from "@/db/db_connect";
 
 async function Opinions() {
-  const fetchedItems = (await getOpinionsData()) as OpinionsDataType;
+  const fetchedItems = (await getOpinionsData()) as unknown as OpinionsDataType;
 
   const { sectionInfo, Cards, button } = fetchedItems[0];
 
