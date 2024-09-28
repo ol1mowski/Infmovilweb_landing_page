@@ -1,36 +1,73 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 🖥️ Computer Service Company Website
 
-## Getting Started
+Welcome to the **Computer Service Company Website**, a dynamic and modern company profile built during my Erasmus internship in Fuerteventura. This project showcases my ability to create professional and high-performing websites using the latest web technologies like Next.js, TypeScript, and MongoDB.
 
-First, run the development server:
+![Service Website](https://github.com/user-attachments/assets/computer-service-preview)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## ✨ Overview
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This website serves as a digital business card for a computer service company. It was developed using **Next.js** with **Server-Side Rendering (SSR)** for enhanced performance and SEO. The site is styled with **SCSS** to ensure modular and maintainable code. **MongoDB** is used for managing service requests, and the project is fully written in **TypeScript** to ensure type safety across the codebase.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Key Features:
+- **💻 Service Overview**: A comprehensive description of the company's services, including computer repairs, diagnostics, and electronics servicing.
+- **📞 Contact Form**: A user-friendly form for customers to request service appointments or ask questions.
+- **📍 Location and Hours**: Clear details about the company's physical location and business hours.
+- **🔄 State Management**: The **Context API** is used to efficiently manage global state, such as user inquiries and service requests.
+- **📈 SEO Optimization**: Server-Side Rendering (SSR) helps boost search engine visibility and improve loading times.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## 🔧 Tech Stack
 
-## Learn More
+- **Framework**: [Next.js](https://nextjs.org/) (React-based framework with SSR)
+- **Styling**: [SCSS](https://sass-lang.com/) (For modular and maintainable styles)
+- **Database**: [MongoDB](https://www.mongodb.com/) (Used to manage service request submissions)
+- **Language**: [TypeScript](https://www.typescriptlang.org/) (Ensures type safety and maintainable code)
+- **State Management**: Context API (For efficient global state handling)
 
-To learn more about Next.js, take a look at the following resources:
+## 🚀 How to Run This Project Locally
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone this repository:**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+   ```bash
+   git clone https://github.com/yourusername/computer-service-website.git
+   cd computer-service-website
+   ```
 
-## Deploy on Vercel
+2. **Install dependencies:**
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+   ```bash
+   npm install
+   ```
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+3. **Run the development server:**
+
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in your browser:**
+
+   Visit `http://localhost:3000` to view the site locally.
+
+## 🎨 Design Inspiration
+
+The design focuses on a professional, user-friendly interface, making it easy for clients to learn about the company’s services and get in touch. The layout is responsive and clean, providing a smooth experience across devices.
+
+## 📞 Contact Section
+
+The **Contact Form** allows users to quickly request services or ask questions, with submitted forms being stored securely in a **MongoDB** database.
+
+## 🌍 Live Demo
+
+Check out the live version of the website [here](your-live-demo-url).
+
+## 🤝 Contributing
+
+Feel free to fork this repository and submit pull requests. If you encounter any issues, please open an issue in this repository.
+
+## 📫 Contact
+
+If you have any questions or feedback, connect with me on [LinkedIn](your-linkedin-url) or [Twitter](your-twitter-url).
+
+## ⭐️ Show Your Support
+
+If you like this project, please give it a ⭐️ on GitHub—it’s greatly appreciated!
