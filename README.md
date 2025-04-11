@@ -2,7 +2,8 @@
 
 Welcome to the **Computer Service Company Website**, a dynamic and modern company profile built during my Erasmus internship in Fuerteventura. This project showcases my ability to create professional and high-performing websites using the latest web technologies like Next.js, TypeScript, and MongoDB.
 
-![Service Website](https://github.com/user-attachments/assets/computer-service-preview)
+![obraz](https://github.com/user-attachments/assets/f2cf6210-5518-4696-a281-b874025ba82d)
+
 
 ## ✨ Overview
 
