@@ -51,7 +51,7 @@ This website serves as a digital business card for a computer service company. I
 
 ## 🎨 Design Inspiration
 
-The design focuses on a professional, user-friendly interface, making it easy for clients to learn about the company’s services and get in touch. The layout is responsive and clean, providing a smooth experience across devices.
+The design focuses on a professional, user-friendly interface, making it easy for clients to learn about the company's services and get in touch. The layout is responsive and clean, providing a smooth experience across devices.
 
 ## 📞 Contact Section
 
@@ -71,4 +71,70 @@ If you have any questions or feedback, connect with me on [LinkedIn](your-linked
 
 ## ⭐️ Show Your Support
 
-If you like this project, please give it a ⭐️ on GitHub—it’s greatly appreciated!
+If you like this project, please give it a ⭐️ on GitHub—it's greatly appreciated!
+
+# Instrukcja uruchomienia aplikacji z Dockerem
+
+## Wymagania
+
+- Docker
+- Docker Compose
+
+## Uruchomienie aplikacji w kontenerze Docker
+
+### 1. Konfiguracja zmiennych środowiskowych
+
+Przed uruchomieniem aplikacji należy skonfigurować zmienne środowiskowe. W pliku `docker-compose.yml` należy zaktualizować następujące wartości:
+
+```yaml
+environment:
+  - DB_URL=mongodb+srv://username:password@cluster0.mongodb.net/infmovilweb?retryWrites=true&w=majority
+```
+
+Zastąp `username`, `password` i `cluster0.mongodb.net` własnymi danymi dostępowymi do bazy MongoDB.
+
+### 2. Budowanie i uruchomienie kontenerów
+
+```bash
+# Budowanie i uruchomienie kontenerów
+docker-compose up -d
+
+# Tylko budowanie obrazów
+docker-compose build
+
+# Sprawdzenie logów
+docker-compose logs -f
+```
+
+### 3. Zatrzymanie kontenerów
+
+```bash
+docker-compose down
+```
+
+## Struktura kontenerów
+
+- **web** - aplikacja Next.js
+- **mongodb** - baza danych (tylko dla środowiska lokalnego)
+
+## Porty
+
+- Aplikacja web: http://localhost:3000
+- MongoDB: localhost:27017
+
+## Wolumeny
+
+- **mongodb_data** - dane bazy MongoDB
+
+## Rozwiązywanie problemów
+
+Jeśli aplikacja nie uruchamia się poprawnie, sprawdź logi:
+
+```bash
+docker-compose logs -f web
+```
+
+W przypadku problemów z połączeniem do bazy danych, upewnij się, że:
+1. URL MongoDB jest poprawny
+2. Użytkownik ma odpowiednie uprawnienia
+3. Nazwa bazy danych jest poprawna
