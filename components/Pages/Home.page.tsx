@@ -1,4 +1,5 @@
 import AboutUS from "@/components/AboutUS/AboutUS.dataFetching";
+import ServiceCalculator from "@/components/CalculatorComponent";
 import Footer from "@/components/Footer/Footer.dataFetching";
 import HamburgerMenu from "@/components/Header/HamburgerMenu/HamburgerMenu.dataFetching";
 import Header from "@/components/Header/Header.dataFetching";
@@ -16,6 +17,7 @@ function Home() {
       <HomePage />
       <AboutUS />
       <Services />
+      <ServiceCalculator />
       <Location />
       <Footer />
     </>
